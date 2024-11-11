@@ -1,0 +1,37 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>{{ title }}</title>
+  <link type="text/css" href="{% static 'trip/css/style.css' %}" rel="stylesheet" />
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<header class="header">
+  <div class="container">
+    <div class="menu">
+      <a href="{% url 'home' %}" class="logo">
+      <img src="{% static 'trip/images/noemi-logo.svg' %}" class="header-logo" alt="header-logo">
+      </a>
+      {% include 'trip/includes/main-menu.html'%}
+    </div>
+    <h1 class="header-title">Путешествие начинается здесь ...</h1>
+  </div>
+</header>
+{% block content%}
+{% endblock%}
+  <footer class="footer">
+    <div class="footer-logo">
+     <a href="0#"><img class="logo_social" src="https://netology-code.github.io/html-2-diploma/sources/images/social/001-dribbble.svg" alt="иконка dribbble"></a>
+     <a href="0#"><img class="logo_social" src="https://netology-code.github.io/html-2-diploma/sources/images/social/002-pinterest.svg" alt="иконка pinterest"></a>
+     <a href="0#"><img class="logo_social" src="https://netology-code.github.io/html-2-diploma/sources/images/social/003-tumblr.svg" alt="иконка tumblr"></a>
+    </div>
+    <div class="copyright">Copyright © 2009–2019 City Blog LLC.</div>
+  </footer>
+<!-- partial -->
+
+</body>
+</html>

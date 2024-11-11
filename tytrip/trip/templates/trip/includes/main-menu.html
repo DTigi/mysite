@@ -1,0 +1,11 @@
+<nav class="head-menu">
+    <ul class="menu-list">
+        {% for item in menu %}
+            {% if not forloop.last %}
+            <li class="menu-list-item">{% else %}<li class="menu-list-item">
+            {% endif %}
+                <a class="menu-link" href="{% url item.url_name %}">{{item.title}}</a>
+            </li>
+        {% endfor %}
+    </ul>
+</nav>

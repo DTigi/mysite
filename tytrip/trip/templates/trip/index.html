@@ -1,0 +1,144 @@
+{% extends 'base.html'%}
+
+{% block content%}
+
+<div class="main-content">
+  <main class="main">
+      {% for p in posts %}
+      {% if p.is_published %}
+      <div class="card">
+        <img class="poster" src="static/trip/images/post_images/mountain.jpg" alt="nice picture">
+        <article class="article">
+            <div class="tag">
+              <ul class="tag-list">
+                  {% for t in p.tags %}
+                <li class="tag-list-item">
+                  <a class="tag-link" href="#0">{{t}}</a>
+                </li>
+                  {% endfor %}
+              </ul>
+            </div>
+            <h2 class="article-title">
+              <a class="title-link" href="{% url 'post' p.id %}">{{p.title}}</a>
+            </h2>
+            <time class="time">{{p.time}}</time>
+            <span class="autor">{{p.author}}</span>
+            <p class="discription">{% autoescape off %}
+                                    {{p.content|linebreaks|truncatewords:50}}
+                                    {% endautoescape %}</p>
+        </article>
+      </div>
+      {% endif%}
+      {% endfor %}
+  </main>
+  <aside class="aside">
+    <div class="new__posts">
+      <header class="header__aside">новые посты</header>
+      <div class="posts">
+            <img class="img_post__aside" src="https://netology-code.github.io/html-2-diploma/sources/images/last-post1.jpg" alt="sunrise on a beach">
+            <article class="article_post">
+              <time class="time">14 июня 2019</time>
+              <a class="title-link-aside" href="#0">10 мест, ради которых стоит проснуться на рассвете</a>
+            </article>
+      </div>
+      <div class="posts">
+            <img class="img_post__aside" src="https://netology-code.github.io/html-2-diploma/sources/images/last-post2.jpg" alt="yoga on a beach">
+            <article class="article_post">
+              <time class="time">10 июня 2019</time>
+              <a class="title-link-aside" href="#0">Йога для домашних</a>
+            </article>
+      </div>
+      <div class="posts">
+            <img class="img_post__aside" src="https://netology-code.github.io/html-2-diploma/sources/images/45.jpg" alt="place of balcony">
+            <article class="article_post">
+              <time class="time">14 июня 2019</time>
+              <a class="title-link-aside" href="#0">Мы превратили классное место в балкон</a>
+            </article>
+      </div>
+      <div class="posts">
+            <img class="img_post__aside" src="https://netology-code.github.io/html-2-diploma/sources/images/last-post4.jpg" alt="food on the table">
+            <article class="article_post">
+              <time class="time">14 июня 2019</time>
+              <a class="title-link-aside" href="#0">Кулинарный подход к науке</a>
+            </article>
+      </div>
+      <div class="posts">
+              <img class="img_post__aside" src="https://netology-code.github.io/html-2-diploma/sources/images/7.jpg" alt="hair of woman">
+              <article class="article_post">
+              <time class="time">14 июня 2019</time>
+              <a class="title-link-aside" href="#0">Лучшие прически для распущенных волос</a>
+            </article>
+      </div>
+     </div>
+    <div class="find">
+      <input type="search" class="field" placeholder="Найти..." required>
+      <button type="submit" class="button_search"></button>
+    </div>
+    <div class="mailing">
+      <header class="header__aside">Рассылка</header>
+      <form class="form">
+        <input type="email" class="field-email" placeholder="Ваш email-адрес" required></intup>
+      <button type="submit" class="button_email">Подписаться</button>
+      </form>
+    </div>
+    <div class="tags">
+      <header class="header__aside">Теги</header>
+      <div class="tags_block">
+        <div class="tags_block_name">
+          <a href="#0" class="tags_block_link">fashion</a>
+        </div>
+        <div class="tags_block_name">
+          <a href="#0" class="tags_block_link">music</a>
+        </div>
+        <div class="tags_block_name">
+          <a href="#0" class="tags_block_link">lifestyle</a>
+        </div>
+        <div class="tags_block_name">
+          <a href="#0" class="tags_block_link">art</a>
+        </div>
+        <div class="tags_block_name">
+          <a href="#0" class="tags_block_link">interior</a>
+        </div>
+        <div class="tags_block_name">
+          <a href="#0" class="tags_block_link">travel</a>
+        </div>
+        <div class="tags_block_name">
+          <a href="#0" class="tags_block_link">food</a>
+        </div>
+        <div class="tags_block_name">
+          <a href="#0" class="tags_block_link">health</a>
+        </div>
+       </div>
+      </div>
+    <div class="topics">
+      <header class="header__aside">Темы</header>
+      <div class="topics_block">
+        <div class="topics_block_name">
+            <a class="topic_block_link" href="#0">Красота</a>
+            <a class="topic_block_link_number" href="#0">12</a>
+        </div>
+        <div class="topics_block_name">
+             <a class="topic_block_link" href="#0">Здоровье</a>
+             <a class="topic_block_link_number" href="#0">4</a>
+        </div>
+        <div class="topics_block_name">
+             <a class="topic_block_link" href="#0">Образ жизни</a>
+             <a class="topic_block_link_number" href="#0">145</a>
+        </div>
+        <div class="topics_block_name">
+             <a class="topic_block_link" href="#0">Музыка</a>
+             <a class="topic_block_link_number" href="#0">28</a>
+        </div>
+        <div class="topics_block_name">
+             <a class="topic_block_link" href="#0">Спорт</a>
+             <a class="topic_block_link_number" href="#0">62</a>
+        </div>
+        <div class="topics_block_name">
+             <a class="topic_block_link" href="#0">Йога</a>
+             <a class="topic_block_link_number" href="#0">8</a>
+        </div>
+      </div>
+    </div>
+  </asdie>
+</div>
+{% endblock %}
