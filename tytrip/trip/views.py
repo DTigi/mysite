@@ -1,16 +1,20 @@
+from lib2to3.fixes.fix_input import context
+
 from django.http import HttpResponse, HttpResponseNotFound, Http404, HttpResponseRedirect, HttpResponsePermanentRedirect
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.template.defaultfilters import slugify
 from django.template.loader import render_to_string
 from django.urls import reverse
 from datetime import datetime
+
+from .models import Trip
 
 menu = [
         {'title': "Главная", 'url_name': 'home'},
         {'title': "Посты", 'url_name': 'posts'},
         {'title': "Статьи", 'url_name': 'articles'},
         {'title': "Теги", 'url_name': 'tags'},
-        {'title': "Темы", 'url_name': 'topics'},
+        {'title': "Темы", 'url_name': 'home'},
         {'title': "Добавить статью", 'url_name': 'add_page'},
         {'title': "Обратная связь", 'url_name': 'contact'},
         {'title': "Войти", 'url_name': 'login'}
@@ -28,13 +32,11 @@ data_db = [
 
 # Create your views here.
 def index(request):
-    # temp = render_to_string('trip/index_old.html')
-    # return HttpResponse(temp)temp
+    post_db = Trip.published.all()
     data = {
         'title': 'Главная страница',
         'menu': menu,
-        'url': slugify('Main page'),
-        'posts': data_db,
+        'posts': post_db,
     }
     return render(request, 'trip/index.html', context=data)
 
@@ -53,18 +55,26 @@ def articles(request):
 def tags(request):
     return HttpResponse(f"Отображение списка тегов")
 
-def topics(request):
-    return HttpResponse(f"Темы")
+def topics(request, topic_id):
+    data = {
+        'title': 'Отображение по рубрикам',
+        'menu': menu,
+        'posts': Trip.published.all(),
+        'cat_selected': topic_id,
+    }
 
-def get_archive(request, year):
-    if year > datetime.now().year:
-        uri = reverse('cats', args=('sport',))
-        return HttpResponsePermanentRedirect(uri) # redirect(uri, permanent=True)
+    return render(request, 'trip/index.html', context=data)
 
-    return HttpResponse(f'<h1>Архив</h1><p>Архив: {year}</p>')
 
-def show_post(request, post_id):
-    return HttpResponse(f"Отображение статьи с id = {post_id}")
+def show_post(request, post_slug):
+    post = get_object_or_404(Trip, slug=post_slug)
+    data = {
+        'title': post.title,
+        'menu': menu,
+        'post': post,
+        'cat_selected': 1,
+    }
+    return render(request, 'trip/post.html', context=data)
 
 
 def addpage(request):
