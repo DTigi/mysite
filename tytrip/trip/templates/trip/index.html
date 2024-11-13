@@ -18,8 +18,9 @@
             <h2 class="article-title">
               <a class="title-link" href="{{ p.get_absolute_url }}">{{p.title}}</a>
             </h2>
-            <time class="time">{{p.time}}</time>
-            <span class="autor">{{p.author}}</span>
+            <p class="first">Тема: {{p.topic.name}}</p>
+            <time class="time">{{p.time_update|date:"d-m-Y H:i:s"}}</time>
+            <span class="autor">{{p.author_id}}</span>
             <p class="discription">{% autoescape off %}
                                     {{p.content|linebreaks|truncatewords:50}}
                                     {% endautoescape %}</p>

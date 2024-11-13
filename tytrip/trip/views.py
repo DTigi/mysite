@@ -7,7 +7,7 @@ from django.template.loader import render_to_string
 from django.urls import reverse
 from datetime import datetime
 
-from .models import Trip
+from .models import Trip, Topics
 
 menu = [
         {'title': "Главная", 'url_name': 'home'},
@@ -55,12 +55,14 @@ def articles(request):
 def tags(request):
     return HttpResponse(f"Отображение списка тегов")
 
-def topics(request, topic_id):
+def topics(request, topic_slug):
+    topic = get_object_or_404(Topics, slug=topic_slug)
+    posts_db = Trip.published.filter(topic_id=topic.id)
     data = {
-        'title': 'Отображение по рубрикам',
+        'title': f'Тема статьи: {topic.name}',
         'menu': menu,
-        'posts': Trip.published.all(),
-        'cat_selected': topic_id,
+        'posts': posts_db,
+        'cat_selected': topic.id,
     }
 
     return render(request, 'trip/index.html', context=data)

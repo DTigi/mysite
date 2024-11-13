@@ -1,4 +1,5 @@
 {% load static %}
+{% load trip_tags %}
 
 <!DOCTYPE html>
 <html lang="en" >
@@ -104,32 +105,10 @@
       </div>
     <div class="topics">
       <header class="header__aside">Темы</header>
-      <div class="topics_block">
-        <div class="topics_block_name">
-            <a class="topic_block_link" href="#0">Красота</a>
-            <a class="topic_block_link_number" href="#0">12</a>
-        </div>
-        <div class="topics_block_name">
-             <a class="topic_block_link" href="#0">Здоровье</a>
-             <a class="topic_block_link_number" href="#0">4</a>
-        </div>
-        <div class="topics_block_name">
-             <a class="topic_block_link" href="#0">Образ жизни</a>
-             <a class="topic_block_link_number" href="#0">145</a>
-        </div>
-        <div class="topics_block_name">
-             <a class="topic_block_link" href="#0">Музыка</a>
-             <a class="topic_block_link_number" href="#0">28</a>
-        </div>
-        <div class="topics_block_name">
-             <a class="topic_block_link" href="#0">Спорт</a>
-             <a class="topic_block_link_number" href="#0">62</a>
-        </div>
-        <div class="topics_block_name">
-             <a class="topic_block_link" href="#0">Йога</a>
-             <a class="topic_block_link_number" href="#0">8</a>
-        </div>
-      </div>
+        <ul>
+            {% show_topics topic_selected %}
+        </ul>
+    </div>
     </div>
   </asdie>
 </div>
