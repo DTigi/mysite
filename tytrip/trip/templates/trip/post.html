@@ -11,9 +11,11 @@
         <article class="article">
             <div class="tag">
               <ul class="tag-list">
+                  {% for tag in post.tags.all %}
                 <li class="tag-list-item">
-                  <a class="tag-link" href="#0">helth</a>
+                  <a class="tag-link" href="{{tag.get_absolute_url}}">{{tag}}</a>
                 </li>
+                  {% endfor %}
               </ul>
             </div>
             <h1 class="article-title">

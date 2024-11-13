@@ -1,0 +1,12 @@
+<div class="tags">
+    {% if tags %}
+      <header class="header__aside">Теги</header>
+      <div class="tags_block">
+                {% for t in tags %}
+                <div class="tags_block_name">
+                    <a class="tags_block_link" href="{{t.get_absolute_url}}">{{t.tag}}</a>
+                </div>
+                {% endfor %}
+      </div>
+    {% endif %}
+</div>

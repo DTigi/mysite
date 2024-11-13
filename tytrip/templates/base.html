@@ -74,41 +74,12 @@
       <button type="submit" class="button_email">Подписаться</button>
       </form>
     </div>
-    <div class="tags">
-      <header class="header__aside">Теги</header>
-      <div class="tags_block">
-        <div class="tags_block_name">
-          <a href="#0" class="tags_block_link">fashion</a>
-        </div>
-        <div class="tags_block_name">
-          <a href="#0" class="tags_block_link">music</a>
-        </div>
-        <div class="tags_block_name">
-          <a href="#0" class="tags_block_link">lifestyle</a>
-        </div>
-        <div class="tags_block_name">
-          <a href="#0" class="tags_block_link">art</a>
-        </div>
-        <div class="tags_block_name">
-          <a href="#0" class="tags_block_link">interior</a>
-        </div>
-        <div class="tags_block_name">
-          <a href="#0" class="tags_block_link">travel</a>
-        </div>
-        <div class="tags_block_name">
-          <a href="#0" class="tags_block_link">food</a>
-        </div>
-        <div class="tags_block_name">
-          <a href="#0" class="tags_block_link">health</a>
-        </div>
-       </div>
-      </div>
+     {% show_all_tags %}
     <div class="topics">
       <header class="header__aside">Темы</header>
         <ul>
             {% show_topics topic_selected %}
         </ul>
-    </div>
     </div>
   </asdie>
 </div>
