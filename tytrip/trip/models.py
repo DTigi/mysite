@@ -38,7 +38,7 @@ class Trip(models.Model):
     class Meta:
         verbose_name = 'Путешествие'
         verbose_name_plural = 'Путешествия'
-        ordering = ['-time_create']
+        ordering = ['-time_update']
         indexes = [
             models.Index(fields=['-time_create']),
         ]

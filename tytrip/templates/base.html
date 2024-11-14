@@ -25,44 +25,7 @@
 {% block content%}
 {% endblock%}
  <aside class="aside">
-    <div class="new__posts">
-      <header class="header__aside">новые посты</header>
-      <div class="posts">
-            <img class="img_post__aside" src="https://netology-code.github.io/html-2-diploma/sources/images/last-post1.jpg" alt="sunrise on a beach">
-            <article class="article_post">
-              <time class="time">14 июня 2019</time>
-              <a class="title-link-aside" href="#0">10 мест, ради которых стоит проснуться на рассвете</a>
-            </article>
-      </div>
-      <div class="posts">
-            <img class="img_post__aside" src="https://netology-code.github.io/html-2-diploma/sources/images/last-post2.jpg" alt="yoga on a beach">
-            <article class="article_post">
-              <time class="time">10 июня 2019</time>
-              <a class="title-link-aside" href="#0">Йога для домашних</a>
-            </article>
-      </div>
-      <div class="posts">
-            <img class="img_post__aside" src="https://netology-code.github.io/html-2-diploma/sources/images/45.jpg" alt="place of balcony">
-            <article class="article_post">
-              <time class="time">14 июня 2019</time>
-              <a class="title-link-aside" href="#0">Мы превратили классное место в балкон</a>
-            </article>
-      </div>
-      <div class="posts">
-            <img class="img_post__aside" src="https://netology-code.github.io/html-2-diploma/sources/images/last-post4.jpg" alt="food on the table">
-            <article class="article_post">
-              <time class="time">14 июня 2019</time>
-              <a class="title-link-aside" href="#0">Кулинарный подход к науке</a>
-            </article>
-      </div>
-      <div class="posts">
-              <img class="img_post__aside" src="https://netology-code.github.io/html-2-diploma/sources/images/7.jpg" alt="hair of woman">
-              <article class="article_post">
-              <time class="time">14 июня 2019</time>
-              <a class="title-link-aside" href="#0">Лучшие прически для распущенных волос</a>
-            </article>
-      </div>
-     </div>
+     {% include 'trip/includes/last_post_list.html'%}
     <div class="find">
       <input type="search" class="field" placeholder="Найти..." required>
       <button type="submit" class="button_search"></button>
@@ -75,12 +38,9 @@
       </form>
     </div>
      {% show_all_tags %}
-    <div class="topics">
-      <header class="header__aside">Темы</header>
-        <ul>
-            {% show_topics topic_selected %}
-        </ul>
-    </div>
+
+     {% show_topics topic_selected %}
+
   </asdie>
 </div>
   <footer class="footer">
