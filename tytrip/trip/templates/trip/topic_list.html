@@ -5,7 +5,7 @@
             <div class="topics_block_name">
                      {% if topic.id == topic_selected %}
                              <li class="topic_block_link selected">{{topic.name}}
-                                 <a class="topic_block_link_number" href="{{ topic.get_absolute_url }}">{{topic.posts.all.count}}</a>
+                                 <a class="topic_block_link_number" href="{{ topic.get_absolute_url }}">{{topic.posts.count}}</a>
                              </li>
                      {% else %}
                              <li class="topic_block_link">

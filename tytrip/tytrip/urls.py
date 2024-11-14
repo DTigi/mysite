@@ -22,7 +22,8 @@ from trip.views import page_not_found
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('trip.urls'))
+    path('', include('trip.urls')),
+    path("__debug__/", include("debug_toolbar.urls")),
 ]
 
 handler404 = page_not_found

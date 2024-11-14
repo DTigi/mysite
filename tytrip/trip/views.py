@@ -22,7 +22,7 @@ menu = [
 
 # Create your views here.
 def index(request):
-    post_db = Trip.published.all()
+    post_db = Trip.published.all().select_related('topic').prefetch_related('tags')
     data = {
         'title': 'Главная страница',
         'menu': menu,
@@ -49,7 +49,7 @@ def tags(request):
 
 def topics(request, topic_slug):
     topic = get_object_or_404(Topics, slug=topic_slug)
-    posts_db = Trip.published.filter(topic_id=topic.id)
+    posts_db = Trip.published.filter(topic_id=topic.id).select_related('topic').prefetch_related('tags')
     data = {
         'title': f'Тема статьи: {topic.name}',
         'menu': menu,
@@ -73,7 +73,7 @@ def show_post(request, post_slug):
 
 def show_tag_postlist(request, tag_slug):
     tag = get_object_or_404(TagPost, slug=tag_slug)
-    posts = tag.posts.filter(is_published=Trip.Status.PUBLISHED)
+    posts = tag.posts.filter(is_published=Trip.Status.PUBLISHED).select_related('topic').prefetch_related('tags')
     data = {
         'title': f'Тег: {tag.tag}',
         'menu': menu,
