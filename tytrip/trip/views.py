@@ -7,6 +7,7 @@ from django.template.loader import render_to_string
 from django.urls import reverse
 from datetime import datetime
 
+from .forms import AddPostForm
 from .models import Trip, Topics, TagPost
 
 menu = [
@@ -31,6 +32,26 @@ def index(request):
         'cat_selected': 0,
     }
     return render(request, 'trip/index.html', context=data)
+
+def addpage(request):
+    if request.method == 'POST':
+        form = AddPostForm(request.POST)
+        if form.is_valid():
+            # print(form.cleaned_data)
+            try:
+                Trip.objects.create(**form.cleaned_data)
+                return redirect('home')
+            except:
+                form.add_error(None, 'Ошибка добавления поста')
+    else:
+        form = AddPostForm()
+
+    data = {'title': 'Добавление статьи',
+            'menu': menu,
+            'form' : form,
+            }
+    return render(request, 'trip/addpage.html', context=data)
+
 
 def about(request):
     return render(request, 'trip/about.html', {'title': 'About my site', 'menu': menu})
@@ -82,10 +103,6 @@ def show_tag_postlist(request, tag_slug):
     }
 
     return render(request, 'trip/index.html', context=data)
-
-def addpage(request):
-    return HttpResponse("Добавление статьи")
-
 
 def contact(request):
     return HttpResponse("Обратная связь")

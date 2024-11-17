@@ -1,34 +1,33 @@
 {% extends 'base.html'%}
 
-{% block content%}
+{% block content %}
 
-<div class="main-content">
-  <main class="main">
-      {% for p in posts %}
-      <div class="card">
-        <img class="poster" src="static/trip/images/post_images/mountain.jpg" alt="nice picture">
-        <article class="article">
-            <div class="tag">
-              <ul class="tag-list">
-                  {% for tag in p.tags.all %}
-                <li class="tag-list-item">
-                  <a class="tag-link" href="{{tag.get_absolute_url}}">{{tag}}</a>
-                </li>
-                  {% endfor %}
-              </ul>
-            </div>
-            <h2 class="article-title">
-              <a class="title-link" href="{{ p.get_absolute_url }}">{{p.title}}</a>
-            </h2>
-            <p class="first">Тема: {{p.topic.name}}</p>
-            <time class="time">{{p.time_update|date:"d-m-Y H:i:s"}}</time>
-            <span class="autor">{{p.author_id}}</span>
-            <p class="discription">{% autoescape off %}
-                                    {{p.content|linebreaks|truncatewords:50}}
-                                    {% endautoescape %}</p>
-        </article>
-      </div>
-      {% endfor %}
-  </main>
+<main class="main">
+  {% for p in posts %}
+  <div class="card">
+    <img class="poster" src="static/trip/images/post_images/mountain.jpg" alt="nice picture">
+    <article class="article">
+        <div class="tag">
+          <ul class="tag-list">
+              {% for tag in p.tags.all %}
+            <li class="tag-list-item">
+              <a class="tag-link" href="{{tag.get_absolute_url}}">{{tag}}</a>
+            </li>
+              {% endfor %}
+          </ul>
+        </div>
+        <h2 class="article-title">
+          <a class="title-link" href="{{ p.get_absolute_url }}">{{p.title}}</a>
+        </h2>
+        <p class="first">Тема: {{p.topic.name}}</p>
+        <time class="time">{{p.time_update|date:"d-m-Y H:i:s"}}</time>
+        <span class="autor">{{p.author_id}}</span>
+        <p class="discription">{% autoescape off %}
+                                {{p.content|linebreaks|truncatewords:50}}
+                                {% endautoescape %}</p>
+    </article>
+  </div>
+  {% endfor %}
+</main>
 
 {% endblock %}

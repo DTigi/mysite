@@ -2,32 +2,32 @@
  
 {% block content %}
 
-<div class="main-content">
-  <main class="main">
-      <div class="card">
-          {% if post.image %}
-        <img class="poster" src="{{post.image.url}}" alt="nice picture">
-          {% endif %}
-        <article class="article">
-            <div class="tag">
-              <ul class="tag-list">
-                  {% for tag in post.tags.all %}
-                <li class="tag-list-item">
-                  <a class="tag-link" href="{{tag.get_absolute_url}}">{{tag}}</a>
-                </li>
-                  {% endfor %}
-              </ul>
-            </div>
-            <h1 class="article-title">
-                {{post.title}}
-            </h1>
-            <time class="time">{{post.time}}</time>
-            <span class="autor">{{post.author}}</span>
-            <p class="discription">{% autoescape off %}
-                                    {{post.content|linebreaks|truncatewords:50}}
-                                    {% endautoescape %}</p>
-        </article>
-      </div>
-  </main>
+
+<main class="main">
+  <div class="card">
+      {% if post.image %}
+    <img class="poster" src="{{post.image.url}}" alt="nice picture">
+      {% endif %}
+    <article class="article">
+        <div class="tag">
+          <ul class="tag-list">
+              {% for tag in post.tags.all %}
+            <li class="tag-list-item">
+              <a class="tag-link" href="{{tag.get_absolute_url}}">{{tag}}</a>
+            </li>
+              {% endfor %}
+          </ul>
+        </div>
+        <h1 class="article-title">
+            {{post.title}}
+        </h1>
+        <time class="time">{{post.time}}</time>
+        <span class="autor">{{post.author}}</span>
+        <p class="discription">{% autoescape off %}
+                                {{post.content|linebreaks|truncatewords:50}}
+                                {% endautoescape %}</p>
+    </article>
+  </div>
+</main>
 
 {% endblock %}
