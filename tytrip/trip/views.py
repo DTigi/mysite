@@ -7,12 +7,12 @@ from django.template.loader import render_to_string
 from django.urls import reverse
 from datetime import datetime
 
-from .forms import AddPostForm
+from .forms import AddPostForm, UploadFileForm
 from .models import Trip, Topics, TagPost
 
 menu = [
         {'title': "Главная", 'url_name': 'home'},
-        {'title': "Посты", 'url_name': 'posts'},
+        {'title': "О сайте", 'url_name': 'about'},
         {'title': "Статьи", 'url_name': 'articles'},
         {'title': "Теги", 'url_name': 'tags'},
         {'title': "Темы", 'url_name': 'home'},
@@ -35,14 +35,10 @@ def index(request):
 
 def addpage(request):
     if request.method == 'POST':
-        form = AddPostForm(request.POST)
+        form = AddPostForm(request.POST, request.FILES)
         if form.is_valid():
-            # print(form.cleaned_data)
-            try:
-                Trip.objects.create(**form.cleaned_data)
-                return redirect('home')
-            except:
-                form.add_error(None, 'Ошибка добавления поста')
+            form.save()
+            return redirect('home')
     else:
         form = AddPostForm()
 
@@ -53,8 +49,24 @@ def addpage(request):
     return render(request, 'trip/addpage.html', context=data)
 
 
+def handle_uploaded_file(f):
+    with open(f"uploads/{f.name}", "wb+") as destination:
+        for chunk in f.chunks():
+            destination.write(chunk)
+
 def about(request):
-    return render(request, 'trip/about.html', {'title': 'About my site', 'menu': menu})
+    if request.method == "POST":
+        # handle_uploaded_file(request.FILES['file_upload'])
+        form = UploadFileForm(request.POST, request.FILES)
+        if form.is_valid():
+            handle_uploaded_file(form.cleaned_data['file'])
+    else:
+        form = UploadFileForm()
+    data = {
+        'title': 'Upload file',
+        'menu': menu,
+        'form': form,}
+    return render(request, 'trip/about.html', context=data)
 
 def posts(request):
     return HttpResponse('<h1>Посты</h1>')
