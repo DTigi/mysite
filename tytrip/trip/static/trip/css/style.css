@@ -112,17 +112,8 @@ box-sizing: border-box;
  width: 380px;
 }
 
-# img {max-width: 300px; height: auto;}
-
-.img-article-left {
-	max-width: 300px;
-	height: auto;
-	float: left;
-	padding: 0 10px 10px 0;
-}
-
-.img-article-left.thumb {
- width: 150px;
+.poster-mini {
+ width: 80px;
 }
 
 .article {
@@ -375,3 +366,26 @@ color: #000000;
   padding-bottom: 40px;
   font-color: #999999;
 }
+
+.form-input {
+    width: 300px;
+    font-size: 16px;
+}
+
+.form-label {
+    display: inline-block;
+    min-width: 150px;
+    vertical-align: top;
+}
+
+.form-error ul {
+    list-style: none;
+    padding: 0;
+    color: #CC0000;
+}
+
+.form-button {
+    min-width: 200px;
+    font-size: 16px;
+}
+

@@ -28,7 +28,7 @@ def index(request):
         'title': 'Главная страница',
         'menu': menu,
         'posts': post_db,
-        'newest_posts': post_db.order_by('-time_create')[:5],
+        'newest_posts': post_db.order_by('-time_create')[:3],
         'cat_selected': 0,
     }
     return render(request, 'trip/index.html', context=data)
@@ -87,6 +87,7 @@ def topics(request, topic_slug):
         'title': f'Тема статьи: {topic.name}',
         'menu': menu,
         'posts': posts_db,
+        'newest_posts': posts_db.order_by('-time_create')[:3],
         'cat_selected': topic.id,
     }
 
@@ -111,6 +112,7 @@ def show_tag_postlist(request, tag_slug):
         'title': f'Тег: {tag.tag}',
         'menu': menu,
         'posts': posts,
+        'newest_posts': posts.order_by('-time_create')[:3],
         'cat_selected': None,
     }
 

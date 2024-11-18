@@ -1,14 +1,18 @@
+{% if newest_posts %}
 <div class="new__posts">
       <header class="header__aside">новые посты</header>
         {% for p in newest_posts %}
         <div class="posts">
           <div class="card">
-            <img class="img_post__aside" src="static/trip/images/post_images/mountain.jpg" alt="nice picture">
+            {% if p.image %}
+                <img class="poster-mini" src="{{ p.image.url }}" alt="nice picture">
+            {% endif %}
             <article class="article_post">
-                <time class="time">{{p.time_create|date:"d-m-Y"}}</time>
+                <p><time class="time">{{p.time_create|date:"d-m-Y"}}</time></p>
                 <a class="title-link-aside" href="{{ p.get_absolute_url }}">{{p.title}}</a>
             </article>
           </div>
         </div>
       {% endfor %}
 </div>
+{% endif %}
