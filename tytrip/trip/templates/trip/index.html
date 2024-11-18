@@ -5,8 +5,10 @@
 <main class="main">
   {% for p in posts %}
   <div class="card">
-    <img class="poster" src="static/trip/images/post_images/mountain.jpg" alt="nice picture">
-    <article class="article">
+    {% if p.image %}
+    <img class="poster" src="{{ p.image.url }}" alt="nice picture">
+    {% endif %}
+      <article class="article">
         <div class="tag">
           <ul class="tag-list">
               {% for tag in p.tags.all %}

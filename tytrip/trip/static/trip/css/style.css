@@ -112,6 +112,19 @@ box-sizing: border-box;
  width: 380px;
 }
 
+# img {max-width: 300px; height: auto;}
+
+.img-article-left {
+	max-width: 300px;
+	height: auto;
+	float: left;
+	padding: 0 10px 10px 0;
+}
+
+.img-article-left.thumb {
+ width: 150px;
+}
+
 .article {
  width: 367px;
  /*text-align: left;*/

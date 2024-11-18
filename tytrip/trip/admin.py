@@ -11,12 +11,12 @@ from trip.models import Trip, Topics
 
 @admin.register(Trip)
 class TripAdmin(admin.ModelAdmin):
-    fields = ['title', 'slug', 'content', 'image', 'post_photo', 'topic', 'capital', 'tags']
+    fields = ['title', 'slug', 'content', 'image', 'post_image', 'topic', 'capital', 'tags']
     # exclude = ['tags', 'is_published']
-    readonly_fields = ['post_photo']
+    readonly_fields = ['post_image']
     prepopulated_fields = {"slug": ("title",)}
     filter_horizontal = ['tags']
-    list_display = ('title', 'image', 'post_photo', 'time_create', 'is_published', 'topic')
+    list_display = ('title', 'image', 'post_image', 'time_create', 'is_published', 'topic')
     list_display_links = ('title',)
     ordering = ['-time_create', 'title']
     list_editable = ('is_published', 'topic')
@@ -27,7 +27,7 @@ class TripAdmin(admin.ModelAdmin):
     save_on_top = True
 
     @admin.display(description="Изображение")
-    def post_photo(self, trip: Trip):
+    def post_image(self, trip: Trip):
         if trip.image:
             return mark_safe(f"<img src='{trip.image.url}' width=50>")
         return "Без фото"
