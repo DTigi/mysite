@@ -7,7 +7,7 @@ from django.template.loader import render_to_string
 from django.urls import reverse
 from datetime import datetime
 
-from django.views.generic import ListView
+from django.views.generic import ListView, DetailView
 
 from .forms import AddPostForm, UploadFileForm
 from .models import Trip, Topics, TagPost
@@ -24,17 +24,6 @@ menu = [
 ]
 
 # Create your views here.
-def index(request):
-    post_db = Trip.published.all().select_related('topic').prefetch_related('tags')
-    data = {
-        'title': 'Главная страница',
-        'menu': menu,
-        'posts': post_db,
-        'newest_posts': post_db.order_by('-time_create')[:3],
-        'cat_selected': 0,
-    }
-    return render(request, 'trip/index.html', context=data)
-
 
 class IndexView(ListView):
     # model = Trip
@@ -99,19 +88,6 @@ def articles(request):
 def tags(request):
     return HttpResponse(f"Отображение списка тегов")
 
-# def topics(request, topic_slug):
-#     topic = get_object_or_404(Topics, slug=topic_slug)
-#     posts_db = Trip.published.filter(topic_id=topic.id).select_related('topic').prefetch_related('tags')
-#     data = {
-#         'title': f'Тема статьи: {topic.name}',
-#         'menu': menu,
-#         'posts': posts_db,
-#         'newest_posts': posts_db.order_by('-time_create')[:3],
-#         'cat_selected': topic.id,
-#     }
-#
-#     return render(request, 'trip/index.html', context=data)
-
 
 class TopicsListView(ListView):
     template_name = 'trip/index.html'
@@ -131,29 +107,21 @@ class TopicsListView(ListView):
         return context
 
 
-def show_post(request, post_slug):
-    post = get_object_or_404(Trip, slug=post_slug)
-    data = {
-        'title': post.title,
-        'menu': menu,
-        'post': post,
-        'cat_selected': 1,
-    }
-    return render(request, 'trip/post.html', context=data)
+class ShowPost(DetailView):
+    # model = Trip
+    template_name = 'trip/post.html'
+    slug_url_kwarg = 'post_slug'
+    context_object_name = 'post'
 
 
-# def show_tag_postlist(request, tag_slug):
-#     tag = get_object_or_404(TagPost, slug=tag_slug)
-#     posts = tag.posts.filter(is_published=Trip.Status.PUBLISHED).select_related('topic').prefetch_related('tags')
-#     data = {
-#         'title': f'Тег: {tag.tag}',
-#         'menu': menu,
-#         'posts': posts,
-#         'newest_posts': posts.order_by('-time_create')[:3],
-#         'cat_selected': None,
-#     }
-#
-#     return render(request, 'trip/index.html', context=data)
+    def get_object(self, queryset=None):
+        return get_object_or_404(Trip.published, slug=self.kwargs[self.slug_url_kwarg])
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['title'] = self.object.title # self.get_object().title
+        context['menu'] = menu
+        return context
 
 
 class TagsListView(ListView):
@@ -180,3 +148,52 @@ def login(request):
 
 def page_not_found(request, exception):
     return HttpResponseNotFound('<h1>Страница не найдена</h1>')
+
+##################### views-functions ##################################################
+
+# def index(request):
+#     post_db = Trip.published.all().select_related('topic').prefetch_related('tags')
+#     data = {
+#         'title': 'Главная страница',
+#         'menu': menu,
+#         'posts': post_db,
+#         'newest_posts': post_db.order_by('-time_create')[:3],
+#         'cat_selected': 0,
+#     }
+#     return render(request, 'trip/index.html', context=data)
+
+# def topics(request, topic_slug):
+#     topic = get_object_or_404(Topics, slug=topic_slug)
+#     posts_db = Trip.published.filter(topic_id=topic.id).select_related('topic').prefetch_related('tags')
+#     data = {
+#         'title': f'Тема статьи: {topic.name}',
+#         'menu': menu,
+#         'posts': posts_db,
+#         'newest_posts': posts_db.order_by('-time_create')[:3],
+#         'cat_selected': topic.id,
+#     }
+#
+#     return render(request, 'trip/index.html', context=data)
+
+# def show_post(request, post_slug):
+#     post = get_object_or_404(Trip, slug=post_slug)
+#     data = {
+#         'title': post.title,
+#         'menu': menu,
+#         'post': post,
+#         'cat_selected': 1,
+#     }
+#     return render(request, 'trip/post.html', context=data)
+
+# def show_tag_postlist(request, tag_slug):
+#     tag = get_object_or_404(TagPost, slug=tag_slug)
+#     posts = tag.posts.filter(is_published=Trip.Status.PUBLISHED).select_related('topic').prefetch_related('tags')
+#     data = {
+#         'title': f'Тег: {tag.tag}',
+#         'menu': menu,
+#         'posts': posts,
+#         'newest_posts': posts.order_by('-time_create')[:3],
+#         'cat_selected': None,
+#     }
+#
+#     return render(request, 'trip/index.html', context=data)
