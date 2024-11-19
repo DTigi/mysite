@@ -18,7 +18,7 @@ menu = [
         {'title': "Статьи", 'url_name': 'articles'},
         {'title': "Теги", 'url_name': 'tags'},
         {'title': "Темы", 'url_name': 'home'},
-        {'title': "Добавить статью", 'url_name': 'add_post'},
+        {'title': "Добавить статью", 'url_name': 'add_page'},
         {'title': "Обратная связь", 'url_name': 'contact'},
         {'title': "Войти", 'url_name': 'login'}
 ]
@@ -42,7 +42,7 @@ class IndexView(ListView):
         }
 
 
-class AddPost(CreateView):
+class AddPage(CreateView):
     # model = Trip
     # fields = ['title', 'slug', 'content', 'is_published', 'topic']
     form_class = AddPostForm
@@ -53,7 +53,7 @@ class AddPost(CreateView):
         'title': 'Добавление статьи',
     }
 
-class UpdatePost(UpdateView):
+class UpdatePage(UpdateView):
     model = Trip
     fields = ['title', 'content', 'image', 'is_published', 'topic']
     template_name = 'trip/addpage.html'
@@ -63,7 +63,7 @@ class UpdatePost(UpdateView):
         'title': 'Редактирование статьи',
     }
 
-class DeletePost(DeleteView):
+class DeletePage(DeleteView):
     model = Trip
     fields = ['title', 'content', 'image', 'is_published', 'topic']
     template_name = 'trip/addpage.html'
@@ -72,6 +72,7 @@ class DeletePost(DeleteView):
         'menu': menu,
         'title': f'Удаление статьи:',
     }
+
 def handle_uploaded_file(f):
     with open(f"uploads/{f.name}", "wb+") as destination:
         for chunk in f.chunks():
