@@ -7,6 +7,8 @@ from django.template.loader import render_to_string
 from django.urls import reverse
 from datetime import datetime
 
+from django.views.generic import ListView
+
 from .forms import AddPostForm, UploadFileForm
 from .models import Trip, Topics, TagPost
 
@@ -32,6 +34,23 @@ def index(request):
         'cat_selected': 0,
     }
     return render(request, 'trip/index.html', context=data)
+
+
+class IndexView(ListView):
+    # model = Trip
+    template_name = 'trip/index.html'
+    context_object_name = 'posts'
+    queryset = Trip.published.all().select_related('topic').prefetch_related('tags')
+
+    # def get_queryset(self):
+    #     return Trip.published.all().select_related('topic').prefetch_related('tags')
+
+
+    extra_context = {
+        'title': 'Главная страница',
+        'menu': menu,
+        'newest_posts': queryset.order_by('-time_create')[:3],
+        }
 
 def addpage(request):
     if request.method == 'POST':
@@ -80,18 +99,36 @@ def articles(request):
 def tags(request):
     return HttpResponse(f"Отображение списка тегов")
 
-def topics(request, topic_slug):
-    topic = get_object_or_404(Topics, slug=topic_slug)
-    posts_db = Trip.published.filter(topic_id=topic.id).select_related('topic').prefetch_related('tags')
-    data = {
-        'title': f'Тема статьи: {topic.name}',
-        'menu': menu,
-        'posts': posts_db,
-        'newest_posts': posts_db.order_by('-time_create')[:3],
-        'cat_selected': topic.id,
-    }
+# def topics(request, topic_slug):
+#     topic = get_object_or_404(Topics, slug=topic_slug)
+#     posts_db = Trip.published.filter(topic_id=topic.id).select_related('topic').prefetch_related('tags')
+#     data = {
+#         'title': f'Тема статьи: {topic.name}',
+#         'menu': menu,
+#         'posts': posts_db,
+#         'newest_posts': posts_db.order_by('-time_create')[:3],
+#         'cat_selected': topic.id,
+#     }
+#
+#     return render(request, 'trip/index.html', context=data)
 
-    return render(request, 'trip/index.html', context=data)
+
+class TopicsListView(ListView):
+    template_name = 'trip/index.html'
+    context_object_name = 'posts'
+    # allow_empty = False
+
+    def get_queryset(self):
+        return Trip.published.filter(topic__slug=self.kwargs['topic_slug']).select_related('topic').prefetch_related('tags')
+
+
+    def get_context_data(self, *, object_list=None, **kwargs):
+        context = super().get_context_data(**kwargs)
+        topic = get_object_or_404(Topics, slug=self.kwargs['topic_slug'])
+        context['title'] = 'Тема - ' + topic.name
+        context['menu'] = menu
+        context['newest_posts'] = *self.get_queryset().order_by('-time_create')[:3],
+        return context
 
 
 def show_post(request, post_slug):
@@ -105,18 +142,34 @@ def show_post(request, post_slug):
     return render(request, 'trip/post.html', context=data)
 
 
-def show_tag_postlist(request, tag_slug):
-    tag = get_object_or_404(TagPost, slug=tag_slug)
-    posts = tag.posts.filter(is_published=Trip.Status.PUBLISHED).select_related('topic').prefetch_related('tags')
-    data = {
-        'title': f'Тег: {tag.tag}',
-        'menu': menu,
-        'posts': posts,
-        'newest_posts': posts.order_by('-time_create')[:3],
-        'cat_selected': None,
-    }
+# def show_tag_postlist(request, tag_slug):
+#     tag = get_object_or_404(TagPost, slug=tag_slug)
+#     posts = tag.posts.filter(is_published=Trip.Status.PUBLISHED).select_related('topic').prefetch_related('tags')
+#     data = {
+#         'title': f'Тег: {tag.tag}',
+#         'menu': menu,
+#         'posts': posts,
+#         'newest_posts': posts.order_by('-time_create')[:3],
+#         'cat_selected': None,
+#     }
+#
+#     return render(request, 'trip/index.html', context=data)
 
-    return render(request, 'trip/index.html', context=data)
+
+class TagsListView(ListView):
+    template_name = 'trip/index.html'
+    context_object_name = 'posts'
+
+    def get_queryset(self):
+        return Trip.published.filter(tags__slug=self.kwargs['tag_slug']).select_related('topic').prefetch_related('tags')
+
+    def get_context_data(self, *, object_list=None, **kwargs):
+        context = super().get_context_data(**kwargs)
+        tag = get_object_or_404(TagPost, slug=self.kwargs['tag_slug'])
+        context['title'] = 'Тег - ' + tag.tag
+        context['menu'] = menu
+        context['newest_posts'] = *self.get_queryset().order_by('-time_create')[:3],
+        return context
 
 def contact(request):
     return HttpResponse("Обратная связь")
