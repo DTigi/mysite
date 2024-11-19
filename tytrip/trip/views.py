@@ -4,10 +4,10 @@ from django.http import HttpResponse, HttpResponseNotFound, Http404, HttpRespons
 from django.shortcuts import render, redirect, get_object_or_404
 from django.template.defaultfilters import slugify
 from django.template.loader import render_to_string
-from django.urls import reverse
+from django.urls import reverse, reverse_lazy
 from datetime import datetime
 
-from django.views.generic import ListView, DetailView
+from django.views.generic import ListView, DetailView, FormView, CreateView, UpdateView, DeleteView
 
 from .forms import AddPostForm, UploadFileForm
 from .models import Trip, Topics, TagPost
@@ -18,7 +18,7 @@ menu = [
         {'title': "Статьи", 'url_name': 'articles'},
         {'title': "Теги", 'url_name': 'tags'},
         {'title': "Темы", 'url_name': 'home'},
-        {'title': "Добавить статью", 'url_name': 'add_page'},
+        {'title': "Добавить статью", 'url_name': 'add_post'},
         {'title': "Обратная связь", 'url_name': 'contact'},
         {'title': "Войти", 'url_name': 'login'}
 ]
@@ -41,22 +41,37 @@ class IndexView(ListView):
         'newest_posts': queryset.order_by('-time_create')[:3],
         }
 
-def addpage(request):
-    if request.method == 'POST':
-        form = AddPostForm(request.POST, request.FILES)
-        if form.is_valid():
-            form.save()
-            return redirect('home')
-    else:
-        form = AddPostForm()
 
-    data = {'title': 'Добавление статьи',
-            'menu': menu,
-            'form' : form,
-            }
-    return render(request, 'trip/addpage.html', context=data)
+class AddPost(CreateView):
+    # model = Trip
+    # fields = ['title', 'slug', 'content', 'is_published', 'topic']
+    form_class = AddPostForm
+    template_name = 'trip/addpage.html'
+    success_url = reverse_lazy('home')
+    extra_context = {
+        'menu': menu,
+        'title': 'Добавление статьи',
+    }
 
+class UpdatePost(UpdateView):
+    model = Trip
+    fields = ['title', 'content', 'image', 'is_published', 'topic']
+    template_name = 'trip/addpage.html'
+    success_url = reverse_lazy('home')
+    extra_context = {
+        'menu': menu,
+        'title': 'Редактирование статьи',
+    }
 
+class DeletePost(DeleteView):
+    model = Trip
+    fields = ['title', 'content', 'image', 'is_published', 'topic']
+    template_name = 'trip/addpage.html'
+    success_url = reverse_lazy('home')
+    extra_context = {
+        'menu': menu,
+        'title': f'Удаление статьи:',
+    }
 def handle_uploaded_file(f):
     with open(f"uploads/{f.name}", "wb+") as destination:
         for chunk in f.chunks():
@@ -161,6 +176,21 @@ def page_not_found(request, exception):
 #         'cat_selected': 0,
 #     }
 #     return render(request, 'trip/index.html', context=data)
+
+# def addpost(request):
+#     if request.method == 'POST':
+#         form = AddPostForm(request.POST, request.FILES)
+#         if form.is_valid():
+#             form.save()
+#             return redirect('home')
+#     else:
+#         form = AddPostForm()
+#
+#     data = {'title': 'Добавление статьи',
+#             'menu': menu,
+#             'form' : form,
+#             }
+#     return render(request, 'trip/addpage.html', context=data)
 
 # def topics(request, topic_slug):
 #     topic = get_object_or_404(Topics, slug=topic_slug)
