@@ -22,9 +22,12 @@
     <h1 class="header-title">Путешествие начинается здесь ...</h1>
   </div>
 </header>
+
 <div class="main-content">
+
 {% block content%}
 {% endblock%}
+
  <aside class="aside">
      {% include 'trip/includes/last_post_list.html'%}
     <div class="find">
@@ -44,6 +47,8 @@
 
   </aside>
 </div>
+{% block navigation%}
+{% endblock%}
   <footer class="footer">
     <div class="footer-logo">
      <a href="0#"><img class="logo_social" src="https://netology-code.github.io/html-2-diploma/sources/images/social/001-dribbble.svg" alt="иконка dribbble"></a>

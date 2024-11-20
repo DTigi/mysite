@@ -11,7 +11,10 @@ from django.views.generic import ListView, DetailView, FormView, CreateView, Upd
 
 from .forms import AddPostForm, UploadFileForm
 from .models import Trip, Topics, TagPost
+from .utils import DataMixin
 
+
+# Create your views here.
 menu = [
         {'title': "Главная", 'url_name': 'home'},
         {'title': "О сайте", 'url_name': 'about'},
@@ -21,15 +24,15 @@ menu = [
         {'title': "Добавить статью", 'url_name': 'add_page'},
         {'title': "Обратная связь", 'url_name': 'contact'},
         {'title': "Войти", 'url_name': 'login'}
-]
+        ]
 
-# Create your views here.
 
-class IndexView(ListView):
+class IndexView(DataMixin, ListView):
     # model = Trip
     template_name = 'trip/index.html'
     context_object_name = 'posts'
     queryset = Trip.published.all().select_related('topic').prefetch_related('tags')
+
 
     # def get_queryset(self):
     #     return Trip.published.all().select_related('topic').prefetch_related('tags')
@@ -105,7 +108,7 @@ def tags(request):
     return HttpResponse(f"Отображение списка тегов")
 
 
-class TopicsListView(ListView):
+class TopicsListView(DataMixin, ListView):
     template_name = 'trip/index.html'
     context_object_name = 'posts'
     # allow_empty = False
@@ -140,7 +143,7 @@ class ShowPost(DetailView):
         return context
 
 
-class TagsListView(ListView):
+class TagsListView(DataMixin, ListView):
     template_name = 'trip/index.html'
     context_object_name = 'posts'
 
