@@ -163,7 +163,10 @@ def contact(request):
 
 
 def login(request):
-    return HttpResponse("Авторизация")
+    return HttpResponse("Авторизация Trip_app")
+
+def logout(request):
+    return HttpResponse("logout Trip_app")
 
 def page_not_found(request, exception):
     return HttpResponseNotFound('<h1>Страница не найдена</h1>')
