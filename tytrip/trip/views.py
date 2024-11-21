@@ -15,17 +15,6 @@ from .utils import DataMixin
 
 
 # Create your views here.
-menu = [
-        {'title': "Главная", 'url_name': 'home'},
-        {'title': "О сайте", 'url_name': 'about'},
-        {'title': "Статьи", 'url_name': 'articles'},
-        {'title': "Теги", 'url_name': 'tags'},
-        {'title': "Темы", 'url_name': 'home'},
-        {'title': "Добавить статью", 'url_name': 'add_page'},
-        {'title': "Обратная связь", 'url_name': 'contact'},
-        {'title': "Войти", 'url_name': 'login'}
-        ]
-
 
 class IndexView(DataMixin, ListView):
     # model = Trip
@@ -40,7 +29,6 @@ class IndexView(DataMixin, ListView):
 
     extra_context = {
         'title': 'Главная страница',
-        'menu': menu,
         'newest_posts': queryset.order_by('-time_create')[:3],
         }
 
@@ -52,7 +40,6 @@ class AddPage(CreateView):
     template_name = 'trip/addpage.html'
     success_url = reverse_lazy('home')
     extra_context = {
-        'menu': menu,
         'title': 'Добавление статьи',
     }
 
@@ -62,7 +49,6 @@ class UpdatePage(UpdateView):
     template_name = 'trip/addpage.html'
     success_url = reverse_lazy('home')
     extra_context = {
-        'menu': menu,
         'title': 'Редактирование статьи',
     }
 
@@ -72,7 +58,6 @@ class DeletePage(DeleteView):
     template_name = 'trip/addpage.html'
     success_url = reverse_lazy('home')
     extra_context = {
-        'menu': menu,
         'title': f'Удаление статьи:',
     }
 
@@ -91,7 +76,6 @@ def about(request):
         form = UploadFileForm()
     data = {
         'title': 'Upload file',
-        'menu': menu,
         'form': form,}
     return render(request, 'trip/about.html', context=data)
 
@@ -121,7 +105,6 @@ class TopicsListView(DataMixin, ListView):
         context = super().get_context_data(**kwargs)
         topic = get_object_or_404(Topics, slug=self.kwargs['topic_slug'])
         context['title'] = 'Тема - ' + topic.name
-        context['menu'] = menu
         context['newest_posts'] = *self.get_queryset().order_by('-time_create')[:3],
         return context
 
@@ -139,7 +122,6 @@ class ShowPost(DetailView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['title'] = self.object.title # self.get_object().title
-        context['menu'] = menu
         return context
 
 
@@ -154,7 +136,6 @@ class TagsListView(DataMixin, ListView):
         context = super().get_context_data(**kwargs)
         tag = get_object_or_404(TagPost, slug=self.kwargs['tag_slug'])
         context['title'] = 'Тег - ' + tag.tag
-        context['menu'] = menu
         context['newest_posts'] = *self.get_queryset().order_by('-time_create')[:3],
         return context
 
