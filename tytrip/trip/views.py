@@ -1,5 +1,7 @@
 from lib2to3.fixes.fix_input import context
 
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.http import HttpResponse, HttpResponseNotFound, Http404, HttpResponseRedirect, HttpResponsePermanentRedirect
 from django.shortcuts import render, redirect, get_object_or_404
 from django.template.defaultfilters import slugify
@@ -33,7 +35,7 @@ class IndexView(DataMixin, ListView):
         }
 
 
-class AddPage(CreateView):
+class AddPage(LoginRequiredMixin, CreateView):
     # model = Trip
     # fields = ['title', 'slug', 'content', 'is_published', 'topic']
     form_class = AddPostForm
@@ -42,6 +44,12 @@ class AddPage(CreateView):
     extra_context = {
         'title': 'Добавление статьи',
     }
+    # login_url = '/admin/'
+
+    def form_valid(self, form):
+        w = form.save(commit=False)
+        w.author = self.request.user
+        return super().form_valid(form)
 
 class UpdatePage(UpdateView):
     model = Trip
@@ -66,6 +74,7 @@ def handle_uploaded_file(f):
         for chunk in f.chunks():
             destination.write(chunk)
 
+@login_required
 def about(request):
     if request.method == "POST":
         # handle_uploaded_file(request.FILES['file_upload'])

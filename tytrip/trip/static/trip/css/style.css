@@ -344,6 +344,7 @@ color: #000000;
   text-align: left;
   padding-left: 2px;
   list-style-type: none;
+  text-transform: uppercase;
 }
 
 .topic_block_link_number {

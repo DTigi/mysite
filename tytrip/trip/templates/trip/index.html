@@ -22,7 +22,7 @@
         </h2>
         <p class="first">Тема: {{p.topic.name}}</p>
         <time class="time">{{p.time_update|date:"d-m-Y H:i:s"}}</time>
-        <span class="autor">{{p.author_id}}</span>
+        <span class="autor">Автор: {{p.author.username|default:"неизвестен"}}</span>
         <p class="discription">{% autoescape off %}
                                 {{p.content|linebreaks|truncatewords:50}}
                                 {% endautoescape %}</p>

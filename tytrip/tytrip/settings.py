@@ -130,7 +130,7 @@ MEDIA_URL = '/media/'
 
 LOGIN_URL = 'users:login'
 LOGIN_REDIRECT_URL = 'home'
-# LOGOUT_REDIRECT_URL = 'home'
+LOGOUT_REDIRECT_URL = 'home'
 
 
 # Default primary key field type

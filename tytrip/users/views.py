@@ -17,6 +17,11 @@ class LoginUser(LoginView):
     # def get_success_url(self):
     #     return reverse_lazy('home') # LOGIN_REDIRECT_URL = 'home' in settings.py
 
+
+
+
+
+####################### func_views ######################################
 # def login_user(request):
 #     if request.method == 'POST':
 #         form = LoginUserForm(request.POST)
