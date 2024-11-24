@@ -65,7 +65,7 @@ box-sizing: border-box;
 .menu-list {
   display: flex;
   list-style-type: none;
-  }
+}
 
 .menu-link {
   text-decoration: none;
@@ -76,6 +76,15 @@ box-sizing: border-box;
 
 .menu-list-item:nth-child(n+2) {
   margin-left: 35px;
+}
+
+li.menu-list-item form {
+    display: inline-block;
+    button {
+        all: unset;
+    };
+    text-transform: uppercase;
+    font-size: 13px;
 }
 
 .header-title {
@@ -323,6 +332,10 @@ color: #000000;
   margin: 13px auto 23px auto;
 }
 
+.topic_block_ul {
+  list-style-type: none;
+}
+
 .topic_block_link {
   font-size: 14px;
   font-weight: 700;
@@ -330,6 +343,7 @@ color: #000000;
   color: #000000;
   text-align: left;
   padding-left: 2px;
+  list-style-type: none;
 }
 
 .topic_block_link_number {
@@ -430,6 +444,4 @@ color: #000000;
    font-size: 20px;
 }
 
-.list-pages .page-num-selected:hover {
-   box-shadow: none;
-}
+.list-pages .page-num-selected:hover 

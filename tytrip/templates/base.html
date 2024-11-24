@@ -25,7 +25,11 @@
                     </li>
                 {% endfor %}
                 {% if user.is_authenticated %}
-                    <li class="menu-list-item"> {{user.username}} | <a class="menu-link" href="{% url 'users:logout' %}">Выйти</a></li>
+                    <li class="menu-list-item"> {{user.username}} | <form method="post" action="{% url 'users:logout' %}">
+                        {% csrf_token %}
+                        <button type="submit">Выйти</button>
+                    </form>
+                    </li>
                 {% else %}
                     <li class="menu-list-item"><a class="menu-link" href="{% url 'users:login' %}">Войти</a> | <a class="menu-link" href="#">Регистрация</a></li>
                     {% endif %}
