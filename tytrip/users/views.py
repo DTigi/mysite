@@ -5,7 +5,7 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render
 from django.urls import reverse, reverse_lazy
 
-from .forms import LoginUserForm
+from .forms import LoginUserForm, RegisterUserForm
 
 
 # Create your views here.
@@ -18,7 +18,17 @@ class LoginUser(LoginView):
     #     return reverse_lazy('home') # LOGIN_REDIRECT_URL = 'home' in settings.py
 
 
-
+def register(request):
+    if request.method == "POST":
+        form = RegisterUserForm(request.POST)
+        if form.is_valid():
+            user = form.save(commit=False)  # создание объекта без сохранения в БД
+            user.set_password(form.cleaned_data['password'])
+            user.save()
+            return render(request, 'users/register_done.html')
+    else:
+        form = RegisterUserForm()
+    return render(request, 'users/register.html', {'form': form})
 
 
 ####################### func_views ######################################

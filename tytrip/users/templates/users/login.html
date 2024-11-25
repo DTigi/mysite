@@ -2,9 +2,8 @@
  
 {% block content %}
 <main class="main">
-<p><h1>Авторизация</h1></p>
+<h1>Авторизация</h1>
 <br>
-<p>
 <form action="" method="post">
     {% csrf_token %}
     <div class="form-error">{{ form.non_field_errors }}</div>
@@ -15,6 +14,5 @@
     <input type="hidden" name="next" value="{{ next }}" />
     <p ><button type="submit">Войти</button></p>
 </form>
-</p>
 </main>
 {% endblock %}
