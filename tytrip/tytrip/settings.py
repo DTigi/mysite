@@ -62,7 +62,7 @@ ROOT_URLCONF = 'tytrip.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR/'templates'],
+        'DIRS': [BASE_DIR/'templates',],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -137,3 +137,9 @@ LOGOUT_REDIRECT_URL = 'home'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',
+    'users.authentication.EmailAuthBackend',
+]

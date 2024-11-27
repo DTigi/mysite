@@ -25,7 +25,7 @@
                     </li>
                 {% endfor %}
                 {% if user.is_authenticated %}
-                    <li class="menu-list-item"> {{user.username}} | <form method="post" action="{% url 'users:logout' %}">
+                    <li class="menu-list-item"> <a class="menu-link" href="{% url 'users:profile' %}">{{user.username}}</a> | <form method="post" action="{% url 'users:logout' %}">
                         {% csrf_token %}
                         <button type="submit">Выйти</button>
                     </form>
