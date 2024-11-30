@@ -1,7 +1,7 @@
 from lib2to3.fixes.fix_input import context
 
 from django.contrib.auth.decorators import login_required
-from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
 from django.http import HttpResponse, HttpResponseNotFound, Http404, HttpResponseRedirect, HttpResponsePermanentRedirect
 from django.shortcuts import render, redirect, get_object_or_404
 from django.template.defaultfilters import slugify
@@ -35,7 +35,7 @@ class IndexView(DataMixin, ListView):
         }
 
 
-class AddPage(LoginRequiredMixin, CreateView):
+class AddPage(PermissionRequiredMixin, CreateView):
     # model = Trip
     # fields = ['title', 'slug', 'content', 'is_published', 'topic']
     form_class = AddPostForm
@@ -44,6 +44,7 @@ class AddPage(LoginRequiredMixin, CreateView):
     extra_context = {
         'title': 'Добавление статьи',
     }
+    permission_required = 'trip.add_trip'
     # login_url = '/admin/'
 
     def form_valid(self, form):
@@ -51,7 +52,7 @@ class AddPage(LoginRequiredMixin, CreateView):
         w.author = self.request.user
         return super().form_valid(form)
 
-class UpdatePage(UpdateView):
+class UpdatePage(PermissionRequiredMixin, UpdateView):
     model = Trip
     fields = ['title', 'content', 'image', 'is_published', 'topic']
     template_name = 'trip/addpage.html'
@@ -59,8 +60,9 @@ class UpdatePage(UpdateView):
     extra_context = {
         'title': 'Редактирование статьи',
     }
+    permission_required = 'trip.change_trip'
 
-class DeletePage(DeleteView):
+class DeletePage(PermissionRequiredMixin, DeleteView):
     model = Trip
     fields = ['title', 'content', 'image', 'is_published', 'topic']
     template_name = 'trip/addpage.html'
@@ -68,6 +70,7 @@ class DeletePage(DeleteView):
     extra_context = {
         'title': f'Удаление статьи:',
     }
+    permission_required = 'trip.delete_trip'
 
 def handle_uploaded_file(f):
     with open(f"uploads/{f.name}", "wb+") as destination:

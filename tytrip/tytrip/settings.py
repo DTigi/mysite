@@ -162,4 +162,4 @@ EMAIL_ADMIN = EMAIL_HOST_USER
 AUTH_USER_MODEL = 'users.User'
 
 ####
-DEFAULT_USER_IMAGE = MEDIA_URL + 'users/default.png'
+DEFAULT_USER_IMAGE = MEDIA_URL + 'users/albert_einstein_avatar_icon.png'

@@ -18,14 +18,17 @@
               {% endfor %}
           </ul>
         </div>
-        <h1 class="article-title">
-            {{post.title}}
-        </h1>
+        <h2 class="article-title">
+            {{post.title|upper}}
+        </h2>
         <time class="time">{{post.time}}</time>
         <span class="autor">{{post.author}}</span>
         <p class="discription">{% autoescape off %}
                                 {{post.content|linebreaks|truncatewords:50}}
                                 {% endautoescape %}</p>
+        {% if perms.trip.change_trip %}
+            <p ><a href="{% url 'edit_page' post.slug %}">Редактировать</a></p>
+        {% endif %}
     </article>
   </div>
 </main>
