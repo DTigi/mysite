@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-om1@il=m@a2n)u4u=cat$738c=-=%+2lebx+2@624&ows-32&#
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1',]
+ALLOWED_HOSTS = ['tytrip.ru', '127.0.0.1', 'localhost', ]
 INTERNAL_IPS = ["127.0.0.1",]
 
 
@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'trip',
     'users',
     "debug_toolbar",
+    'social_django',
 ]
 
 MIDDLEWARE = [
@@ -140,6 +141,8 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 AUTHENTICATION_BACKENDS = [
+    'social_core.backends.vk.VKOAuth2',
+    'social_core.backends.github.GithubOAuth2',
     'django.contrib.auth.backends.ModelBackend',
     'users.authentication.EmailAuthBackend',
 ]
@@ -161,5 +164,27 @@ EMAIL_ADMIN = EMAIL_HOST_USER
 # user_model
 AUTH_USER_MODEL = 'users.User'
 
-####
+#### default_profile_image ####
 DEFAULT_USER_IMAGE = MEDIA_URL + 'users/albert_einstein_avatar_icon.png'
+
+##### social-auth #######
+SOCIAL_AUTH_GITHUB_KEY = ''
+SOCIAL_AUTH_GITHUB_SECRET = ''
+
+SOCIAL_AUTH_VK_OAUTH2_KEY = ''
+SOCIAL_AUTH_VK_OAUTH2_SECRET = ''
+
+SOCIAL_AUTH_VK_OAUTH2_SCOPE = ['email']
+
+SOCIAL_AUTH_PIPELINE = (
+    'social_core.pipeline.social_auth.social_details',
+    'social_core.pipeline.social_auth.social_uid',
+    'social_core.pipeline.social_auth.auth_allowed',
+    'social_core.pipeline.social_auth.social_user',
+    'social_core.pipeline.user.get_username',
+    'social_core.pipeline.user.create_user',
+    'users.pipeline.new_users_handler',
+    'social_core.pipeline.social_auth.associate_user',
+    'social_core.pipeline.social_auth.load_extra_data',
+    'social_core.pipeline.user.user_details',
+)
