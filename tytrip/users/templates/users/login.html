@@ -15,8 +15,11 @@
     {% endfor %}
     <p ><button type="submit">Войти</button></p>
 </form>
+    <br>
     <p ><a href="{% url 'users:password_reset' %}">Забыли пароль?</a></p>
+    <br>
 <hr>
+    <br>
 <p>
     <a class="poster-mini" href="{% url 'social:begin' 'github' %}"><img src="/media/social-auth/github.png"></a>
     <a class="poster-mini" href="{% url 'social:begin' 'vk-oauth2' %}"><img src="/media/social-auth/vk.png"></a>
