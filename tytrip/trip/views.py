@@ -11,7 +11,7 @@ from datetime import datetime
 
 from django.views.generic import ListView, DetailView, FormView, CreateView, UpdateView, DeleteView
 
-from .forms import AddPostForm, UploadFileForm
+from .forms import AddPostForm, UploadFileForm, ContactForm
 from .models import Trip, Topics, TagPost
 from .utils import DataMixin
 
@@ -23,12 +23,8 @@ class IndexView(DataMixin, ListView):
     template_name = 'trip/index.html'
     context_object_name = 'posts'
     queryset = Trip.published.all().select_related('topic').prefetch_related('tags')
-
-
     # def get_queryset(self):
     #     return Trip.published.all().select_related('topic').prefetch_related('tags')
-
-
     extra_context = {
         'title': 'Главная страница',
         'newest_posts': queryset.order_by('-time_create')[:3],
@@ -52,6 +48,7 @@ class AddPage(PermissionRequiredMixin, CreateView):
         w.author = self.request.user
         return super().form_valid(form)
 
+
 class UpdatePage(PermissionRequiredMixin, UpdateView):
     model = Trip
     fields = ['title', 'content', 'image', 'is_published', 'topic']
@@ -61,6 +58,7 @@ class UpdatePage(PermissionRequiredMixin, UpdateView):
         'title': 'Редактирование статьи',
     }
     permission_required = 'trip.change_trip'
+
 
 class DeletePage(PermissionRequiredMixin, DeleteView):
     model = Trip
@@ -91,18 +89,6 @@ def about(request):
         'form': form,}
     return render(request, 'trip/about.html', context=data)
 
-def posts(request):
-    return HttpResponse('<h1>Посты</h1>')
-
-def articles(request):
-    if request.GET:
-        print(request.GET)
-
-    return HttpResponse('<h1>Статьи</h1>')
-
-def tags(request):
-    return HttpResponse(f"Отображение списка тегов")
-
 
 class TopicsListView(DataMixin, ListView):
     template_name = 'trip/index.html'
@@ -111,7 +97,6 @@ class TopicsListView(DataMixin, ListView):
 
     def get_queryset(self):
         return Trip.published.filter(topic__slug=self.kwargs['topic_slug']).select_related('topic').prefetch_related('tags')
-
 
     def get_context_data(self, *, object_list=None, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -126,7 +111,6 @@ class ShowPost(DetailView):
     template_name = 'trip/post.html'
     slug_url_kwarg = 'post_slug'
     context_object_name = 'post'
-
 
     def get_object(self, queryset=None):
         return get_object_or_404(Trip.published, slug=self.kwargs[self.slug_url_kwarg])
@@ -151,9 +135,28 @@ class TagsListView(DataMixin, ListView):
         context['newest_posts'] = *self.get_queryset().order_by('-time_create')[:3],
         return context
 
-def contact(request):
-    return HttpResponse("Обратная связь")
+class ContactFormView(LoginRequiredMixin, DataMixin, FormView):
+    form_class = ContactForm
+    template_name = 'trip/contact.html'
+    success_url = reverse_lazy('home')
+    title_page = "Обратная связь"
 
+    def form_valid(self, form):
+        print(form.cleaned_data)
+        return super().form_valid(form)
+
+
+def posts(request):
+    return HttpResponse('<h1>Посты</h1>')
+
+def articles(request):
+    if request.GET:
+        print(request.GET)
+
+    return HttpResponse('<h1>Статьи</h1>')
+
+def tags(request):
+    return HttpResponse(f"Отображение списка тегов")
 
 def login(request):
     return HttpResponse("Авторизация Trip_app")
