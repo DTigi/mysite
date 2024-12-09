@@ -51,6 +51,8 @@ INSTALLED_APPS = [
     "debug_toolbar",
     'social_django',
     'captcha',
+    'django.contrib.sites',
+    'django.contrib.sitemaps',
 ]
 
 MIDDLEWARE = [
@@ -216,3 +218,5 @@ CACHES = {
 CACHE_MIDDLEWARE_ALIAS = 'default'
 CACHE_MIDDLEWARE_SECONDS = 10
 CACHE_MIDDLEWARE_KEY_PREFIX = 'tytrip'
+
+SITE_ID = 1
