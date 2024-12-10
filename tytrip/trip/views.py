@@ -1,5 +1,3 @@
-from lib2to3.fixes.fix_input import context
-
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
 from django.http import HttpResponse, HttpResponseNotFound, Http404, HttpResponseRedirect, HttpResponsePermanentRedirect
@@ -166,6 +164,10 @@ def logout(request):
 
 def page_not_found(request, exception):
     return HttpResponseNotFound('<h1>Страница не найдена</h1>')
+
+
+########################  API-Views ############################################
+
 
 ##################### views-functions ##################################################
 

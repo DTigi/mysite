@@ -1,0 +1,1 @@
+[{"model": "trip.trip", "pk": 1, "fields": {"title": "Лето в горах", "slug": "leto-v-gorah", "image": "images/2024/11/30/nature-italiya-gori-ozero-stroenie-gornii_peizazh-80647.jpeg", "content": "Лето в горах", "time_create": "2024-11-30T09:15:33.375Z", "time_update": "2024-11-30T09:15:33.375Z", "is_published": true, "topic": 4, "capital": null, "author": 1, "tags": []}}]

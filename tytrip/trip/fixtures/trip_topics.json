@@ -1,0 +1,1 @@
+[{"model": "trip.topics", "pk": 1, "fields": {"name": "зима", "slug": "winter"}}, {"model": "trip.topics", "pk": 2, "fields": {"name": "лето", "slug": "summer"}}, {"model": "trip.topics", "pk": 3, "fields": {"name": "пляж", "slug": "coast"}}, {"model": "trip.topics", "pk": 4, "fields": {"name": "горы", "slug": "mountains"}}]
