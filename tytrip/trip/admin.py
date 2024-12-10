@@ -1,10 +1,10 @@
 from django.contrib import admin
-from .models import Trip
+from .models import Trip, TagPost, Topics
 
 from django.contrib import admin, messages
 from django.utils.safestring import mark_safe
 
-from trip.models import Trip, Topics
+
 
 
 # Register your models here.
@@ -51,3 +51,8 @@ class TripAdmin(admin.ModelAdmin):
 class TopicsAdmin(admin.ModelAdmin):
     list_display = ('id', 'name')
     list_display_links = ('id', 'name')
+
+@admin.register(TagPost)
+class TagsAdmin(admin.ModelAdmin):
+    list_display = ('id', 'tag')
+    list_display_links = ('id', 'tag')

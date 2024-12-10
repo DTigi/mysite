@@ -20,7 +20,7 @@ from django.urls import path, include
 from django.views.decorators.cache import cache_page
 
 from trip.sitemaps import PostSitemap
-from trip.views import page_not_found
+from trip.views import page_not_found, TripAPIView, TripAPIUpdate, TripAPIDetail
 from . import settings
 from django.contrib.sitemaps.views import sitemap
 
@@ -35,6 +35,9 @@ urlpatterns = [
     path('social-auth/', include('social_django.urls', namespace='social')),
     path('captcha/', include('captcha.urls')),
     path('sitemap.xml', cache_page(86400)(sitemap), {'sitemaps': sitemaps}, name="django.contrib.sitemaps.views.sitemap"),
+    path('api/v1/triplist/', TripAPIView.as_view()),
+    path('api/v1/triplist/<int:pk>/', TripAPIUpdate.as_view()),
+    path('api/v1/tripdetail/<int:pk>/', TripAPIDetail.as_view()),
 ]
 
 if settings.DEBUG:

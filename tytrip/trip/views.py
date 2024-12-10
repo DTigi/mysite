@@ -8,10 +8,13 @@ from django.urls import reverse, reverse_lazy
 from datetime import datetime
 
 from django.views.generic import ListView, DetailView, FormView, CreateView, UpdateView, DeleteView
+from rest_framework import generics
 
 from .forms import AddPostForm, UploadFileForm, ContactForm
 from .models import Trip, Topics, TagPost
+from .serializers import TripSerializer
 from .utils import DataMixin
+
 
 
 # Create your views here.
@@ -167,7 +170,17 @@ def page_not_found(request, exception):
 
 
 ########################  API-Views ############################################
+class TripAPIView(generics.ListCreateAPIView):
+    queryset = Trip.objects.all()
+    serializer_class = TripSerializer
 
+class TripAPIUpdate(generics.UpdateAPIView):
+    queryset = Trip.objects.all()
+    serializer_class = TripSerializer
+
+class TripAPIDetail(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Trip.objects.all()
+    serializer_class = TripSerializer
 
 ##################### views-functions ##################################################
 

@@ -53,6 +53,7 @@ INSTALLED_APPS = [
     'captcha',
     'django.contrib.sites',
     'django.contrib.sitemaps',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
@@ -220,3 +221,10 @@ CACHE_MIDDLEWARE_SECONDS = 10
 CACHE_MIDDLEWARE_KEY_PREFIX = 'tytrip'
 
 SITE_ID = 1
+
+REST_FRAMEWORK = {
+    'DEFAULT_RENDERER_CLASSES': [
+        'rest_framework.renderers.JSONRenderer',
+        'rest_framework.renderers.BrowsableAPIRenderer',
+    ]
+}
