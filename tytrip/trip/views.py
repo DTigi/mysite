@@ -10,10 +10,12 @@ from datetime import datetime
 from django.views.generic import ListView, DetailView, FormView, CreateView, UpdateView, DeleteView
 from rest_framework import generics, viewsets
 from rest_framework.decorators import action
+from rest_framework.permissions import IsAuthenticatedOrReadOnly, IsAdminUser
 from rest_framework.response import Response
 
 from .forms import AddPostForm, UploadFileForm, ContactForm
 from .models import Trip, Topics, TagPost
+from .permissions import IsAdminOrReadOnly
 from .serializers import TripSerializer
 from .utils import DataMixin
 
@@ -187,6 +189,7 @@ def page_not_found(request, exception):
 class TripViewSet(viewsets.ModelViewSet):
     queryset = Trip.objects.all()
     serializer_class = TripSerializer
+    permission_classes = (IsAdminOrReadOnly,)
 
     @action(methods=['get'], detail=False)
     def topics(self, request):
