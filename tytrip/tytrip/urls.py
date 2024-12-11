@@ -38,6 +38,7 @@ urlpatterns = [
     path('social-auth/', include('social_django.urls', namespace='social')),
     path('captcha/', include('captcha.urls')),
     path('sitemap.xml', cache_page(86400)(sitemap), {'sitemaps': sitemaps}, name="django.contrib.sitemaps.views.sitemap"),
+    path('api/v1/auth/', include('rest_framework.urls')),
     path('api/v1/', include(router.urls)),
 ]
 
