@@ -9,6 +9,7 @@ from datetime import datetime
 
 from django.views.generic import ListView, DetailView, FormView, CreateView, UpdateView, DeleteView
 from rest_framework import generics, viewsets
+from rest_framework.authentication import TokenAuthentication
 from rest_framework.decorators import action
 from rest_framework.permissions import IsAuthenticatedOrReadOnly, IsAdminUser
 from rest_framework.response import Response
@@ -189,7 +190,8 @@ def page_not_found(request, exception):
 class TripViewSet(viewsets.ModelViewSet):
     queryset = Trip.objects.all()
     serializer_class = TripSerializer
-    permission_classes = (IsAdminOrReadOnly,)
+    # permission_classes = (IsAdminOrReadOnly,)
+    authentication_classes = (TokenAuthentication,) # аутентификация только по токенам
 
     @action(methods=['get'], detail=False)
     def topics(self, request):
