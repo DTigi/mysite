@@ -8,7 +8,9 @@ from django.urls import reverse, reverse_lazy
 from datetime import datetime
 
 from django.views.generic import ListView, DetailView, FormView, CreateView, UpdateView, DeleteView
-from rest_framework import generics
+from rest_framework import generics, viewsets
+from rest_framework.decorators import action
+from rest_framework.response import Response
 
 from .forms import AddPostForm, UploadFileForm, ContactForm
 from .models import Trip, Topics, TagPost
@@ -170,17 +172,34 @@ def page_not_found(request, exception):
 
 
 ########################  API-Views ############################################
-class TripAPIView(generics.ListCreateAPIView):
+# class TripAPIView(generics.ListCreateAPIView):
+#     queryset = Trip.objects.all()
+#     serializer_class = TripSerializer
+#
+# class TripAPIUpdate(generics.UpdateAPIView):
+#     queryset = Trip.objects.all()
+#     serializer_class = TripSerializer
+#
+# class TripAPIDetail(generics.RetrieveUpdateDestroyAPIView):
+#     queryset = Trip.objects.all()
+#     serializer_class = TripSerializer
+
+class TripViewSet(viewsets.ModelViewSet):
     queryset = Trip.objects.all()
     serializer_class = TripSerializer
 
-class TripAPIUpdate(generics.UpdateAPIView):
-    queryset = Trip.objects.all()
-    serializer_class = TripSerializer
+    @action(methods=['get'], detail=False)
+    def topics(self, request):
+        topics = Topics.objects.all()
+        return Response({'topic': [c.name for c in topics]})
 
-class TripAPIDetail(generics.RetrieveUpdateDestroyAPIView):
-    queryset = Trip.objects.all()
-    serializer_class = TripSerializer
+    # def get_queryset(self):
+    #     pk = self.kwargs.get("pk")
+    #
+    #     if not pk:
+    #         return Trip.objects.all()[:3]
+    #
+    #     return Trip.objects.filter(pk=pk)
 
 ##################### views-functions ##################################################
 

@@ -18,15 +18,18 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path, include
 from django.views.decorators.cache import cache_page
+from rest_framework import routers
 
 from trip.sitemaps import PostSitemap
-from trip.views import page_not_found, TripAPIView, TripAPIUpdate, TripAPIDetail
+from trip.views import page_not_found, TripViewSet
 from . import settings
 from django.contrib.sitemaps.views import sitemap
 
-sitemaps = {
-    'posts': PostSitemap,
-}
+sitemaps = {'posts': PostSitemap}
+
+router = routers.SimpleRouter()
+router.register(r'triplist', TripViewSet)
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('trip.urls')),
@@ -35,9 +38,7 @@ urlpatterns = [
     path('social-auth/', include('social_django.urls', namespace='social')),
     path('captcha/', include('captcha.urls')),
     path('sitemap.xml', cache_page(86400)(sitemap), {'sitemaps': sitemaps}, name="django.contrib.sitemaps.views.sitemap"),
-    path('api/v1/triplist/', TripAPIView.as_view()),
-    path('api/v1/triplist/<int:pk>/', TripAPIUpdate.as_view()),
-    path('api/v1/tripdetail/<int:pk>/', TripAPIDetail.as_view()),
+    path('api/v1/', include(router.urls)),
 ]
 
 if settings.DEBUG:
