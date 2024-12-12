@@ -24,6 +24,7 @@ from trip.sitemaps import PostSitemap
 from trip.views import page_not_found, TripViewSet
 from . import settings
 from django.contrib.sitemaps.views import sitemap
+from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView, TokenVerifyView
 
 sitemaps = {'posts': PostSitemap}
 
@@ -42,6 +43,9 @@ urlpatterns = [
     path('api/v1/', include(router.urls)),
     path('api/v1/auth/', include('djoser.urls')),
     re_path(r'^auth/', include('djoser.urls.authtoken')),
+    path('api/v1/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
+    path('api/v1/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
+    path('api/v1/token/verify/', TokenVerifyView.as_view(), name='token_verify'),
 ]
 
 if settings.DEBUG:

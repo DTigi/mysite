@@ -190,8 +190,8 @@ def page_not_found(request, exception):
 class TripViewSet(viewsets.ModelViewSet):
     queryset = Trip.objects.all()
     serializer_class = TripSerializer
-    # permission_classes = (IsAdminOrReadOnly,)
-    authentication_classes = (TokenAuthentication,) # аутентификация только по токенам
+    permission_classes = (IsAdminOrReadOnly,)
+    # authentication_classes = (TokenAuthentication,) # аутентификация только по токенам
 
     @action(methods=['get'], detail=False)
     def topics(self, request):
