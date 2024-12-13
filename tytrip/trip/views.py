@@ -26,7 +26,7 @@ from .utils import DataMixin
 
 class IndexView(DataMixin, ListView):
     # model = Trip
-    template_name = 'trip/index.html'
+    template_name = 'trip/index_new.html'
     context_object_name = 'posts'
     queryset = Trip.published.all().select_related('topic').prefetch_related('tags')
     # def get_queryset(self):

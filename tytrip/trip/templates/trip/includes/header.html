@@ -1,0 +1,30 @@
+{% load static%}
+
+<header class="header">
+  <div class="container">
+    <div class="menu">
+      <a href="{% url 'home' %}" class="logo">
+      <img src="{% static 'trip/images/noemi-logo.svg' %}" class="header-logo" alt="header-logo">
+      </a>
+      <nav class="head-menu">
+            <ul class="menu-list">
+                {% for item in menu %}
+                    <li class="menu-list-item">
+                        <a class="menu-link" href="{% url item.url_name %}">{{item.title}}</a>
+                    </li>
+                {% endfor %}
+                {% if user.is_authenticated %}
+                    <li class="menu-list-item"> <a class="menu-link" href="{% url 'users:profile' %}">{{user.username}}</a> | <form method="post" action="{% url 'users:logout' %}">
+                        {% csrf_token %}
+                        <button type="submit">Выйти</button>
+                    </form>
+                    </li>
+                {% else %}
+                    <li class="menu-list-item"><a class="menu-link" href="{% url 'users:login' %}">Войти</a> | <a class="menu-link" href="{% url 'users:register' %}">Регистрация</a></li>
+                    {% endif %}
+            </ul>
+      </nav>
+    </div>
+    <h1 class="header-title">Путешествие начинается здесь ...</h1>
+  </div>
+</header>
