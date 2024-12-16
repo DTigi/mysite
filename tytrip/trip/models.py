@@ -2,6 +2,7 @@ from django.contrib.auth import get_user_model
 from django.core.validators import MinLengthValidator, MaxLengthValidator
 from django.db import models
 from django.urls import reverse
+from taggit.managers import TaggableManager
 
 
 class PublishedModel(models.Manager):
@@ -31,6 +32,7 @@ class Trip(models.Model):
                                    verbose_name="Столица")
     author = models.ForeignKey(get_user_model(), on_delete=models.SET_NULL, related_name='posts', null=True,
                                default=None, verbose_name="Автор")
+    tag = TaggableManager()
 
     objects = models.Manager()
     published = PublishedModel()
@@ -83,6 +85,21 @@ class Capital(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class Comment(models.Model):
+    post = models.ForeignKey(Trip, on_delete=models.CASCADE, related_name='comments')
+    username = models.ForeignKey(get_user_model(), on_delete=models.CASCADE, related_name='user_name')
+    text = models.TextField()
+    created_date = models.DateTimeField(auto_now_add=True, verbose_name="Время создания")
+
+    class Meta:
+        verbose_name = 'Комментарий'
+        verbose_name_plural = 'Комментарии'
+        ordering = ['-created_date']
+
+    def __str__(self):
+        return self.text
 
 
 class UploadFile(models.Model):

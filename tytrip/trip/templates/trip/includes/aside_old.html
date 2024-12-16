@@ -1,0 +1,18 @@
+ <aside class="aside">
+     {% include 'trip/includes/last_post_list.html'%}
+    <div class="find">
+      <input type="search" class="field" placeholder="Найти..." required>
+      <button type="submit" class="button_search"></button>
+    </div>
+    <div class="mailing">
+      <header class="header__aside">Рассылка</header>
+      <form class="form">
+        <input type="email" class="field-email" placeholder="Ваш email-адрес" required></intup>
+      <button type="submit" class="button_email">Подписаться</button>
+      </form>
+    </div>
+     {% show_all_tags %}
+
+     {% show_topics topic_selected %}
+
+  </aside>

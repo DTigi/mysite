@@ -1,21 +1,28 @@
+from django.contrib.auth import login, authenticate, logout
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
-from django.http import HttpResponse, HttpResponseNotFound, Http404, HttpResponseRedirect, HttpResponsePermanentRedirect
+from django.core.mail import send_mail, BadHeaderError
+from django.core.paginator import Paginator
+from django.db.models import Q
+from django.http import HttpResponse, HttpResponseNotFound, Http404, HttpResponseRedirect, \
+    HttpResponsePermanentRedirect
 from django.shortcuts import render, redirect, get_object_or_404
 from django.template.defaultfilters import slugify
 from django.template.loader import render_to_string
 from django.urls import reverse, reverse_lazy
 from datetime import datetime
 
+from django.views import View
 from django.views.generic import ListView, DetailView, FormView, CreateView, UpdateView, DeleteView
 from rest_framework import generics, viewsets
 from rest_framework.authentication import TokenAuthentication
 from rest_framework.decorators import action
 from rest_framework.permissions import IsAuthenticatedOrReadOnly, IsAdminUser
 from rest_framework.response import Response
+from taggit.models import Tag
 
-from .forms import AddPostForm, UploadFileForm, ContactForm
-from .models import Trip, Topics, TagPost
+from .forms import AddPostForm, UploadFileForm, ContactForm, CommentForm, SignUpForm, SignInForm, FeedBackForm
+from .models import Trip, Topics, TagPost, Comment
 from .permissions import IsAdminOrReadOnly
 from .serializers import TripSerializer
 from .utils import DataMixin
@@ -151,24 +158,150 @@ class ContactFormView(LoginRequiredMixin, DataMixin, FormView):
         print(form.cleaned_data)
         return super().form_valid(form)
 
+################### alternative-views ###########################
+class MainView(View):
+    def get(self, request, *args, **kwargs):
+        posts = Trip.objects.all().order_by('-time_create')
+        paginator = Paginator(posts, 6)
 
-def posts(request):
-    return HttpResponse('<h1>Посты</h1>')
+        page_number = request.GET.get('page')
+        page_obj = paginator.get_page(page_number)
 
-def articles(request):
-    if request.GET:
-        print(request.GET)
+        return render(request, 'trip/index.html', context={
+            'page_obj': page_obj
+        })
 
-    return HttpResponse('<h1>Статьи</h1>')
 
-def tags(request):
-    return HttpResponse(f"Отображение списка тегов")
+class PostDetailView(View):
+    def get(self, request, slug, *args, **kwargs):
+        post = get_object_or_404(Trip, url=slug)
+        common_tags = Trip.tag.most_common()
+        last_posts = Trip.objects.all().order_by('-id')[:5]
+        comment_form = CommentForm()
+        return render(request, 'trip/post_detail.html', context={
+            'post': post,
+            'common_tags': common_tags,
+            'last_posts': last_posts,
+            'comment_form': comment_form
+        })
 
-def login(request):
-    return HttpResponse("Авторизация Trip_app")
+    def post(self, request, slug, *args, **kwargs):
+        comment_form = CommentForm(request.POST)
+        if comment_form.is_valid():
+            text = request.POST['text']
+            username = self.request.user
+            post = get_object_or_404(Trip, url=slug)
+            Comment.objects.create(post=post, username=username, text=text)
+            return HttpResponseRedirect(request.META.get('HTTP_REFERER', '/'))
+        return render(request, 'trip/post_detail.html', context={
+            'comment_form': comment_form
+        })
 
-def logout(request):
-    return HttpResponse("logout Trip_app")
+
+class SignUpView(View):
+    def get(self, request, *args, **kwargs):
+        form = SignUpForm()
+        return render(request, 'trip/signup.html', context={'form': form})
+
+    def post(self, request, *args, **kwargs):
+        form = SignUpForm(request.POST)
+        if form.is_valid():
+            user = form.save()
+            if user is not None:
+                login(request, user)
+                return HttpResponseRedirect('/')
+        return render(request, 'trip/signup.html', context={'form': form})
+
+
+class SignInView(View):
+    def get(self, request, *args, **kwargs):
+        form = SignInForm()
+        return render(request, 'trip/signin.html', context={
+            'form': form,
+        })
+
+    def post(self, request, *args, **kwargs):
+        form = SignInForm(request.POST)
+        if form.is_valid():
+            username = request.POST['username']
+            password = request.POST['password']
+            user = authenticate(request, username=username, password=password)
+            if user is not None:
+                login(request, user)
+                return HttpResponseRedirect('/')
+            else:
+                form.add_error(None, "Неправильный пароль или указанная учётная запись не существует!")
+                return render(request, "trip/signin.html", {"form": form})
+        return render(request, 'trip/signin.html', context={
+            'form': form,
+        })
+
+
+def log_out(request):
+    logout(request)
+    return HttpResponseRedirect(reverse('home'))
+
+
+class FeedBackView(View):
+    def get(self, request, *args, **kwargs):
+        form = FeedBackForm()
+        return render(request, 'trip/contact_new.html', context={
+            'form': form,
+            'title': 'Написать мне'
+        })
+
+    def post(self, request, *args, **kwargs):
+        form = FeedBackForm(request.POST)
+        if form.is_valid():
+            name = form.cleaned_data['name']
+            from_email = form.cleaned_data['email']
+            subject = form.cleaned_data['subject']
+            message = form.cleaned_data['message']
+            try:
+                send_mail(f'От {name} | {subject}', message, from_email, ['tgnudev@gmail.com',])
+            except BadHeaderError:
+                return HttpResponse('Невалидный заголовок')
+            return HttpResponseRedirect('success')
+        return render(request, 'trip/contact_new.html', context={
+            'form': form,
+        })
+
+
+class SuccessView(View):
+    def get(self, request, *args, **kwargs):
+        return render(request, 'trip/success.html', context={
+            'title': 'Спасибо'
+        })
+
+
+class SearchResultsView(View):
+    def get(self, request, *args, **kwargs):
+        query = request.GET.get('q')
+        results = ""
+        if query:
+            results = Trip.objects.filter(
+                Q(title__icontains=query) | Q(content__icontains=query)
+            )
+        paginator = Paginator(results, 6)
+        page_number = request.GET.get('page')
+        page_obj = paginator.get_page(page_number)
+        return render(request, 'trip/search.html', context={
+            'title': 'Поиск',
+            'results': page_obj,
+            'count': paginator.count
+        })
+
+
+class TagView(View):
+    def get(self, request, slug, *args, **kwargs):
+        tag = get_object_or_404(Tag, slug=slug)
+        posts = Trip.objects.filter(tag=tag)
+        common_tags = Trip.tag.most_common()
+        return render(request, 'trip/tag.html', context={
+            'title': f'#ТЕГ {tag}',
+            'posts': posts,
+            'common_tags': common_tags
+        })
 
 def page_not_found(request, exception):
     return HttpResponseNotFound('<h1>Страница не найдена</h1>')
