@@ -1,10 +1,7 @@
-{% extends 'base.html' %}
-{% load static %}
-
-{% block title %}{{ post.h1 }}{% endblock %}
+{% extends 'base_new.html' %}
 
 {% block header %}
-    {% include 'block/header.html' %}
+    {% include 'trip/includes/slider.html' %}
 {% endblock %}
 
 {% block content %}
@@ -16,8 +13,8 @@
                     <!--    ЭТО ХЛЕБНЫЕ КРОШКИ -->
                     <nav aria-label="breadcrumb" class="my-4">
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="{% url 'index'%}">Главная</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">{{ post.h1 }}</li>
+                            <li class="breadcrumb-item"><a href="{% url 'home'%}">Главная</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">{{ post.title }}</li>
                         </ol>
                     </nav>
                     <!--    ЭТО ТЕЛО ПОСТА -->
@@ -34,14 +31,14 @@
                     <hr>
                     <div class="d-flex justify-content-between">
                         <div class="lead">Автор: {{ post.author }}</div>
-                        <div>Опубликовано: {{ post.created_at }}</div>
+                        <div>Опубликовано: {{ post.time_create }}</div>
                     </div>
                     <hr>
                     <!--    ЭТО КОМПОНЕНТ С КОММЕНТАРИЯМИ -->
-                    {% include 'block/comments.html' %}
+                    {% include 'trip/includes/comments.html' %}
                 </div>
                 <!--    ЭТО ПРАВАЯ КОЛОНКА -->
-                {% include 'block/aside.html' %}
+                {% include 'trip/includes/aside.html' %}
             </div>
         </div>
     </section>

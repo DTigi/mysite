@@ -1,6 +1,9 @@
-{% extends 'base.html' %}
-{% load static %}
-{% block title %}Авторизация{% endblock %}
+{% extends 'base_new.html'%}
+
+{% block header %}
+{% include 'trip/includes/slider.html' %}
+{% endblock %}
+
 
 {% block content %}
     <section class="my-registration-form">
@@ -10,7 +13,7 @@
                     <!--    ЭТО ХЛЕБНЫЕ КРОШКИ -->
                     <nav aria-label="breadcrumb" class="my-4">
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="{% url 'index' %}">Главная</a></li>
+                            <li class="breadcrumb-item"><a href="{% url 'home' %}">Главная</a></li>
                             <li class="breadcrumb-item active" aria-current="page">Форма авторизации</li>
                         </ol>
                     </nav>

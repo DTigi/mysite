@@ -174,7 +174,7 @@ class MainView(View):
 
 class PostDetailView(View):
     def get(self, request, slug, *args, **kwargs):
-        post = get_object_or_404(Trip, url=slug)
+        post = get_object_or_404(Trip, slug=slug)
         common_tags = Trip.tag.most_common()
         last_posts = Trip.objects.all().order_by('-id')[:5]
         comment_form = CommentForm()
