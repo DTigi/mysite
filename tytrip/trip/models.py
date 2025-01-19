@@ -26,7 +26,7 @@ class Trip(models.Model):
     time_update = models.DateTimeField(auto_now=True, verbose_name="Время редактирования")
     is_published = models.BooleanField(choices=tuple(map(lambda x: (bool(x[0]), x[1]), Status.choices)),
                                        default=Status.DRAFT, verbose_name="Статус публикации")
-    topic = models.ForeignKey('Topics', on_delete=models.PROTECT, related_name='posts', verbose_name="Тема")
+    topic = models.ForeignKey('Topics', null=True, blank=True, on_delete=models.PROTECT, related_name='posts', verbose_name="Тема")
     tags = models.ManyToManyField('TagPost', blank=True, related_name='posts', verbose_name="Теги")
     capital = models.OneToOneField('Capital', on_delete=models.SET_NULL, null=True, blank=True, related_name='trip',
                                    verbose_name="Столица")
@@ -77,6 +77,9 @@ class TagPost(models.Model):
     def __str__(self):
         return self.tag
 
+    class Meta:
+        verbose_name = 'Тег'
+        verbose_name_plural = 'Теги'
 
 class Capital(models.Model):
     name = models.CharField(max_length=100)

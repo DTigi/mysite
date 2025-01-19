@@ -190,7 +190,7 @@ class PostDetailView(View):
         if comment_form.is_valid():
             text = request.POST['text']
             username = self.request.user
-            post = get_object_or_404(Trip, url=slug)
+            post = get_object_or_404(Trip, slug=slug)
             Comment.objects.create(post=post, username=username, text=text)
             return HttpResponseRedirect(request.META.get('HTTP_REFERER', '/'))
         return render(request, 'trip/post_detail.html', context={

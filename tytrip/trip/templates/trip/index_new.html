@@ -1,5 +1,6 @@
 {% extends 'base_new.html'%}
 
+{% block title %}Главная{% endblock %}
 {% block header %}
 {% include 'trip/includes/slider.html' %}
 {% endblock %}
@@ -16,7 +17,7 @@
                             <div class="card-body">
                                 <h4 class="card-title">{{ post.title }}</h4>
                                 <p class="card-text">{{post.content|safe|truncatechars:100 }}</p>
-                                {% for tag in post.tags.all %}
+                                {% for tag in post.tag.all %}
                                     <a href="{{ tag.get_absolute_url }}" class="badge bg-info text-dark mb-2">#{{ tag }}</a>
                                 {% endfor %}
                                 <div class="d-flex justify-content-between align-items-center">

@@ -1,9 +1,9 @@
-{% extends 'base.html' %}
+{% extends 'base_new.html' %}
 {% load static %}
 {% block title %}Поиск{% endblock %}
 
 {% block header %}
-    {% include 'block/search_form.html' %}
+    {% include 'trip/includes/search_form.html' %}
 {% endblock %}
 
 {% block content %}
@@ -15,14 +15,14 @@
                 <!--    ЭТО ХЛЕБНЫЕ КРОШКИ -->
                 <nav aria-label="breadcrumb" class="my-4">
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="{% url 'index' %}">Главная</a></li>
+                        <li class="breadcrumb-item"><a href="{% url 'home' %}">Главная</a></li>
                         <li class="breadcrumb-item active" aria-current="page">Поиск</li>
                     </ol>
                 </nav>
-                <p class="lead">Найдено записей: {{ count }}}</p>
+                <p class="lead">Найдено записей: {{ count }} </p>
                 {% for result in results %}
-                    <a href="{% url 'post_detail' slug=result.url %}"><h2>{{ result.h1 }}</h2></a>
-                    <p>{{ result.description|safe }}</p>
+                    <a href="{% url 'post_detail' slug=result.url %}"><h2>{{ result.title }}</h2></a>
+                    <p>{{ result.content|safe }}</p>
                     <hr>
                 {% endfor %}
             </div>

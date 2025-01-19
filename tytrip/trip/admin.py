@@ -11,7 +11,7 @@ from django.utils.safestring import mark_safe
 
 @admin.register(Trip)
 class TripAdmin(admin.ModelAdmin):
-    fields = ['title', 'slug', 'content', 'image', 'post_image', 'topic', 'capital', 'tags']
+    fields = ['title', 'slug', 'content', 'image', 'post_image', 'tag']
     # exclude = ['tags', 'is_published']
     readonly_fields = ['post_image']
     prepopulated_fields = {"slug": ("title",)}
@@ -47,12 +47,12 @@ class TripAdmin(admin.ModelAdmin):
     #     super().save(*args, **kwargs)
 
 
-@admin.register(Topics)
-class TopicsAdmin(admin.ModelAdmin):
-    list_display = ('id', 'name')
-    list_display_links = ('id', 'name')
+# @admin.register(Topics)
+# class TopicsAdmin(admin.ModelAdmin):
+#     list_display = ('id', 'name')
+#     list_display_links = ('id', 'name')
 
-@admin.register(TagPost)
-class TagsAdmin(admin.ModelAdmin):
-    list_display = ('id', 'tag')
-    list_display_links = ('id', 'tag')
+# @admin.register(TagPost)
+# class TagsAdmin(admin.ModelAdmin):
+#     list_display = ('id', 'tag')
+#     list_display_links = ('id', 'tag')
