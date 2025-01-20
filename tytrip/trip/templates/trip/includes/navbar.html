@@ -24,18 +24,22 @@
                     <button class="btn btn-outline-success me-2" type="submit">Найти</button>
                   </form>
                       {% if user.is_authenticated %}
-                        <span class="navbar-text me-2">{{ user }}</span>
-                        <a href="{% url 'logout' %}" class="btn btn-outline-light">Выход</a>
+                        <a class="btn btn-outline-light me-2" href="{% url 'users:profile' %}">{{user.username}}</a>
+<!--                        <a href="{% url 'logout' %}" class="btn btn-outline-light">Выход</a>-->
+                        <form method="post" action="{% url 'users:logout' %}">
+                        {% csrf_token %}
+                        <button class="btn btn-outline-light" type="submit" >Выйти</button>
+                    </form>
                       {% else %}
-                        {% if request.get_full_path == '/signin/' %}
-                            <a href="{% url 'signin' %}" class="btn btn-outline-light me-2 active">Войти</a>
+                        {% if request.get_full_path == '/users/login/' %}
+                            <a href="{% url 'users:login' %}" class="btn btn-outline-light me-2 active">Войти</a>
                         {% else %}
-                            <a href="{% url 'signin' %}" class="btn btn-outline-light me-2">Войти</a>
+                            <a href="{% url 'users:login' %}" class="btn btn-outline-light me-2">Войти</a>
                         {% endif %}
-                        {% if request.get_full_path == '/signup/' %}
-                            <a href="{% url 'signup' %}" class="btn btn-outline-light me-2 active">Регистрация</a>
+                        {% if request.get_full_path == '/users/register/' %}
+                            <a href="{% url 'users:register' %}" class="btn btn-outline-light me-2 active">Регистрация</a>
                         {% else %}
-                            <a href="{% url 'signup' %}" class="btn btn-outline-light me-2">Регистрация</a>
+                            <a href="{% url 'users:register' %}" class="btn btn-outline-light me-2">Регистрация</a>
                         {% endif %}
                       {% endif %}
             </div>

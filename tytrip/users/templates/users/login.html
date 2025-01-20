@@ -1,28 +1,61 @@
-{% extends 'base.html' %}
+{% extends 'base_new.html' %}
+{% block title %}{{ title }}{% endblock %}
  
 {% block content %}
-<main class="main">
-<h1>Авторизация</h1>
-<br>
-<form action="" method="post">
-    {% csrf_token %}
-    <input type="hidden" name="next" value="{{ next }}" />
-    <div class="form-error">{{ form.non_field_errors }}</div>
-    {% for f in form %}
-        <p ><label class="form-label" for="{{ f.id_for_label }}">{{f.label}}: </label>{{ f }}</p>
-        <div class="form-error">{{ f.errors }}</div>
-    <br>
-    {% endfor %}
-    <p ><button type="submit">Войти</button></p>
-</form>
-    <br>
-    <p ><a href="{% url 'users:password_reset' %}">Забыли пароль?</a></p>
-    <br>
-<hr>
-    <br>
-<p>
-    <a class="poster-mini" href="{% url 'social:begin' 'github' %}"><img src="/media/social-auth/github.png"></a>
-    <a class="poster-mini" href="{% url 'social:begin' 'vk-oauth2' %}"><img src="/media/social-auth/vk.png"></a>
-</p>
-</main>
+<section class="my-registration-form">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12">
+                    <!--    ЭТО ХЛЕБНЫЕ КРОШКИ -->
+                    <nav aria-label="breadcrumb" class="my-4">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="{% url 'home' %}">Главная</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Форма авторизации</li>
+                        </ol>
+                    </nav>
+
+                    <div class="row justify-content-center">
+                        <div class="col-6">
+                            <p class="lead">Для входа укажите логин и пароль</p>
+                            {% if form.errors %}
+                                {% for field in form %}
+                                    {% for error in field.errors %}
+                                        <div class="alert alert-danger">
+                                            <strong>{{ error|escape }}</strong>
+                                        </div>
+                                    {% endfor %}
+                                {% endfor %}
+                                {% for error in form.non_field_errors %}
+                                    <div class="alert alert-danger">
+                                        <strong>{{ error|escape }}</strong>
+                                    </div>
+                                {% endfor %}
+                            {% endif %}
+                            <form method="post" action="{% url 'users:login' %}">
+                                {% csrf_token %}
+                                <input type="hidden" name="next" value="{{ next }}" />
+                                <div class="mb-3">
+                                    <label for="inputUsername" class="form-label visually-hidden">Имя пользователя</label>
+                                    {{ form.username }}
+                                </div>
+                                <div class="mb-3">
+                                    <label for="inputPassword" class="form-label visually-hidden">Пароль</label>
+                                    {{ form.password }}
+                                </div>
+                                <button type="submit" class="btn btn-primary">Войти</button>
+                            </form>
+                        </div>
+                        <p ><a href="{% url 'users:password_reset' %}">Забыли пароль?</a></p>
+                        <br>
+                        <hr>
+                        <br>
+                        <p>
+                            <a class="poster-mini" href="{% url 'social:begin' 'github' %}"><img src="/media/social-auth/github.png"></a>
+                            <a class="poster-mini" href="{% url 'social:begin' 'vk-oauth2' %}"><img src="/media/social-auth/vk.png"></a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+</section>
 {% endblock %}

@@ -1,21 +1,68 @@
-{% extends 'base.html' %}
+{% extends 'base_new.html' %}
  
 {% block content %}
-<main class="main">
-<h1>Регистрация</h1>
-<br>
+    <section class="my-registration-form">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12">
+                    <!--    ЭТО ХЛЕБНЫЕ КРОШКИ -->
+                    <nav aria-label="breadcrumb" class="my-4">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="{% url 'home' %}">Главная</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Форма регистрации</li>
+                        </ol>
+                    </nav>
 
-<form method="post">
-    {% csrf_token %}
-<input type="hidden" name="next" value="{{ next }}" />
-    <div class="form-error">{{ form.non_field_errors }}</div>
-    {% for f in form %}
-        <p ><label class="form-label" for="{{ f.id_for_label }}">{{f.label}}: </label>{{ f }}</p>
-        <div class="form-error">{{ f.errors }}</div>
-        <br>
-    {% endfor %}
-    <p ><button type="submit">Регистрация</button></p>
-</form>
+                    <div class="row justify-content-center">
+                        <div class="col-6">
+                            <p class="lead">Для регистрации укажите имя пользователя и пароль</p>
+                            {% if form.errors %}
+                                {% for field in form %}
+                                    {% for error in field.errors %}
+                                        <div class="alert alert-danger">
+                                            <strong>{{ error|escape }}</strong>
+                                        </div>
+                                {% endfor %}
+                                {% endfor %}
+                                {% for error in form.non_field_errors %}
+                                    <div class="alert alert-danger">
+                                        <strong>{{ error|escape }}</strong>
+                                    </div>
+                                {% endfor %}
+                            {% endif %}
+                                <form method="post" action="{% url 'users:register' %}">
+                                    {% csrf_token %}
+                                    <div class="mb-3">
+                                        <label for="inputUsername" class="form-label visually-hidden">Имя пользователя</label>
+                                        {{ form.username }}
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="inputPassword" class="form-label visually-hidden">Пароль</label>
+                                        {{ form.password1 }}
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="ReInputPassword" class="form-label visually-hidden">Повторите пароль</label>
+                                        {{ form.password2 }}
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="ReInputPassword" class="form-label visually-hidden">email</label>
+                                        {{ form.email }}
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="ReInputPassword" class="form-label visually-hidden">first-name</label>
+                                        {{ form.first_name }}
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="ReInputPassword" class="form-label visually-hidden">last-name</label>
+                                        {{ form.last_name }}
+                                    </div>
+                                    <button type="submit" class="btn btn-primary">Регистрация</button>
+                                </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-</main>
 {% endblock %}

@@ -1,4 +1,4 @@
-{% extends 'base.html' %}
+{% extends 'base_new.html' %}
  
 {% block content %}
 <main class="main">
@@ -13,15 +13,13 @@
     {% endif %}
     <div class="form-error">{{ form.non_field_errors }}</div>
     {% for f in form %}
-    <p ><label class="form-label" for="{{ f.id_for_label }}">{{f.label}}: </label>{{ f }}</p>
+    <div class="md-form mb-0"><label class="form-label" for="{{ f.id_for_label }}">{{f.label}}: </label>{{ f }}</div>
     <div class="form-error">{{ f.errors }}</div>
     <br>
     {% endfor %}
     <p ><button type="submit">Сохранить</button></p>
-    <br>
     <hr>
     {% if not perms.users.social_auth %}
-        <hr>
         <p><a href="{% url 'users:password_change' %}">Сменить пароль</a></p>
     {% endif %}
 </form>

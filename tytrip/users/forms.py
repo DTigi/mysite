@@ -6,31 +6,73 @@ from django.contrib.auth.forms import AuthenticationForm, UserCreationForm, Pass
 
 
 class LoginUserForm(AuthenticationForm):
-    username = forms.CharField(label='Логин', widget=forms.TextInput(attrs={'class': 'form-input'}))
-    password = forms.CharField(label='Пароль', widget=forms.PasswordInput(attrs={'class': 'form-input'}))
-
+    username = forms.CharField(
+        label='Логин',
+        max_length=100,
+        required=True,
+        widget=forms.TextInput(attrs={
+            'class': "form-control",
+            'id': "inputUsername",
+        })
+    )
+    password = forms.CharField(
+        label='Пароль',
+        required=True,
+        widget=forms.PasswordInput(attrs={
+            'class': "form-control mt-2",
+            'id': "inputPassword",
+        })
+    )
     class Meta:
         model = get_user_model()
         fields = ['username', 'password']
 
 
 class RegisterUserForm(UserCreationForm):
-    username = forms.CharField(label="Логин", widget=forms.TextInput(attrs={'class': 'form-input'}))
-    password1 = forms.CharField(label="Пароль", widget=forms.PasswordInput(attrs={'class': 'form-input'}))
-    password2 = forms.CharField(label="Повтор пароля", widget=forms.PasswordInput(attrs={'class': 'form-input'}))
+    # username = forms.CharField(label="Логин", widget=forms.TextInput(attrs={'class': 'form-input'}))
+    username = forms.CharField(
+        max_length=100,
+        required=True,
+        widget=forms.TextInput(attrs={
+            'class': "form-control",
+            'id': "inputUsername",
+            'type': 'username',
+            'placeholder': 'Имя пользователя'
+        }),
+    )
+    # password1 = forms.CharField(label="Пароль", widget=forms.PasswordInput(attrs={'class': 'form-input'}))
+    password1 = forms.CharField(
+        required=True,
+        widget=forms.PasswordInput(attrs={
+            'class': "form-control",
+            'id': "inputPassword",
+            'type': 'password',
+            'placeholder': 'Пароль'
+        }),
+    )
 
+    # password2 = forms.CharField(label="Повтор пароля", widget=forms.PasswordInput(attrs={'class': 'form-input'}))
+    password2 = forms.CharField(
+        required=True,
+        widget=forms.PasswordInput(attrs={
+            'class': "form-control",
+            'id': "ReInputPassword",
+            'type': 'password',
+            'placeholder': 'Повторите пароль'
+        }),
+    )
     class Meta:
         model = get_user_model()
         fields = ['username', 'email', 'first_name', 'last_name', 'password1', 'password2']
-        labels = {
-            'email': 'E-mail',
-            'first_name': 'Имя',
-            'last_name': 'Фамилия',
-        }
+        # labels = {
+        #     'email': 'E-mail',
+        #     'first_name': 'Имя',
+        #     'last_name': 'Фамилия',
+        # }
         widgets = {
-            'email': forms.TextInput(attrs={'class': 'form-input'}),
-            'first_name': forms.TextInput(attrs={'class': 'form-input'}),
-            'last_name': forms.TextInput(attrs={'class': 'form-input'}),
+            'email': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'e-mail'}),
+            'first_name': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'first_name'}),
+            'last_name': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'last_name'}),
         }
 
 
