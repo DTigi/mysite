@@ -21,6 +21,7 @@ from rest_framework.permissions import IsAuthenticatedOrReadOnly, IsAdminUser
 from rest_framework.response import Response
 from taggit.models import Tag
 
+from tytrip.settings import DEFAULT_FROM_EMAIL
 from .forms import AddPostForm, UploadFileForm, ContactForm, CommentForm, SignUpForm, SignInForm, FeedBackForm
 from .models import Trip, Topics, TagPost, Comment
 from .permissions import IsAdminOrReadOnly
@@ -254,9 +255,9 @@ class FeedBackView(View):
         form = FeedBackForm(request.POST)
         if form.is_valid():
             name = form.cleaned_data['name']
-            from_email = form.cleaned_data['email']
+            from_email = DEFAULT_FROM_EMAIL # form.cleaned_data['email']
             subject = form.cleaned_data['subject']
-            message = form.cleaned_data['message']
+            message = form.cleaned_data['message'] + '\n' + form.cleaned_data['email']
             try:
                 send_mail(f'От {name} | {subject}', message, from_email, ['tgnudev@gmail.com',])
             except BadHeaderError:
@@ -264,6 +265,7 @@ class FeedBackView(View):
             return HttpResponseRedirect('success')
         return render(request, 'trip/contact_new.html', context={
             'form': form,
+            'title': 'Написать мне',
         })
 
 

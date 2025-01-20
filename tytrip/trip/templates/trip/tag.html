@@ -1,9 +1,9 @@
-{% extends 'base.html' %}
+{% extends 'base_new.html' %}
 {% load static %}
 {% block title %}Все записи по тегу{% endblock %}
 
 {% block header %}
-    {% include 'block/header.html' %}
+    {% include 'trip/includes/slider.html' %}
 {% endblock %}
 
 {% block content %}
@@ -20,14 +20,14 @@
                         <div class="card mb-4 shadow-sm">
                             <img src="/media/{{ post.image }}" alt="" class="card-img-top">
                             <div class="card-body">
-                                <h4 class="card-title">{{ post.h1 }}</h4>
+                                <h4 class="card-title">{{ post.title }}</h4>
                                 <p class="card-text">{{post.description|safe|truncatechars:100 }}</p>
                                 {% for tag in post.tag.all %}
                                     <a href="{% url 'tag' tag.slug %}" class="badge bg-info text-dark mb-2">#{{ tag }}</a>
                                 {% endfor %}
                                 <div class="d-flex justify-content-between align-items-center">
                                     <div class="btn-group">
-                                        <a href="{% url 'post_detail' slug=post.url %}" class="btn btn-sm btn-outline-secondary">Подробнее</a>
+                                        <a href="{% url 'post_detail' slug=post.slug %}" class="btn btn-sm btn-outline-secondary">Подробнее</a>
                                     </div>
                                     <small class="text-muted">{{ post.created_at }}</small>
                                 </div>
