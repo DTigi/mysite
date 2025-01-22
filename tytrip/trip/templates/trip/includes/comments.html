@@ -11,7 +11,7 @@
                 <button type="submit" class="btn btn-primary">Отправить</button>
             </form>
         {% else %}
-            <h6 class="card-body"><a href="{% url 'signin' %}">Авторизуйтесь</a> или <a href="{% url 'signup' %}">зарегистрируйтесь</a> чтобы оставить комментарий</h6>
+            <h6 class="card-body"><a href="{% url 'users:login' %}">Авторизуйтесь</a> или <a href="{% url 'users:register' %}">зарегистрируйтесь</a> чтобы оставить комментарий</h6>
         {% endif %}
     </div>
 </div>

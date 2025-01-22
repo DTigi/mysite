@@ -8,14 +8,14 @@ register_converter(converters.FourDigitYearConverter, "year4")
 
 urlpatterns = [
     path('', views.IndexView.as_view(), name='home'),
-    path('about/', views.about, name='about'),
-    path('topics/<slug:topic_slug>/', views.TopicsListView.as_view(), name='topics'),
-    path('addpage/', views.AddPage.as_view(), name='add_page'),
+    # path('about/', views.about, name='about'),
+    # path('topics/<slug:topic_slug>/', views.TopicsListView.as_view(), name='topics'),
+    # path('addpage/', views.AddPage.as_view(), name='add_page'),
     # path('contact_old/', views.ContactFormView.as_view(), name='contact_old'),
     # path('post/<slug:post_slug>/', views.ShowPost.as_view(), name='post'),
     # path('tag/<slug:tag_slug>/', views.TagsListView.as_view(), name='tag'),
-    path('edit/<slug:slug>/', views.UpdatePage.as_view(), name='edit_page'),
-    path('delete/<slug:slug>/', views.DeletePage.as_view(), name='delete_page'),
+    # path('edit/<slug:slug>/', views.UpdatePage.as_view(), name='edit_page'),
+    # path('delete/<slug:slug>/', views.DeletePage.as_view(), name='delete_page'),
 
     path('signup/', SignUpView.as_view(), name='signup'),
     path('signin/', SignInView.as_view(), name='signin'),
