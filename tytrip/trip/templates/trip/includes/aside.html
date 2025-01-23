@@ -14,7 +14,9 @@
             {% for lp in last_posts %}
                 <div class="card-body">
                     <h5 class="card-title">{{ lp.title }}</h5>
+                    {% if lp.image %}
                     <img src="{{ lp.image.url }}" alt="" class="card-img-top">
+                    {% endif %}
                     {{ lp.content|safe|truncatechars:100 }}
                     <a href="{% url 'post_detail' lp.slug%}" class="card-link">Подробнее</a>
                     <hr>

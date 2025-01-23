@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Trip, TagPost, Topics
+from .models import Trip, TagPost, Topics, Comment
 
 from django.contrib import admin, messages
 from django.utils.safestring import mark_safe
@@ -46,6 +46,11 @@ class TripAdmin(admin.ModelAdmin):
     #     self.slug = slugify(self.title, allow_unicode=True)
     #     super().save(*args, **kwargs)
 
+
+@admin.register(Comment)
+class CommentAdmin(admin.ModelAdmin):
+    list_display = ('id', 'post', 'username', 'text')
+    list_display_links = ('id', 'post', 'username', 'text')
 
 # @admin.register(Topics)
 # class TopicsAdmin(admin.ModelAdmin):

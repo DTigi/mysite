@@ -15,10 +15,11 @@
         {% endif %}
     </div>
 </div>
+{% if user.is_authenticated %}
 {% for comment in post.comments.all %}
 <div class="d-flex">
     <div class="flex-shrink-0">
-        <img class="rounded-circle" src="http://placehold.it/50x50" alt="">
+        <img class="rounded-circle" src="https://placehold.co/50x50?text=user" alt="">
     </div>
     <div class="flex-grow-1 ms-3">
         <h5 class="mt-0">{{comment.username}}</h5>
@@ -26,3 +27,4 @@
     </div>
 </div>
 {% endfor %}
+{% endif %}

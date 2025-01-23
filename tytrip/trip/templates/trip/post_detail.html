@@ -18,7 +18,9 @@
                         </ol>
                     </nav>
                     <!--    ЭТО ТЕЛО ПОСТА -->
+                    {% if post.image %}
                     <img class="img-fluid rounded " src="{{ post.image.url }}" alt="">
+                    {% endif %}
                     <hr>
                     <p class="lead">
                         {{ post.content|safe }}
@@ -33,6 +35,12 @@
                         <div class="lead">Автор: {{ post.author }}</div>
                         <div>Опубликовано: {{ post.time_create }}</div>
                     </div>
+                    {% if perms.trip.change_trip %}
+                        <a href="{% url 'edit_page' post.slug %}">Редактировать</a>
+                    {% endif %}
+                    {% if perms.trip.delete_trip %}
+                        <a href="{% url 'delete_page' post.slug %}">Удалить</a>
+                    {% endif %}
                     <hr>
                     <!--    ЭТО КОМПОНЕНТ С КОММЕНТАРИЯМИ -->
                     {% include 'trip/includes/comments.html' %}

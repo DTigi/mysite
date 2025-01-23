@@ -45,7 +45,7 @@ class IndexView(DataMixin, ListView):
         }
 
 
-class AddPage(PermissionRequiredMixin, CreateView):
+class AddPage(LoginRequiredMixin, CreateView):
     model = Trip
     fields = ['title', 'slug', 'image', 'content', 'tag']
     # form_class = AddPostForm
@@ -54,7 +54,7 @@ class AddPage(PermissionRequiredMixin, CreateView):
     extra_context = {
         'title': 'Добавить статью',
     }
-    permission_required = 'trip.add_trip'
+    # permission_required = 'trip.add_trip'
     # login_url = '/admin/'
 
     def form_valid(self, form):
@@ -65,7 +65,7 @@ class AddPage(PermissionRequiredMixin, CreateView):
 
 class UpdatePage(PermissionRequiredMixin, UpdateView):
     model = Trip
-    fields = ['title', 'content', 'image', 'is_published', 'topic']
+    fields = ['title', 'slug', 'image', 'content', 'tag']
     template_name = 'trip/addpage.html'
     success_url = reverse_lazy('home')
     extra_context = {
@@ -76,7 +76,7 @@ class UpdatePage(PermissionRequiredMixin, UpdateView):
 
 class DeletePage(PermissionRequiredMixin, DeleteView):
     model = Trip
-    fields = ['title', 'content', 'image', 'is_published', 'topic']
+    fields = ['title', 'slug', 'image', 'content', 'tag']
     template_name = 'trip/addpage.html'
     success_url = reverse_lazy('home')
     extra_context = {
@@ -177,7 +177,7 @@ class PostDetailView(View):
     def get(self, request, slug, *args, **kwargs):
         post = get_object_or_404(Trip, slug=slug)
         common_tags = Trip.tag.most_common()
-        last_posts = Trip.objects.all().order_by('-id')[:5]
+        last_posts = Trip.published.all().order_by('-id')[:5]
         comment_form = CommentForm()
         return render(request, 'trip/post_detail.html', context={
             'post': post,
