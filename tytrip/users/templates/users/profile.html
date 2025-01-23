@@ -4,9 +4,13 @@
 {% endblock %}
  
 {% block content %}
-<main class="main">
+  <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12">
+                    <div class="row justify-content-center">
+                        <div class="col-6">
+
 <h1>Профиль</h1>
- 
 <form method="post" enctype="multipart/form-data">
     {% csrf_token %}
     {% if user.photo %}
@@ -20,11 +24,16 @@
     <div class="form-error">{{ f.errors }}</div>
     <br>
     {% endfor %}
-    <p ><button type="submit">Сохранить</button></p>
+    <p ><button type="submit" class="btn btn-primary">Сохранить</button></p>
     <hr>
     {% if not perms.users.social_auth %}
         <p><a href="{% url 'users:password_change' %}">Сменить пароль</a></p>
     {% endif %}
 </form>
-</main>
+                        </div>
+                    </div>
+                </div>
+            </div>
+  </div>
+
 {% endblock %}

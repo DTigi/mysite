@@ -46,13 +46,13 @@ class IndexView(DataMixin, ListView):
 
 
 class AddPage(PermissionRequiredMixin, CreateView):
-    # model = Trip
-    # fields = ['title', 'slug', 'content', 'is_published', 'topic']
-    form_class = AddPostForm
+    model = Trip
+    fields = ['title', 'slug', 'image', 'content', 'tag']
+    # form_class = AddPostForm
     template_name = 'trip/addpage.html'
     success_url = reverse_lazy('home')
     extra_context = {
-        'title': 'Добавление статьи',
+        'title': 'Добавить статью',
     }
     permission_required = 'trip.add_trip'
     # login_url = '/admin/'

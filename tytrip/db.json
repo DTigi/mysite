@@ -1,25 +1,110 @@
 [
-//{
-//  "model": "auth.permission",
-//  "pk": 1,
-//  "fields": {
-//    "name": "Can add log entry",
-//    "content_type": [
-//      "admin",
-//      "logentry"
-//    ],
-//    "codename": "add_logentry"
-//  }
-//},
+{
+  "model": "admin.logentry",
+  "pk": 1,
+  "fields": {
+    "action_time": "2024-11-30T09:13:09.874Z",
+    "user": 1,
+    "content_type": 8,
+    "object_id": "1",
+    "object_repr": "зима",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2,
+  "fields": {
+    "action_time": "2024-11-30T09:13:24.103Z",
+    "user": 1,
+    "content_type": 8,
+    "object_id": "2",
+    "object_repr": "лето",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 3,
+  "fields": {
+    "action_time": "2024-11-30T09:13:42.771Z",
+    "user": 1,
+    "content_type": 8,
+    "object_id": "3",
+    "object_repr": "пляж",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 4,
+  "fields": {
+    "action_time": "2024-11-30T09:14:03.795Z",
+    "user": 1,
+    "content_type": 8,
+    "object_id": "4",
+    "object_repr": "горы",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 5,
+  "fields": {
+    "action_time": "2024-11-30T09:42:58.958Z",
+    "user": 1,
+    "content_type": 3,
+    "object_id": "1",
+    "object_repr": "moderator",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 6,
+  "fields": {
+    "action_time": "2024-11-30T09:43:24.030Z",
+    "user": 1,
+    "content_type": 11,
+    "object_id": "2",
+    "object_repr": "user1",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Groups\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 7,
+  "fields": {
+    "action_time": "2024-11-30T15:12:42.567Z",
+    "user": 1,
+    "content_type": 3,
+    "object_id": "2",
+    "object_repr": "social",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 1,
+  "fields": {
+    "name": "Can add log entry",
+    "content_type": 1,
+    "codename": "add_logentry"
+  }
+},
 {
   "model": "auth.permission",
   "pk": 2,
   "fields": {
     "name": "Can change log entry",
-    "content_type": [
-      "admin",
-      "logentry"
-    ],
+    "content_type": 1,
     "codename": "change_logentry"
   }
 },
@@ -28,10 +113,7 @@
   "pk": 3,
   "fields": {
     "name": "Can delete log entry",
-    "content_type": [
-      "admin",
-      "logentry"
-    ],
+    "content_type": 1,
     "codename": "delete_logentry"
   }
 },
@@ -40,10 +122,7 @@
   "pk": 4,
   "fields": {
     "name": "Can view log entry",
-    "content_type": [
-      "admin",
-      "logentry"
-    ],
+    "content_type": 1,
     "codename": "view_logentry"
   }
 },
@@ -52,10 +131,7 @@
   "pk": 5,
   "fields": {
     "name": "Can add permission",
-    "content_type": [
-      "auth",
-      "permission"
-    ],
+    "content_type": 2,
     "codename": "add_permission"
   }
 },
@@ -64,10 +140,7 @@
   "pk": 6,
   "fields": {
     "name": "Can change permission",
-    "content_type": [
-      "auth",
-      "permission"
-    ],
+    "content_type": 2,
     "codename": "change_permission"
   }
 },
@@ -76,10 +149,7 @@
   "pk": 7,
   "fields": {
     "name": "Can delete permission",
-    "content_type": [
-      "auth",
-      "permission"
-    ],
+    "content_type": 2,
     "codename": "delete_permission"
   }
 },
@@ -88,10 +158,7 @@
   "pk": 8,
   "fields": {
     "name": "Can view permission",
-    "content_type": [
-      "auth",
-      "permission"
-    ],
+    "content_type": 2,
     "codename": "view_permission"
   }
 },
@@ -100,10 +167,7 @@
   "pk": 9,
   "fields": {
     "name": "Can add group",
-    "content_type": [
-      "auth",
-      "group"
-    ],
+    "content_type": 3,
     "codename": "add_group"
   }
 },
@@ -112,10 +176,7 @@
   "pk": 10,
   "fields": {
     "name": "Can change group",
-    "content_type": [
-      "auth",
-      "group"
-    ],
+    "content_type": 3,
     "codename": "change_group"
   }
 },
@@ -124,10 +185,7 @@
   "pk": 11,
   "fields": {
     "name": "Can delete group",
-    "content_type": [
-      "auth",
-      "group"
-    ],
+    "content_type": 3,
     "codename": "delete_group"
   }
 },
@@ -136,10 +194,7 @@
   "pk": 12,
   "fields": {
     "name": "Can view group",
-    "content_type": [
-      "auth",
-      "group"
-    ],
+    "content_type": 3,
     "codename": "view_group"
   }
 },
@@ -148,10 +203,7 @@
   "pk": 13,
   "fields": {
     "name": "Can add content type",
-    "content_type": [
-      "contenttypes",
-      "contenttype"
-    ],
+    "content_type": 4,
     "codename": "add_contenttype"
   }
 },
@@ -160,10 +212,7 @@
   "pk": 14,
   "fields": {
     "name": "Can change content type",
-    "content_type": [
-      "contenttypes",
-      "contenttype"
-    ],
+    "content_type": 4,
     "codename": "change_contenttype"
   }
 },
@@ -172,10 +221,7 @@
   "pk": 15,
   "fields": {
     "name": "Can delete content type",
-    "content_type": [
-      "contenttypes",
-      "contenttype"
-    ],
+    "content_type": 4,
     "codename": "delete_contenttype"
   }
 },
@@ -184,10 +230,7 @@
   "pk": 16,
   "fields": {
     "name": "Can view content type",
-    "content_type": [
-      "contenttypes",
-      "contenttype"
-    ],
+    "content_type": 4,
     "codename": "view_contenttype"
   }
 },
@@ -196,10 +239,7 @@
   "pk": 17,
   "fields": {
     "name": "Can add session",
-    "content_type": [
-      "sessions",
-      "session"
-    ],
+    "content_type": 5,
     "codename": "add_session"
   }
 },
@@ -208,10 +248,7 @@
   "pk": 18,
   "fields": {
     "name": "Can change session",
-    "content_type": [
-      "sessions",
-      "session"
-    ],
+    "content_type": 5,
     "codename": "change_session"
   }
 },
@@ -220,10 +257,7 @@
   "pk": 19,
   "fields": {
     "name": "Can delete session",
-    "content_type": [
-      "sessions",
-      "session"
-    ],
+    "content_type": 5,
     "codename": "delete_session"
   }
 },
@@ -232,10 +266,7 @@
   "pk": 20,
   "fields": {
     "name": "Can view session",
-    "content_type": [
-      "sessions",
-      "session"
-    ],
+    "content_type": 5,
     "codename": "view_session"
   }
 },
@@ -244,10 +275,7 @@
   "pk": 21,
   "fields": {
     "name": "Can add capital",
-    "content_type": [
-      "trip",
-      "capital"
-    ],
+    "content_type": 6,
     "codename": "add_capital"
   }
 },
@@ -256,10 +284,7 @@
   "pk": 22,
   "fields": {
     "name": "Can change capital",
-    "content_type": [
-      "trip",
-      "capital"
-    ],
+    "content_type": 6,
     "codename": "change_capital"
   }
 },
@@ -268,10 +293,7 @@
   "pk": 23,
   "fields": {
     "name": "Can delete capital",
-    "content_type": [
-      "trip",
-      "capital"
-    ],
+    "content_type": 6,
     "codename": "delete_capital"
   }
 },
@@ -280,10 +302,7 @@
   "pk": 24,
   "fields": {
     "name": "Can view capital",
-    "content_type": [
-      "trip",
-      "capital"
-    ],
+    "content_type": 6,
     "codename": "view_capital"
   }
 },
@@ -292,10 +311,7 @@
   "pk": 25,
   "fields": {
     "name": "Can add tag post",
-    "content_type": [
-      "trip",
-      "tagpost"
-    ],
+    "content_type": 7,
     "codename": "add_tagpost"
   }
 },
@@ -304,10 +320,7 @@
   "pk": 26,
   "fields": {
     "name": "Can change tag post",
-    "content_type": [
-      "trip",
-      "tagpost"
-    ],
+    "content_type": 7,
     "codename": "change_tagpost"
   }
 },
@@ -316,10 +329,7 @@
   "pk": 27,
   "fields": {
     "name": "Can delete tag post",
-    "content_type": [
-      "trip",
-      "tagpost"
-    ],
+    "content_type": 7,
     "codename": "delete_tagpost"
   }
 },
@@ -328,10 +338,7 @@
   "pk": 28,
   "fields": {
     "name": "Can view tag post",
-    "content_type": [
-      "trip",
-      "tagpost"
-    ],
+    "content_type": 7,
     "codename": "view_tagpost"
   }
 },
@@ -340,10 +347,7 @@
   "pk": 29,
   "fields": {
     "name": "Can add Тема",
-    "content_type": [
-      "trip",
-      "topics"
-    ],
+    "content_type": 8,
     "codename": "add_topics"
   }
 },
@@ -352,10 +356,7 @@
   "pk": 30,
   "fields": {
     "name": "Can change Тема",
-    "content_type": [
-      "trip",
-      "topics"
-    ],
+    "content_type": 8,
     "codename": "change_topics"
   }
 },
@@ -364,10 +365,7 @@
   "pk": 31,
   "fields": {
     "name": "Can delete Тема",
-    "content_type": [
-      "trip",
-      "topics"
-    ],
+    "content_type": 8,
     "codename": "delete_topics"
   }
 },
@@ -376,10 +374,7 @@
   "pk": 32,
   "fields": {
     "name": "Can view Тема",
-    "content_type": [
-      "trip",
-      "topics"
-    ],
+    "content_type": 8,
     "codename": "view_topics"
   }
 },
@@ -388,10 +383,7 @@
   "pk": 33,
   "fields": {
     "name": "Can add Путешествие",
-    "content_type": [
-      "trip",
-      "trip"
-    ],
+    "content_type": 9,
     "codename": "add_trip"
   }
 },
@@ -400,10 +392,7 @@
   "pk": 34,
   "fields": {
     "name": "Can change Путешествие",
-    "content_type": [
-      "trip",
-      "trip"
-    ],
+    "content_type": 9,
     "codename": "change_trip"
   }
 },
@@ -412,10 +401,7 @@
   "pk": 35,
   "fields": {
     "name": "Can delete Путешествие",
-    "content_type": [
-      "trip",
-      "trip"
-    ],
+    "content_type": 9,
     "codename": "delete_trip"
   }
 },
@@ -424,10 +410,7 @@
   "pk": 36,
   "fields": {
     "name": "Can view Путешествие",
-    "content_type": [
-      "trip",
-      "trip"
-    ],
+    "content_type": 9,
     "codename": "view_trip"
   }
 },
@@ -436,10 +419,7 @@
   "pk": 37,
   "fields": {
     "name": "Can add upload file",
-    "content_type": [
-      "trip",
-      "uploadfile"
-    ],
+    "content_type": 10,
     "codename": "add_uploadfile"
   }
 },
@@ -448,10 +428,7 @@
   "pk": 38,
   "fields": {
     "name": "Can change upload file",
-    "content_type": [
-      "trip",
-      "uploadfile"
-    ],
+    "content_type": 10,
     "codename": "change_uploadfile"
   }
 },
@@ -460,10 +437,7 @@
   "pk": 39,
   "fields": {
     "name": "Can delete upload file",
-    "content_type": [
-      "trip",
-      "uploadfile"
-    ],
+    "content_type": 10,
     "codename": "delete_uploadfile"
   }
 },
@@ -472,10 +446,7 @@
   "pk": 40,
   "fields": {
     "name": "Can view upload file",
-    "content_type": [
-      "trip",
-      "uploadfile"
-    ],
+    "content_type": 10,
     "codename": "view_uploadfile"
   }
 },
@@ -484,10 +455,7 @@
   "pk": 41,
   "fields": {
     "name": "Can add user",
-    "content_type": [
-      "users",
-      "user"
-    ],
+    "content_type": 11,
     "codename": "add_user"
   }
 },
@@ -496,10 +464,7 @@
   "pk": 42,
   "fields": {
     "name": "Can change user",
-    "content_type": [
-      "users",
-      "user"
-    ],
+    "content_type": 11,
     "codename": "change_user"
   }
 },
@@ -508,10 +473,7 @@
   "pk": 43,
   "fields": {
     "name": "Can delete user",
-    "content_type": [
-      "users",
-      "user"
-    ],
+    "content_type": 11,
     "codename": "delete_user"
   }
 },
@@ -520,10 +482,7 @@
   "pk": 44,
   "fields": {
     "name": "Can view user",
-    "content_type": [
-      "users",
-      "user"
-    ],
+    "content_type": 11,
     "codename": "view_user"
   }
 },
@@ -532,10 +491,7 @@
   "pk": 45,
   "fields": {
     "name": "Social Auth",
-    "content_type": [
-      "users",
-      "user"
-    ],
+    "content_type": 11,
     "codename": "social_auth"
   }
 },
@@ -544,10 +500,7 @@
   "pk": 46,
   "fields": {
     "name": "Can add association",
-    "content_type": [
-      "social_django",
-      "association"
-    ],
+    "content_type": 12,
     "codename": "add_association"
   }
 },
@@ -556,10 +509,7 @@
   "pk": 47,
   "fields": {
     "name": "Can change association",
-    "content_type": [
-      "social_django",
-      "association"
-    ],
+    "content_type": 12,
     "codename": "change_association"
   }
 },
@@ -568,10 +518,7 @@
   "pk": 48,
   "fields": {
     "name": "Can delete association",
-    "content_type": [
-      "social_django",
-      "association"
-    ],
+    "content_type": 12,
     "codename": "delete_association"
   }
 },
@@ -580,10 +527,7 @@
   "pk": 49,
   "fields": {
     "name": "Can view association",
-    "content_type": [
-      "social_django",
-      "association"
-    ],
+    "content_type": 12,
     "codename": "view_association"
   }
 },
@@ -592,10 +536,7 @@
   "pk": 50,
   "fields": {
     "name": "Can add code",
-    "content_type": [
-      "social_django",
-      "code"
-    ],
+    "content_type": 13,
     "codename": "add_code"
   }
 },
@@ -604,10 +545,7 @@
   "pk": 51,
   "fields": {
     "name": "Can change code",
-    "content_type": [
-      "social_django",
-      "code"
-    ],
+    "content_type": 13,
     "codename": "change_code"
   }
 },
@@ -616,10 +554,7 @@
   "pk": 52,
   "fields": {
     "name": "Can delete code",
-    "content_type": [
-      "social_django",
-      "code"
-    ],
+    "content_type": 13,
     "codename": "delete_code"
   }
 },
@@ -628,10 +563,7 @@
   "pk": 53,
   "fields": {
     "name": "Can view code",
-    "content_type": [
-      "social_django",
-      "code"
-    ],
+    "content_type": 13,
     "codename": "view_code"
   }
 },
@@ -640,10 +572,7 @@
   "pk": 54,
   "fields": {
     "name": "Can add nonce",
-    "content_type": [
-      "social_django",
-      "nonce"
-    ],
+    "content_type": 14,
     "codename": "add_nonce"
   }
 },
@@ -652,10 +581,7 @@
   "pk": 55,
   "fields": {
     "name": "Can change nonce",
-    "content_type": [
-      "social_django",
-      "nonce"
-    ],
+    "content_type": 14,
     "codename": "change_nonce"
   }
 },
@@ -664,10 +590,7 @@
   "pk": 56,
   "fields": {
     "name": "Can delete nonce",
-    "content_type": [
-      "social_django",
-      "nonce"
-    ],
+    "content_type": 14,
     "codename": "delete_nonce"
   }
 },
@@ -676,10 +599,7 @@
   "pk": 57,
   "fields": {
     "name": "Can view nonce",
-    "content_type": [
-      "social_django",
-      "nonce"
-    ],
+    "content_type": 14,
     "codename": "view_nonce"
   }
 },
@@ -688,10 +608,7 @@
   "pk": 58,
   "fields": {
     "name": "Can add user social auth",
-    "content_type": [
-      "social_django",
-      "usersocialauth"
-    ],
+    "content_type": 15,
     "codename": "add_usersocialauth"
   }
 },
@@ -700,10 +617,7 @@
   "pk": 59,
   "fields": {
     "name": "Can change user social auth",
-    "content_type": [
-      "social_django",
-      "usersocialauth"
-    ],
+    "content_type": 15,
     "codename": "change_usersocialauth"
   }
 },
@@ -712,10 +626,7 @@
   "pk": 60,
   "fields": {
     "name": "Can delete user social auth",
-    "content_type": [
-      "social_django",
-      "usersocialauth"
-    ],
+    "content_type": 15,
     "codename": "delete_usersocialauth"
   }
 },
@@ -724,10 +635,7 @@
   "pk": 61,
   "fields": {
     "name": "Can view user social auth",
-    "content_type": [
-      "social_django",
-      "usersocialauth"
-    ],
+    "content_type": 15,
     "codename": "view_usersocialauth"
   }
 },
@@ -736,10 +644,7 @@
   "pk": 62,
   "fields": {
     "name": "Can add partial",
-    "content_type": [
-      "social_django",
-      "partial"
-    ],
+    "content_type": 16,
     "codename": "add_partial"
   }
 },
@@ -748,10 +653,7 @@
   "pk": 63,
   "fields": {
     "name": "Can change partial",
-    "content_type": [
-      "social_django",
-      "partial"
-    ],
+    "content_type": 16,
     "codename": "change_partial"
   }
 },
@@ -760,10 +662,7 @@
   "pk": 64,
   "fields": {
     "name": "Can delete partial",
-    "content_type": [
-      "social_django",
-      "partial"
-    ],
+    "content_type": 16,
     "codename": "delete_partial"
   }
 },
@@ -772,347 +671,8 @@
   "pk": 65,
   "fields": {
     "name": "Can view partial",
-    "content_type": [
-      "social_django",
-      "partial"
-    ],
+    "content_type": 16,
     "codename": "view_partial"
-  }
-},
-{
-  "model": "auth.permission",
-  "pk": 66,
-  "fields": {
-    "name": "Can add captcha store",
-    "content_type": [
-      "captcha",
-      "captchastore"
-    ],
-    "codename": "add_captchastore"
-  }
-},
-{
-  "model": "auth.permission",
-  "pk": 67,
-  "fields": {
-    "name": "Can change captcha store",
-    "content_type": [
-      "captcha",
-      "captchastore"
-    ],
-    "codename": "change_captchastore"
-  }
-},
-{
-  "model": "auth.permission",
-  "pk": 68,
-  "fields": {
-    "name": "Can delete captcha store",
-    "content_type": [
-      "captcha",
-      "captchastore"
-    ],
-    "codename": "delete_captchastore"
-  }
-},
-{
-  "model": "auth.permission",
-  "pk": 69,
-  "fields": {
-    "name": "Can view captcha store",
-    "content_type": [
-      "captcha",
-      "captchastore"
-    ],
-    "codename": "view_captchastore"
-  }
-},
-{
-  "model": "auth.permission",
-  "pk": 70,
-  "fields": {
-    "name": "Can add site",
-    "content_type": [
-      "sites",
-      "site"
-    ],
-    "codename": "add_site"
-  }
-},
-{
-  "model": "auth.permission",
-  "pk": 71,
-  "fields": {
-    "name": "Can change site",
-    "content_type": [
-      "sites",
-      "site"
-    ],
-    "codename": "change_site"
-  }
-},
-{
-  "model": "auth.permission",
-  "pk": 72,
-  "fields": {
-    "name": "Can delete site",
-    "content_type": [
-      "sites",
-      "site"
-    ],
-    "codename": "delete_site"
-  }
-},
-{
-  "model": "auth.permission",
-  "pk": 73,
-  "fields": {
-    "name": "Can view site",
-    "content_type": [
-      "sites",
-      "site"
-    ],
-    "codename": "view_site"
-  }
-},
-{
-  "model": "auth.permission",
-  "pk": 74,
-  "fields": {
-    "name": "Can add Token",
-    "content_type": [
-      "authtoken",
-      "token"
-    ],
-    "codename": "add_token"
-  }
-},
-{
-  "model": "auth.permission",
-  "pk": 75,
-  "fields": {
-    "name": "Can change Token",
-    "content_type": [
-      "authtoken",
-      "token"
-    ],
-    "codename": "change_token"
-  }
-},
-{
-  "model": "auth.permission",
-  "pk": 76,
-  "fields": {
-    "name": "Can delete Token",
-    "content_type": [
-      "authtoken",
-      "token"
-    ],
-    "codename": "delete_token"
-  }
-},
-{
-  "model": "auth.permission",
-  "pk": 77,
-  "fields": {
-    "name": "Can view Token",
-    "content_type": [
-      "authtoken",
-      "token"
-    ],
-    "codename": "view_token"
-  }
-},
-{
-  "model": "auth.permission",
-  "pk": 78,
-  "fields": {
-    "name": "Can add Token",
-    "content_type": [
-      "authtoken",
-      "tokenproxy"
-    ],
-    "codename": "add_tokenproxy"
-  }
-},
-{
-  "model": "auth.permission",
-  "pk": 79,
-  "fields": {
-    "name": "Can change Token",
-    "content_type": [
-      "authtoken",
-      "tokenproxy"
-    ],
-    "codename": "change_tokenproxy"
-  }
-},
-{
-  "model": "auth.permission",
-  "pk": 80,
-  "fields": {
-    "name": "Can delete Token",
-    "content_type": [
-      "authtoken",
-      "tokenproxy"
-    ],
-    "codename": "delete_tokenproxy"
-  }
-},
-{
-  "model": "auth.permission",
-  "pk": 81,
-  "fields": {
-    "name": "Can view Token",
-    "content_type": [
-      "authtoken",
-      "tokenproxy"
-    ],
-    "codename": "view_tokenproxy"
-  }
-},
-{
-  "model": "auth.permission",
-  "pk": 82,
-  "fields": {
-    "name": "Can add tag",
-    "content_type": [
-      "taggit",
-      "tag"
-    ],
-    "codename": "add_tag"
-  }
-},
-{
-  "model": "auth.permission",
-  "pk": 83,
-  "fields": {
-    "name": "Can change tag",
-    "content_type": [
-      "taggit",
-      "tag"
-    ],
-    "codename": "change_tag"
-  }
-},
-{
-  "model": "auth.permission",
-  "pk": 84,
-  "fields": {
-    "name": "Can delete tag",
-    "content_type": [
-      "taggit",
-      "tag"
-    ],
-    "codename": "delete_tag"
-  }
-},
-{
-  "model": "auth.permission",
-  "pk": 85,
-  "fields": {
-    "name": "Can view tag",
-    "content_type": [
-      "taggit",
-      "tag"
-    ],
-    "codename": "view_tag"
-  }
-},
-{
-  "model": "auth.permission",
-  "pk": 86,
-  "fields": {
-    "name": "Can add tagged item",
-    "content_type": [
-      "taggit",
-      "taggeditem"
-    ],
-    "codename": "add_taggeditem"
-  }
-},
-{
-  "model": "auth.permission",
-  "pk": 87,
-  "fields": {
-    "name": "Can change tagged item",
-    "content_type": [
-      "taggit",
-      "taggeditem"
-    ],
-    "codename": "change_taggeditem"
-  }
-},
-{
-  "model": "auth.permission",
-  "pk": 88,
-  "fields": {
-    "name": "Can delete tagged item",
-    "content_type": [
-      "taggit",
-      "taggeditem"
-    ],
-    "codename": "delete_taggeditem"
-  }
-},
-{
-  "model": "auth.permission",
-  "pk": 89,
-  "fields": {
-    "name": "Can view tagged item",
-    "content_type": [
-      "taggit",
-      "taggeditem"
-    ],
-    "codename": "view_taggeditem"
-  }
-},
-{
-  "model": "auth.permission",
-  "pk": 90,
-  "fields": {
-    "name": "Can add Комментарий",
-    "content_type": [
-      "trip",
-      "comment"
-    ],
-    "codename": "add_comment"
-  }
-},
-{
-  "model": "auth.permission",
-  "pk": 91,
-  "fields": {
-    "name": "Can change Комментарий",
-    "content_type": [
-      "trip",
-      "comment"
-    ],
-    "codename": "change_comment"
-  }
-},
-{
-  "model": "auth.permission",
-  "pk": 92,
-  "fields": {
-    "name": "Can delete Комментарий",
-    "content_type": [
-      "trip",
-      "comment"
-    ],
-    "codename": "delete_comment"
-  }
-},
-{
-  "model": "auth.permission",
-  "pk": 93,
-  "fields": {
-    "name": "Can view Комментарий",
-    "content_type": [
-      "trip",
-      "comment"
-    ],
-    "codename": "view_comment"
   }
 },
 {
@@ -1121,26 +681,10 @@
   "fields": {
     "name": "moderator",
     "permissions": [
-      [
-        "add_trip",
-        "trip",
-        "trip"
-      ],
-      [
-        "change_trip",
-        "trip",
-        "trip"
-      ],
-      [
-        "delete_trip",
-        "trip",
-        "trip"
-      ],
-      [
-        "view_trip",
-        "trip",
-        "trip"
-      ]
+      33,
+      34,
+      35,
+      36
     ]
   }
 },
@@ -1150,28 +694,8 @@
   "fields": {
     "name": "social",
     "permissions": [
-      [
-        "social_auth",
-        "users",
-        "user"
-      ]
+      45
     ]
-  }
-},
-{
-  "model": "sessions.session",
-  "pk": "4tq0qpaq2sao4zibxnwrfoz2xfp7xchf",
-  "fields": {
-    "session_data": ".eJxVjDEOwjAMRe-SGUWU2o7NyM4ZqjhOaAG1UtNOiLtDpQ6w_vfef7kurkvfrTXP3WDu7Bp3-N00pkceN2D3ON4mn6ZxmQf1m-J3Wv11svy87O7fQR9r_60TsSAjCWQSKhEIGBVbg_aYQuYARsaGKtyIkjJKIohB1AoWOLn3B8D0N1Y:1tNvVs:-AKVy9n5hmAvw2dxJERgdaotp3uKN68tPy_Evt2-Utc",
-    "expire_date": "2025-01-01T14:59:00.517Z"
-  }
-},
-{
-  "model": "sessions.session",
-  "pk": "c2tu4c6txjh56vaufx1012yq212uez5s",
-  "fields": {
-    "session_data": ".eJxVjDEOwjAMRe-SGUWU2o7NyM4ZqjhOaAG1UtNOiLtDpQ6w_vfef7kurkvfrTXP3WDu7Bp3-N00pkceN2D3ON4mn6ZxmQf1m-J3Wv11svy87O7fQR9r_60TsSAjCWQSKhEIGBVbg_aYQuYARsaGKtyIkjJKIohB1AoWOLn3B8D0N1Y:1tIDiC:kIN8biF-rKqweJfQN1UDN6AKLnnYlqiRF2Qa_SJQ4lw",
-    "expire_date": "2024-12-16T21:12:08.129Z"
   }
 },
 {
@@ -1184,26 +708,10 @@
 },
 {
   "model": "sessions.session",
-  "pk": "kd67cwexikrhoolzmvgvl4y7fab2w93l",
+  "pk": "wt2sbd5vhefjag1dpsknz9loh22wije1",
   "fields": {
-    "session_data": ".eJxVjEsOwiAUAO_C2hAs7_Fx6b5nII-fVA0kpV0Z764kXeh2ZjIv5mjfitt7Wt0S2YVN7PTLPIVHqkPEO9Vb46HVbV08Hwk_bOdzi-l5Pdq_QaFexjalrNBGssqEDMqjRCE0WPt95IkMQMAoUWoTfLRBa6HAZ9DGEJwFsvcH55A3jw:1tLiCJ:M9pkIOh_8E09dwT4sQaYqFhCJJ2US2jRzc4rDXZSsj8",
-    "expire_date": "2024-12-26T12:21:39.076Z"
-  }
-},
-{
-  "model": "sessions.session",
-  "pk": "oolbavt6xd6bjipowe09mnjt7saqkac3",
-  "fields": {
-    "session_data": ".eJxVjDEOwjAMRe-SGUWU2o7NyM4ZqjhOaAG1UtNOiLtDpQ6w_vfef7kurkvfrTXP3WDu7Bp3-N00pkceN2D3ON4mn6ZxmQf1m-J3Wv11svy87O7fQR9r_60TsSAjCWQSKhEIGBVbg_aYQuYARsaGKtyIkjJKIohB1AoWOLn3B8D0N1Y:1tLkV9:uJV1hOn7_vbS-DJoNkUxGu-xyKptFE6VKoT45Mqa-wM",
-    "expire_date": "2024-12-26T14:49:15.360Z"
-  }
-},
-{
-  "model": "sessions.session",
-  "pk": "oui19x14b3edvl7i1jgrzzmjwfd7n8wm",
-  "fields": {
-    "session_data": ".eJxVjDsOwjAQBe_iGln-4B8lPWew1t41DiBbipMKcXcSKQW0M_Pem0VYlxrXQXOckF2YZadfliA_qe0CH9DunefelnlKfE_4YQe_daTX9Wj_DiqMuq1BGF2QUEo0Nmk0IWjvjJbWBTAlo9ioRBDgFEAmL7MKQaSz9FQUefb5AucAOAE:1tNuNg:cgywzmyTji6OpSPw_Y2wYQgi6QKJdGYRFyg0jDvnfwU",
-    "expire_date": "2025-01-01T13:46:28.121Z"
+    "session_data": "eyJnaXRodWJfc3RhdGUiOiJGRndQMmJSWmE3NFVVdHJ3N0Z5ZFBZa1BUc3VadUxvVCIsInZrLW9hdXRoMl9zdGF0ZSI6Inp3T0hoRUZVRFNZMzAyeTJSYzdGd3lnWlh2YWUycU5CIn0:1tHq4R:rFQoC6ia6CN950kuSEEI-5sVLe4NkV_t4wWGOxuShuU",
+    "expire_date": "2024-12-15T19:57:31.639Z"
   }
 },
 {
@@ -1212,6 +720,23 @@
   "fields": {
     "session_data": "eyJ2ay1vYXV0aDJfc3RhdGUiOiJ4d0Yxbnd6OWtPNjJ2cDFzV3hmS2FHR0xTMWNBN3gyTSJ9:1tHnkG:9c0D2QR74iI9jxMe74ty_SWtHYwhcQtPEYB2OwsoCxI",
     "expire_date": "2024-12-15T17:28:32.268Z"
+  }
+},
+{
+  "model": "trip.trip",
+  "pk": 1,
+  "fields": {
+    "title": "Лето в горах",
+    "slug": "leto-v-gorah",
+    "image": "images/2024/11/30/nature-italiya-gori-ozero-stroenie-gornii_peizazh-80647.jpeg",
+    "content": "Лето в горах",
+    "time_create": "2024-11-30T09:15:33.375Z",
+    "time_update": "2024-11-30T09:15:33.375Z",
+    "is_published": true,
+    "topic": 4,
+    "capital": null,
+    "author": 1,
+    "tags": []
   }
 },
 {
@@ -1247,59 +772,11 @@
   }
 },
 {
-  "model": "trip.tagpost",
-  "pk": 1,
-  "fields": {
-    "tag": "simple",
-    "slug": "simple"
-  }
-},
-{
-  "model": "trip.tagpost",
-  "pk": 2,
-  "fields": {
-    "tag": "tag",
-    "slug": "tag"
-  }
-},
-{
-  "model": "trip.tagpost",
-  "pk": 3,
-  "fields": {
-    "tag": "sea",
-    "slug": "sea"
-  }
-},
-{
-  "model": "trip.tagpost",
-  "pk": 4,
-  "fields": {
-    "tag": "coast",
-    "slug": "coast"
-  }
-},
-{
-  "model": "trip.tagpost",
-  "pk": 5,
-  "fields": {
-    "tag": "winter",
-    "slug": "winter"
-  }
-},
-{
-  "model": "trip.tagpost",
-  "pk": 6,
-  "fields": {
-    "tag": "summer",
-    "slug": "summer"
-  }
-},
-{
   "model": "users.user",
   "pk": 1,
   "fields": {
     "password": "pbkdf2_sha256$870000$NAuj4mrK9sRYTrLCUZ5mDJ$5voS4jobzqFxPjLLgTw5SL1fB0LrPb2Q6cSUQmqsri0=",
-    "last_login": "2024-12-18T14:59:00.515Z",
+    "last_login": "2024-12-01T16:45:51.583Z",
     "is_superuser": true,
     "username": "root",
     "first_name": "",
@@ -1319,7 +796,7 @@
   "pk": 2,
   "fields": {
     "password": "pbkdf2_sha256$870000$4NoilwUJceNJ3IWuELuYuM$54EILQq2C7v8ZpZQF6xsDdTGJk7oXzMr3gzc1d2vFV8=",
-    "last_login": "2024-12-12T12:21:39.074Z",
+    "last_login": "2024-11-30T19:34:00.333Z",
     "is_superuser": false,
     "username": "user1",
     "first_name": "Тигиняну",
@@ -1331,9 +808,7 @@
     "photo": "",
     "date_birth": null,
     "groups": [
-      [
-        "moderator"
-      ]
+      1
     ],
     "user_permissions": []
   }
@@ -1355,881 +830,9 @@
     "photo": "",
     "date_birth": null,
     "groups": [
-      [
-        "social"
-      ]
+      2
     ],
     "user_permissions": []
-  }
-},
-{
-  "model": "users.user",
-  "pk": 4,
-  "fields": {
-    "password": "!YmNWqa1tHhqWjiu76lQ6SMmaqiblcMeAzMcxhZaQ",
-    "last_login": "2024-12-02T21:12:01.767Z",
-    "is_superuser": false,
-    "username": "DTigiac202dcff88e47ee",
-    "first_name": "",
-    "last_name": "",
-    "email": "",
-    "is_staff": false,
-    "is_active": true,
-    "date_joined": "2024-12-02T21:05:22.676Z",
-    "photo": "",
-    "date_birth": null,
-    "groups": [
-      [
-        "social"
-      ]
-    ],
-    "user_permissions": []
-  }
-},
-{
-  "model": "users.user",
-  "pk": 6,
-  "fields": {
-    "password": "pbkdf2_sha256$870000$3d4szJIUjegJo6GSUDlCzL$J3+HluEhu+AsTS6mA4byZ9AZ0u8xzuk81GgymVDc4ok=",
-    "last_login": "2024-12-18T13:46:28.119Z",
-    "is_superuser": false,
-    "username": "user5",
-    "first_name": "",
-    "last_name": "",
-    "email": "",
-    "is_staff": false,
-    "is_active": true,
-    "date_joined": "2024-12-18T13:46:26.967Z",
-    "photo": "",
-    "date_birth": null,
-    "groups": [],
-    "user_permissions": []
-  }
-},
-{
-  "model": "captcha.captchastore",
-  "pk": 1,
-  "fields": {
-    "challenge": "XBSG",
-    "response": "xbsg",
-    "hashkey": "6da68253c4f080e7b5b9e48c07737422d4dfe0ad",
-    "expiration": "2024-12-06T13:15:06.647Z"
-  }
-},
-{
-  "model": "captcha.captchastore",
-  "pk": 2,
-  "fields": {
-    "challenge": "FPAG",
-    "response": "fpag",
-    "hashkey": "f0250b72b625f0f31880ed470e63b85e406dcd5b",
-    "expiration": "2024-12-06T13:16:29.419Z"
-  }
-},
-{
-  "model": "captcha.captchastore",
-  "pk": 3,
-  "fields": {
-    "challenge": "RCYW",
-    "response": "rcyw",
-    "hashkey": "cef2507469904aa793f50692f4eb045a26bcf6f3",
-    "expiration": "2024-12-06T13:16:32.401Z"
-  }
-},
-{
-  "model": "captcha.captchastore",
-  "pk": 4,
-  "fields": {
-    "challenge": "DMUK",
-    "response": "dmuk",
-    "hashkey": "aafa755e88c232820446b5ccc05d1ec7a70e41f9",
-    "expiration": "2024-12-06T13:16:33.966Z"
-  }
-},
-{
-  "model": "sites.site",
-  "pk": 1,
-  "fields": {
-    "domain": "tytrip.ru",
-    "name": "tytrip.ru"
-  }
-},
-{
-  "model": "trip.trip",
-  "pk": 1,
-  "fields": {
-    "title": "Лето в горах",
-    "slug": "leto-v-gorah",
-    "image": "images/2024/12/13/italy800x600.jpg",
-    "content": "Начнём новый год с ярких впечатлений, активного отдыха в горах Грузии и знакомства с колоритной культурой. Посетим более 7 городов, среди которых — знаменитый горнолыжный курорт Гудаури, родина «Мимино», минеральный Боржоми и пещерный Уплисцихе. Прогуляемся по нарядным улицам Тбилиси, увидим древнейшие памятники архитектуры и современные достопримечательности. Отправимся в винный край Грузии, заберёмся высоко на Крестовый перевал и попробуем национальные блюда. Для желающих будет организован праздничный ужин с шоу-программой в одном из лучших ресторанов Тбилиси.",
-    "time_create": "2024-11-30T09:15:33.375Z",
-    "time_update": "2024-12-13T08:09:12.318Z",
-    "is_published": true,
-    "topic": 4,
-    "capital": null,
-    "author": [
-      "root"
-    ],
-    "tags": [
-      4,
-      5
-    ]
-  }
-},
-{
-  "model": "trip.trip",
-  "pk": 2,
-  "fields": {
-    "title": "Южно-Сахалинск",
-    "slug": "yuzhno-sahalinsk",
-    "image": "images/2024/12/13/Sheregesh-hotels800x600.jpg",
-    "content": "Курорт «Горный воздух»\r\n«А из нашего окна трасса лыжная видна», — скажут вам жители Южно-Сахалинска. Курорт находится на горах Большевик и Красная и заметен из любой точки города.\r\nРельеф ровный и прямой, самый интересный ищите на Южном склоне, трассе «Армейка» и на горе Красная. Снег плотно утрамбован и на нём приятно закантовываться, но после 15:00 полотно отшлифовывается из-за проскальзываний и становится жёстче.",
-    "time_create": "2024-12-12T12:26:50.643Z",
-    "time_update": "2024-12-13T08:08:47.621Z",
-    "is_published": true,
-    "topic": 3,
-    "capital": null,
-    "author": [
-      "user1"
-    ],
-    "tags": [
-      1,
-      3,
-      5
-    ]
-  }
-},
-{
-  "model": "trip.trip",
-  "pk": 3,
-  "fields": {
-    "title": "Тбилиси",
-    "slug": "tbilisi",
-    "image": "images/2024/12/13/kursh800x600.jpg",
-    "content": "Курорт «Гудаури»\r\nГотовьтесь рассекать горный воздух, как орёл из грузинских тостов. Здесь сможете прокачать скиллы фрирайда и насладиться топовыми видами на Казбек.\r\nПолезно знать.\r\nПо трассам ежедневно проезжают ратраки, поэтому утром здесь всегда идеальный вельвет. Если захотите покататься вне курорта, обязательно берите с собой сертифицированного инструктора: некоторые участки склонов могут быть опасны.",
-    "time_create": "2024-12-12T17:02:18.850Z",
-    "time_update": "2024-12-13T08:08:35.643Z",
-    "is_published": true,
-    "topic": 1,
-    "capital": null,
-    "author": null,
-    "tags": [
-      5
-    ]
-  }
-},
-{
-  "model": "trip.trip",
-  "pk": 4,
-  "fields": {
-    "title": "Сочи",
-    "slug": "sochi",
-    "image": "images/2024/12/13/Small-Ski-Resorts-in-America800x600.jpg",
-    "content": "Красная поляна\r\nОдна из трёх горнолыжек в Сочи — спасибо Олимпиаде-2014. Здесь чуть меньше трасс, зато сразу восемь зон для фрирайда.\r\nПолезно знать\r\nДикие участки покрывает классный пухляк, но на уровне ниже 1 500 метров он быстро тяжелеет из-за влажности. В целом снег рыхлый и выдувается медленнее из-за не очень сильного ветра",
-    "time_create": "2024-12-12T17:11:55.838Z",
-    "time_update": "2024-12-13T08:08:20.071Z",
-    "is_published": true,
-    "topic": 1,
-    "capital": null,
-    "author": null,
-    "tags": [
-      3,
-      4,
-      5,
-      6
-    ]
-  }
-},
-{
-  "model": "trip.trip",
-  "pk": 5,
-  "fields": {
-    "title": "Алматы",
-    "slug": "almaty",
-    "image": "images/2024/12/13/serbia800x600.jpg",
-    "content": "Курорт «Шымбулак»\r\nИз советской тренировочной базы — в модный спот для горнолыжников. Приезжайте покорять склоны и рассекать на высокогорном катке.\r\nПолезно знать\r\nОбычно снега много — он скользкий и не такой сухой, как на севере. Но подмерзает через пару дней после осадков и становится более медленным",
-    "time_create": "2024-12-12T17:19:14.490Z",
-    "time_update": "2024-12-13T08:08:04.318Z",
-    "is_published": true,
-    "topic": 4,
-    "capital": null,
-    "author": null,
-    "tags": [
-      1,
-      5,
-      6
-    ]
-  }
-},
-{
-  "model": "trip.trip",
-  "pk": 6,
-  "fields": {
-    "title": "Ставрополь",
-    "slug": "stavropol",
-    "image": "images/2024/12/13/palandoken800x600.jpg",
-    "content": "Курорт «Архыз»\r\nКурорт, который растянулся сразу на два посёлка. Новичкам зайдёт самая длинная высокогорная трасса в стране, а продвинутым райдерам — «чёрные» склоны, сноупарк и ски-туры.",
-    "time_create": "2024-12-12T18:42:04.489Z",
-    "time_update": "2024-12-13T08:07:48.244Z",
-    "is_published": true,
-    "topic": 1,
-    "capital": null,
-    "author": null,
-    "tags": [
-      2,
-      5
-    ]
-  }
-},
-{
-  "model": "trip.trip",
-  "pk": 7,
-  "fields": {
-    "title": "Минеральные воды",
-    "slug": "mineralnye-vody",
-    "image": "images/2024/12/13/mineral.jpg",
-    "content": "Домбай\r\nЕсли гора к вам так и не пришла, хватайте удобные ботинки и вперёд — покорять кавказские вершины и ущелья. По пути сможете искупаться в прозрачных озёрах и заценить церкви X века.\r\nПолезно знать\r\nПлатить везде картой не получится — берите с собой наличные\r\nЕсли едете летом, запаситесь репеллентом от слепней",
-    "time_create": "2024-12-13T08:15:49.593Z",
-    "time_update": "2024-12-13T08:15:54.608Z",
-    "is_published": true,
-    "topic": 4,
-    "capital": null,
-    "author": null,
-    "tags": [
-      1,
-      5,
-      6
-    ]
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 1,
-  "fields": {
-    "action_time": "2024-11-30T09:13:09.874Z",
-    "user": [
-      "root"
-    ],
-    "content_type": [
-      "trip",
-      "topics"
-    ],
-    "object_id": "1",
-    "object_repr": "зима",
-    "action_flag": 1,
-    "change_message": "[{\"added\": {}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 2,
-  "fields": {
-    "action_time": "2024-11-30T09:13:24.103Z",
-    "user": [
-      "root"
-    ],
-    "content_type": [
-      "trip",
-      "topics"
-    ],
-    "object_id": "2",
-    "object_repr": "лето",
-    "action_flag": 1,
-    "change_message": "[{\"added\": {}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 3,
-  "fields": {
-    "action_time": "2024-11-30T09:13:42.771Z",
-    "user": [
-      "root"
-    ],
-    "content_type": [
-      "trip",
-      "topics"
-    ],
-    "object_id": "3",
-    "object_repr": "пляж",
-    "action_flag": 1,
-    "change_message": "[{\"added\": {}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 4,
-  "fields": {
-    "action_time": "2024-11-30T09:14:03.795Z",
-    "user": [
-      "root"
-    ],
-    "content_type": [
-      "trip",
-      "topics"
-    ],
-    "object_id": "4",
-    "object_repr": "горы",
-    "action_flag": 1,
-    "change_message": "[{\"added\": {}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 5,
-  "fields": {
-    "action_time": "2024-11-30T09:42:58.958Z",
-    "user": [
-      "root"
-    ],
-    "content_type": [
-      "auth",
-      "group"
-    ],
-    "object_id": "1",
-    "object_repr": "moderator",
-    "action_flag": 1,
-    "change_message": "[{\"added\": {}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 6,
-  "fields": {
-    "action_time": "2024-11-30T09:43:24.030Z",
-    "user": [
-      "root"
-    ],
-    "content_type": [
-      "users",
-      "user"
-    ],
-    "object_id": "2",
-    "object_repr": "user1",
-    "action_flag": 2,
-    "change_message": "[{\"changed\": {\"fields\": [\"Groups\"]}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 7,
-  "fields": {
-    "action_time": "2024-11-30T15:12:42.567Z",
-    "user": [
-      "root"
-    ],
-    "content_type": [
-      "auth",
-      "group"
-    ],
-    "object_id": "2",
-    "object_repr": "social",
-    "action_flag": 1,
-    "change_message": "[{\"added\": {}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 8,
-  "fields": {
-    "action_time": "2024-12-09T18:16:32.322Z",
-    "user": [
-      "root"
-    ],
-    "content_type": [
-      "sites",
-      "site"
-    ],
-    "object_id": "1",
-    "object_repr": "tytrip.ru",
-    "action_flag": 2,
-    "change_message": "[{\"changed\": {\"fields\": [\"Domain name\", \"Display name\"]}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 9,
-  "fields": {
-    "action_time": "2024-12-12T14:49:44.071Z",
-    "user": [
-      "root"
-    ],
-    "content_type": [
-      "trip",
-      "tagpost"
-    ],
-    "object_id": "1",
-    "object_repr": "simple",
-    "action_flag": 1,
-    "change_message": "[{\"added\": {}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 10,
-  "fields": {
-    "action_time": "2024-12-12T14:49:52.594Z",
-    "user": [
-      "root"
-    ],
-    "content_type": [
-      "trip",
-      "tagpost"
-    ],
-    "object_id": "2",
-    "object_repr": "tag",
-    "action_flag": 1,
-    "change_message": "[{\"added\": {}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 11,
-  "fields": {
-    "action_time": "2024-12-12T14:50:13.282Z",
-    "user": [
-      "root"
-    ],
-    "content_type": [
-      "trip",
-      "tagpost"
-    ],
-    "object_id": "3",
-    "object_repr": "sea",
-    "action_flag": 1,
-    "change_message": "[{\"added\": {}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 12,
-  "fields": {
-    "action_time": "2024-12-12T14:50:29.778Z",
-    "user": [
-      "root"
-    ],
-    "content_type": [
-      "trip",
-      "tagpost"
-    ],
-    "object_id": "4",
-    "object_repr": "coast",
-    "action_flag": 1,
-    "change_message": "[{\"added\": {}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 13,
-  "fields": {
-    "action_time": "2024-12-12T14:50:40.688Z",
-    "user": [
-      "root"
-    ],
-    "content_type": [
-      "trip",
-      "tagpost"
-    ],
-    "object_id": "5",
-    "object_repr": "winter",
-    "action_flag": 1,
-    "change_message": "[{\"added\": {}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 14,
-  "fields": {
-    "action_time": "2024-12-12T14:50:50.621Z",
-    "user": [
-      "root"
-    ],
-    "content_type": [
-      "trip",
-      "tagpost"
-    ],
-    "object_id": "6",
-    "object_repr": "summer",
-    "action_flag": 1,
-    "change_message": "[{\"added\": {}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 15,
-  "fields": {
-    "action_time": "2024-12-12T14:51:35.295Z",
-    "user": [
-      "root"
-    ],
-    "content_type": [
-      "trip",
-      "trip"
-    ],
-    "object_id": "2",
-    "object_repr": "Статья",
-    "action_flag": 2,
-    "change_message": "[{\"changed\": {\"fields\": [\"\\u0422\\u0435\\u0433\\u0438\"]}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 16,
-  "fields": {
-    "action_time": "2024-12-12T14:52:03.685Z",
-    "user": [
-      "root"
-    ],
-    "content_type": [
-      "trip",
-      "trip"
-    ],
-    "object_id": "1",
-    "object_repr": "Лето в горах",
-    "action_flag": 2,
-    "change_message": "[{\"changed\": {\"fields\": [\"\\u0422\\u0435\\u0433\\u0438\"]}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 17,
-  "fields": {
-    "action_time": "2024-12-12T16:52:28.372Z",
-    "user": [
-      "root"
-    ],
-    "content_type": [
-      "trip",
-      "trip"
-    ],
-    "object_id": "2",
-    "object_repr": "Южно-Сахалинск",
-    "action_flag": 2,
-    "change_message": "[{\"changed\": {\"fields\": [\"\\u041d\\u0430\\u0438\\u043c\\u0435\\u043d\\u043e\\u0432\\u0430\\u043d\\u0438\\u0435\", \"\\u0421\\u043b\\u0430\\u0433\", \"\\u041e\\u043f\\u0438\\u0441\\u0430\\u043d\\u0438\\u0435\", \"\\u0418\\u0437\\u043e\\u0431\\u0440\\u0430\\u0436\\u0435\\u043d\\u0438\\u0435\", \"\\u0422\\u0435\\u0433\\u0438\"]}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 18,
-  "fields": {
-    "action_time": "2024-12-12T17:02:18.854Z",
-    "user": [
-      "root"
-    ],
-    "content_type": [
-      "trip",
-      "trip"
-    ],
-    "object_id": "3",
-    "object_repr": "Тбилиси",
-    "action_flag": 1,
-    "change_message": "[{\"added\": {}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 19,
-  "fields": {
-    "action_time": "2024-12-12T17:02:58.843Z",
-    "user": [
-      "root"
-    ],
-    "content_type": [
-      "trip",
-      "trip"
-    ],
-    "object_id": "3",
-    "object_repr": "Тбилиси",
-    "action_flag": 2,
-    "change_message": "[{\"changed\": {\"fields\": [\"\\u0421\\u0442\\u0430\\u0442\\u0443\\u0441 \\u043f\\u0443\\u0431\\u043b\\u0438\\u043a\\u0430\\u0446\\u0438\\u0438\"]}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 20,
-  "fields": {
-    "action_time": "2024-12-12T17:06:52.459Z",
-    "user": [
-      "root"
-    ],
-    "content_type": [
-      "trip",
-      "trip"
-    ],
-    "object_id": "1",
-    "object_repr": "Лето в горах",
-    "action_flag": 2,
-    "change_message": "[{\"changed\": {\"fields\": [\"\\u041e\\u043f\\u0438\\u0441\\u0430\\u043d\\u0438\\u0435\", \"\\u0418\\u0437\\u043e\\u0431\\u0440\\u0430\\u0436\\u0435\\u043d\\u0438\\u0435\"]}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 21,
-  "fields": {
-    "action_time": "2024-12-12T17:11:55.842Z",
-    "user": [
-      "root"
-    ],
-    "content_type": [
-      "trip",
-      "trip"
-    ],
-    "object_id": "4",
-    "object_repr": "Сочи",
-    "action_flag": 1,
-    "change_message": "[{\"added\": {}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 22,
-  "fields": {
-    "action_time": "2024-12-12T17:12:16.225Z",
-    "user": [
-      "root"
-    ],
-    "content_type": [
-      "trip",
-      "trip"
-    ],
-    "object_id": "4",
-    "object_repr": "Сочи",
-    "action_flag": 2,
-    "change_message": "[{\"changed\": {\"fields\": [\"\\u0421\\u0442\\u0430\\u0442\\u0443\\u0441 \\u043f\\u0443\\u0431\\u043b\\u0438\\u043a\\u0430\\u0446\\u0438\\u0438\"]}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 23,
-  "fields": {
-    "action_time": "2024-12-12T17:13:24.741Z",
-    "user": [
-      "root"
-    ],
-    "content_type": [
-      "trip",
-      "trip"
-    ],
-    "object_id": "4",
-    "object_repr": "Сочи",
-    "action_flag": 2,
-    "change_message": "[{\"changed\": {\"fields\": [\"\\u0418\\u0437\\u043e\\u0431\\u0440\\u0430\\u0436\\u0435\\u043d\\u0438\\u0435\"]}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 24,
-  "fields": {
-    "action_time": "2024-12-12T17:19:14.494Z",
-    "user": [
-      "root"
-    ],
-    "content_type": [
-      "trip",
-      "trip"
-    ],
-    "object_id": "5",
-    "object_repr": "Алматы",
-    "action_flag": 1,
-    "change_message": "[{\"added\": {}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 25,
-  "fields": {
-    "action_time": "2024-12-12T17:19:20.061Z",
-    "user": [
-      "root"
-    ],
-    "content_type": [
-      "trip",
-      "trip"
-    ],
-    "object_id": "5",
-    "object_repr": "Алматы",
-    "action_flag": 2,
-    "change_message": "[{\"changed\": {\"fields\": [\"\\u0421\\u0442\\u0430\\u0442\\u0443\\u0441 \\u043f\\u0443\\u0431\\u043b\\u0438\\u043a\\u0430\\u0446\\u0438\\u0438\"]}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 26,
-  "fields": {
-    "action_time": "2024-12-12T18:42:04.493Z",
-    "user": [
-      "root"
-    ],
-    "content_type": [
-      "trip",
-      "trip"
-    ],
-    "object_id": "6",
-    "object_repr": "Ставрополь",
-    "action_flag": 1,
-    "change_message": "[{\"added\": {}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 27,
-  "fields": {
-    "action_time": "2024-12-12T18:42:21.573Z",
-    "user": [
-      "root"
-    ],
-    "content_type": [
-      "trip",
-      "trip"
-    ],
-    "object_id": "6",
-    "object_repr": "Ставрополь",
-    "action_flag": 2,
-    "change_message": "[{\"changed\": {\"fields\": [\"\\u0421\\u0442\\u0430\\u0442\\u0443\\u0441 \\u043f\\u0443\\u0431\\u043b\\u0438\\u043a\\u0430\\u0446\\u0438\\u0438\"]}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 28,
-  "fields": {
-    "action_time": "2024-12-13T08:07:48.247Z",
-    "user": [
-      "root"
-    ],
-    "content_type": [
-      "trip",
-      "trip"
-    ],
-    "object_id": "6",
-    "object_repr": "Ставрополь",
-    "action_flag": 2,
-    "change_message": "[{\"changed\": {\"fields\": [\"\\u0418\\u0437\\u043e\\u0431\\u0440\\u0430\\u0436\\u0435\\u043d\\u0438\\u0435\"]}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 29,
-  "fields": {
-    "action_time": "2024-12-13T08:08:04.321Z",
-    "user": [
-      "root"
-    ],
-    "content_type": [
-      "trip",
-      "trip"
-    ],
-    "object_id": "5",
-    "object_repr": "Алматы",
-    "action_flag": 2,
-    "change_message": "[{\"changed\": {\"fields\": [\"\\u0418\\u0437\\u043e\\u0431\\u0440\\u0430\\u0436\\u0435\\u043d\\u0438\\u0435\"]}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 30,
-  "fields": {
-    "action_time": "2024-12-13T08:08:20.073Z",
-    "user": [
-      "root"
-    ],
-    "content_type": [
-      "trip",
-      "trip"
-    ],
-    "object_id": "4",
-    "object_repr": "Сочи",
-    "action_flag": 2,
-    "change_message": "[{\"changed\": {\"fields\": [\"\\u0418\\u0437\\u043e\\u0431\\u0440\\u0430\\u0436\\u0435\\u043d\\u0438\\u0435\"]}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 31,
-  "fields": {
-    "action_time": "2024-12-13T08:08:35.645Z",
-    "user": [
-      "root"
-    ],
-    "content_type": [
-      "trip",
-      "trip"
-    ],
-    "object_id": "3",
-    "object_repr": "Тбилиси",
-    "action_flag": 2,
-    "change_message": "[{\"changed\": {\"fields\": [\"\\u0418\\u0437\\u043e\\u0431\\u0440\\u0430\\u0436\\u0435\\u043d\\u0438\\u0435\"]}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 32,
-  "fields": {
-    "action_time": "2024-12-13T08:08:47.623Z",
-    "user": [
-      "root"
-    ],
-    "content_type": [
-      "trip",
-      "trip"
-    ],
-    "object_id": "2",
-    "object_repr": "Южно-Сахалинск",
-    "action_flag": 2,
-    "change_message": "[{\"changed\": {\"fields\": [\"\\u0418\\u0437\\u043e\\u0431\\u0440\\u0430\\u0436\\u0435\\u043d\\u0438\\u0435\"]}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 33,
-  "fields": {
-    "action_time": "2024-12-13T08:09:12.321Z",
-    "user": [
-      "root"
-    ],
-    "content_type": [
-      "trip",
-      "trip"
-    ],
-    "object_id": "1",
-    "object_repr": "Лето в горах",
-    "action_flag": 2,
-    "change_message": "[{\"changed\": {\"fields\": [\"\\u0418\\u0437\\u043e\\u0431\\u0440\\u0430\\u0436\\u0435\\u043d\\u0438\\u0435\"]}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 34,
-  "fields": {
-    "action_time": "2024-12-13T08:15:49.604Z",
-    "user": [
-      "root"
-    ],
-    "content_type": [
-      "trip",
-      "trip"
-    ],
-    "object_id": "7",
-    "object_repr": "Минеральные воды",
-    "action_flag": 1,
-    "change_message": "[{\"added\": {}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 35,
-  "fields": {
-    "action_time": "2024-12-13T08:15:54.609Z",
-    "user": [
-      "root"
-    ],
-    "content_type": [
-      "trip",
-      "trip"
-    ],
-    "object_id": "7",
-    "object_repr": "Минеральные воды",
-    "action_flag": 2,
-    "change_message": "[{\"changed\": {\"fields\": [\"\\u0421\\u0442\\u0430\\u0442\\u0443\\u0441 \\u043f\\u0443\\u0431\\u043b\\u0438\\u043a\\u0430\\u0446\\u0438\\u0438\"]}}]"
   }
 }
 ]

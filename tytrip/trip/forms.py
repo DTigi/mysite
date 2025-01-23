@@ -167,7 +167,7 @@ class FeedBackForm(forms.Form):
             'placeholder': "Ваше сообщение"
         })
     )
-
+    captcha = CaptchaField()
 
 class CommentForm(forms.ModelForm):
 

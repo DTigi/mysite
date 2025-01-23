@@ -20,7 +20,7 @@
 
                     <div class="row justify-content-center">
                         <div class="col-6">
-                            <p class="lead">Для входа укажите логин и пароль</p>
+                            <p class="lead">Для входа укажите логин или email и пароль</p>
                             {% if form.errors %}
                                 {% for field in form %}
                                     {% for error in field.errors %}
@@ -53,6 +53,7 @@
                         <br>
                         <hr>
                         <br>
+                        <p>Другие способы входа</p>
                         <p>
                             <a class="poster-mini" href="{% url 'social:begin' 'github' %}"><img src="/media/social-auth/github.png"></a>
                             <a class="poster-mini" href="{% url 'social:begin' 'vk-oauth2' %}"><img src="/media/social-auth/vk.png"></a>

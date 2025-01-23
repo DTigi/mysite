@@ -18,6 +18,7 @@
                         <a class="nav-link" href="{% url 'home' %}">Главная</a>
                       {% endif %}
                       <a class="nav-link" href="{% url 'contact' %}">Контакты</a>
+                      <a class="nav-link" href="{% url 'add_page' %}">Добавить статью</a>
                   </div>
                   <form action="{% url 'search_results' %}" method="get" class="d-flex" role="search">
                     <input name="q" class="form-control me-2" type="search" placeholder="Поиск" aria-label="Поиск">
