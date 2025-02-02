@@ -1,49 +1,53 @@
 <section class="my-navigation">
-      <nav class="navbar navbar-expand-lg bg-body-tertiary"  data-bs-theme="dark">
-          <div class="container-fluid">
-              <a href="{% url 'home' %}" class="navbar-brand">
-                  <img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg" width="30" height="30" alt="Python">
-              </a>
-<!--              <a href="{% url 'home' %}" class="navbar-brand">-->
-<!--                  <img src="https://upload.wikimedia.org/wikipedia/commons/a/ae/Nuxt_logo.svg" width="30" height="30" alt="NuxtJS">-->
-<!--              </a>-->
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                  <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                  <div class="navbar-nav me-auto mb-2 mb-lg-0">
-                      {% if request.get_full_path == '/' %}
-                        <a class="nav-link active" href="{% url 'home' %}">Главная</a>
-                      {% else %}
-                        <a class="nav-link" href="{% url 'home' %}">Главная</a>
-                      {% endif %}
-                      <a class="nav-link" href="{% url 'contact' %}">Контакты</a>
-                      <a class="nav-link" href="{% url 'add_page' %}">Добавить статью</a>
-                  </div>
-                  <form action="{% url 'search_results' %}" method="get" class="d-flex" role="search">
-                    <input name="q" class="form-control me-2" type="search" placeholder="Поиск" aria-label="Поиск">
-                    <button class="btn btn-outline-success me-2" type="submit">Найти</button>
-                  </form>
-                      {% if user.is_authenticated %}
-                        <a class="btn btn-outline-light me-2" href="{% url 'users:profile' %}">{{user.username}}</a>
-<!--                        <a href="{% url 'logout' %}" class="btn btn-outline-light">Выход</a>-->
-                        <form method="post" action="{% url 'users:logout' %}">
-                        {% csrf_token %}
-                        <button class="btn btn-outline-light" type="submit" >Выйти</button>
-                        </form>
-                      {% else %}
-                        {% if request.get_full_path == '/users/login/' %}
-                            <a href="{% url 'users:login' %}" class="btn btn-outline-light me-2 active">Войти</a>
-                        {% else %}
-                            <a href="{% url 'users:login' %}" class="btn btn-outline-light me-2">Войти</a>
-                        {% endif %}
-                        {% if request.get_full_path == '/users/register/' %}
-                            <a href="{% url 'users:register' %}" class="btn btn-outline-light me-2 active">Регистрация</a>
-                        {% else %}
-                            <a href="{% url 'users:register' %}" class="btn btn-outline-light me-2">Регистрация</a>
-                        {% endif %}
-                      {% endif %}
-            </div>
-          </div>
-      </nav>
+  <nav class="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
+    <div class="container-fluid">
+      <a href="{% url 'home' %}" class="navbar-brand">
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Antu_flightgear.svg/512px-Antu_flightgear.svg.png?20160706104033"
+          width="30" height="30" alt="">
+      </a>
+      <button class="btn btn-outline-success me-2" id="theme-toggle">🌙 Темная тема</button>
+      <!--              <a href="{% url 'home' %}" class="navbar-brand">-->
+      <!--                  <img src="https://upload.wikimedia.org/wikipedia/commons/a/ae/Nuxt_logo.svg" width="30" height="30" alt="NuxtJS">-->
+      <!--              </a>-->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="navbar-nav me-auto mb-2 mb-lg-0">
+          {% if request.get_full_path == '/' %}
+          <a class="nav-link active" href="{% url 'home' %}">Главная</a>
+          {% else %}
+          <a class="nav-link" href="{% url 'home' %}">Главная</a>
+          {% endif %}
+          <a class="nav-link" href="{% url 'contact' %}">Контакты</a>
+          <a class="nav-link" href="{% url 'add_page' %}">Добавить статью</a>
+        </div>
+        <form action="{% url 'search_results' %}" method="get" class="d-flex" role="search">
+          <input name="q" class="form-control me-2" type="search" placeholder="Поиск" aria-label="Поиск">
+          <button class="btn btn-outline-success me-2" type="submit">Найти</button>
+        </form>
+        {% if user.is_authenticated %}
+        <a class="btn btn-outline-light me-2" href="{% url 'users:profile' %}">{{user.username}}</a>
+        <!--                        <a href="{% url 'logout' %}" class="btn btn-outline-light">Выход</a>-->
+        <form method="post" action="{% url 'users:logout' %}">
+          {% csrf_token %}
+          <button class="btn btn-outline-light" type="submit">Выйти</button>
+        </form>
+        {% else %}
+        {% if request.get_full_path == '/users/login/' %}
+        <a href="{% url 'users:login' %}" class="btn btn-outline-light me-2 active">Войти</a>
+        {% else %}
+        <a href="{% url 'users:login' %}" class="btn btn-outline-light me-2">Войти</a>
+        {% endif %}
+        {% if request.get_full_path == '/users/register/' %}
+        <a href="{% url 'users:register' %}" class="btn btn-outline-light me-2 active">Регистрация</a>
+        {% else %}
+        <a href="{% url 'users:register' %}" class="btn btn-outline-light me-2">Регистрация</a>
+        {% endif %}
+        {% endif %}
+      </div>
+    </div>
+  </nav>
 </section>

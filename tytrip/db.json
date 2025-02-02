@@ -1,0 +1,2197 @@
+[
+{
+  "model": "admin.logentry",
+  "pk": 1,
+  "fields": {
+    "action_time": "2024-11-30T09:13:09.874Z",
+    "user": 1,
+    "content_type": 8,
+    "object_id": "1",
+    "object_repr": "зима",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2,
+  "fields": {
+    "action_time": "2024-11-30T09:13:24.103Z",
+    "user": 1,
+    "content_type": 8,
+    "object_id": "2",
+    "object_repr": "лето",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 3,
+  "fields": {
+    "action_time": "2024-11-30T09:13:42.771Z",
+    "user": 1,
+    "content_type": 8,
+    "object_id": "3",
+    "object_repr": "пляж",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 4,
+  "fields": {
+    "action_time": "2024-11-30T09:14:03.795Z",
+    "user": 1,
+    "content_type": 8,
+    "object_id": "4",
+    "object_repr": "горы",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 5,
+  "fields": {
+    "action_time": "2024-11-30T09:42:58.958Z",
+    "user": 1,
+    "content_type": 3,
+    "object_id": "1",
+    "object_repr": "moderator",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 6,
+  "fields": {
+    "action_time": "2024-11-30T09:43:24.030Z",
+    "user": 1,
+    "content_type": 11,
+    "object_id": "2",
+    "object_repr": "user1",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Groups\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 7,
+  "fields": {
+    "action_time": "2024-11-30T15:12:42.567Z",
+    "user": 1,
+    "content_type": 3,
+    "object_id": "2",
+    "object_repr": "social",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 8,
+  "fields": {
+    "action_time": "2025-01-23T09:31:19.623Z",
+    "user": 1,
+    "content_type": 9,
+    "object_id": "2",
+    "object_repr": "Test",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"\\u0421\\u0442\\u0430\\u0442\\u0443\\u0441 \\u043f\\u0443\\u0431\\u043b\\u0438\\u043a\\u0430\\u0446\\u0438\\u0438\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 9,
+  "fields": {
+    "action_time": "2025-01-23T09:33:35.690Z",
+    "user": 1,
+    "content_type": 9,
+    "object_id": "3",
+    "object_repr": "test2",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"\\u0421\\u0442\\u0430\\u0442\\u0443\\u0441 \\u043f\\u0443\\u0431\\u043b\\u0438\\u043a\\u0430\\u0446\\u0438\\u0438\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 10,
+  "fields": {
+    "action_time": "2025-01-23T11:11:23.656Z",
+    "user": 1,
+    "content_type": 9,
+    "object_id": "4",
+    "object_repr": "авава",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Tags\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 11,
+  "fields": {
+    "action_time": "2025-01-23T11:27:48.106Z",
+    "user": 1,
+    "content_type": 9,
+    "object_id": "4",
+    "object_repr": "авава",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"\\u0421\\u0442\\u0430\\u0442\\u0443\\u0441 \\u043f\\u0443\\u0431\\u043b\\u0438\\u043a\\u0430\\u0446\\u0438\\u0438\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 12,
+  "fields": {
+    "action_time": "2025-01-23T12:15:53.617Z",
+    "user": 1,
+    "content_type": 19,
+    "object_id": "1",
+    "object_repr": "tytrip.ru",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Domain name\", \"Display name\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 13,
+  "fields": {
+    "action_time": "2025-01-23T12:17:45.945Z",
+    "user": 1,
+    "content_type": 11,
+    "object_id": "1",
+    "object_repr": "комментарий",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Username\", \"Text\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 14,
+  "fields": {
+    "action_time": "2025-01-23T17:10:33.392Z",
+    "user": 1,
+    "content_type": 9,
+    "object_id": "4",
+    "object_repr": "Топ-10 направлений для путешествий в 2025 году",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 15,
+  "fields": {
+    "action_time": "2025-01-23T17:12:03.261Z",
+    "user": 1,
+    "content_type": 9,
+    "object_id": "5",
+    "object_repr": "Путешествие в одиночку: плюсы, минусы и полезные советы",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 16,
+  "fields": {
+    "action_time": "2025-01-23T17:13:42.700Z",
+    "user": 1,
+    "content_type": 9,
+    "object_id": "6",
+    "object_repr": "Секреты бюджетного путешествия: как увидеть мир и не разориться",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 17,
+  "fields": {
+    "action_time": "2025-01-23T17:15:40.797Z",
+    "user": 1,
+    "content_type": 9,
+    "object_id": "7",
+    "object_repr": "Неизведанные уголки планеты: 7 скрытых жемчужин для туристов",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 18,
+  "fields": {
+    "action_time": "2025-01-23T17:18:54.249Z",
+    "user": 1,
+    "content_type": 9,
+    "object_id": "8",
+    "object_repr": "Как выбрать идеальный багаж: рюкзак или чемодан?",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 19,
+  "fields": {
+    "action_time": "2025-01-23T17:20:48.827Z",
+    "user": 1,
+    "content_type": 9,
+    "object_id": "9",
+    "object_repr": "Путешествие по национальным паркам: где вдохновиться природой",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 20,
+  "fields": {
+    "action_time": "2025-01-23T17:24:11.385Z",
+    "user": 1,
+    "content_type": 9,
+    "object_id": "10",
+    "object_repr": "Гастрономический туризм: города, которые стоит посетить ради кухни",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 21,
+  "fields": {
+    "action_time": "2025-01-23T17:26:27.418Z",
+    "user": 1,
+    "content_type": 9,
+    "object_id": "11",
+    "object_repr": "Путешествия с детьми: советы для комфортного отдыха",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 22,
+  "fields": {
+    "action_time": "2025-01-23T17:28:45.703Z",
+    "user": 1,
+    "content_type": 9,
+    "object_id": "12",
+    "object_repr": "Топ-5 лучших поездок на выходные: короткие маршруты для отдыха",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 23,
+  "fields": {
+    "action_time": "2025-01-23T17:30:56.517Z",
+    "user": 1,
+    "content_type": 9,
+    "object_id": "13",
+    "object_repr": "Экологичный туризм: как путешествовать без вреда для природы",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 24,
+  "fields": {
+    "action_time": "2025-01-23T17:32:52.041Z",
+    "user": 1,
+    "content_type": 9,
+    "object_id": "14",
+    "object_repr": "Лучшие железнодорожные маршруты мира: путешествия с видом",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 25,
+  "fields": {
+    "action_time": "2025-01-23T17:34:21.793Z",
+    "user": 1,
+    "content_type": 9,
+    "object_id": "15",
+    "object_repr": "Как подготовиться к трекингу в горах: снаряжение и безопасность",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 26,
+  "fields": {
+    "action_time": "2025-01-23T17:35:32.382Z",
+    "user": 1,
+    "content_type": 9,
+    "object_id": "16",
+    "object_repr": "Путешествия по Европе на автомобиле: маршруты, советы и лайфхаки",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 27,
+  "fields": {
+    "action_time": "2025-01-23T17:36:39.655Z",
+    "user": 1,
+    "content_type": 9,
+    "object_id": "16",
+    "object_repr": "Путешествия по Европе на автомобиле: маршруты, советы и лайфхаки",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"\\u0421\\u0442\\u0430\\u0442\\u0443\\u0441 \\u043f\\u0443\\u0431\\u043b\\u0438\\u043a\\u0430\\u0446\\u0438\\u0438\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 28,
+  "fields": {
+    "action_time": "2025-01-23T17:36:39.658Z",
+    "user": 1,
+    "content_type": 9,
+    "object_id": "15",
+    "object_repr": "Как подготовиться к трекингу в горах: снаряжение и безопасность",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"\\u0421\\u0442\\u0430\\u0442\\u0443\\u0441 \\u043f\\u0443\\u0431\\u043b\\u0438\\u043a\\u0430\\u0446\\u0438\\u0438\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 29,
+  "fields": {
+    "action_time": "2025-01-23T17:36:39.659Z",
+    "user": 1,
+    "content_type": 9,
+    "object_id": "14",
+    "object_repr": "Лучшие железнодорожные маршруты мира: путешествия с видом",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"\\u0421\\u0442\\u0430\\u0442\\u0443\\u0441 \\u043f\\u0443\\u0431\\u043b\\u0438\\u043a\\u0430\\u0446\\u0438\\u0438\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 30,
+  "fields": {
+    "action_time": "2025-01-23T17:36:39.661Z",
+    "user": 1,
+    "content_type": 9,
+    "object_id": "13",
+    "object_repr": "Экологичный туризм: как путешествовать без вреда для природы",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"\\u0421\\u0442\\u0430\\u0442\\u0443\\u0441 \\u043f\\u0443\\u0431\\u043b\\u0438\\u043a\\u0430\\u0446\\u0438\\u0438\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 31,
+  "fields": {
+    "action_time": "2025-01-23T17:36:39.663Z",
+    "user": 1,
+    "content_type": 9,
+    "object_id": "12",
+    "object_repr": "Топ-5 лучших поездок на выходные: короткие маршруты для отдыха",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"\\u0421\\u0442\\u0430\\u0442\\u0443\\u0441 \\u043f\\u0443\\u0431\\u043b\\u0438\\u043a\\u0430\\u0446\\u0438\\u0438\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 32,
+  "fields": {
+    "action_time": "2025-01-23T17:36:39.664Z",
+    "user": 1,
+    "content_type": 9,
+    "object_id": "11",
+    "object_repr": "Путешествия с детьми: советы для комфортного отдыха",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"\\u0421\\u0442\\u0430\\u0442\\u0443\\u0441 \\u043f\\u0443\\u0431\\u043b\\u0438\\u043a\\u0430\\u0446\\u0438\\u0438\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 33,
+  "fields": {
+    "action_time": "2025-01-23T17:36:39.666Z",
+    "user": 1,
+    "content_type": 9,
+    "object_id": "10",
+    "object_repr": "Гастрономический туризм: города, которые стоит посетить ради кухни",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"\\u0421\\u0442\\u0430\\u0442\\u0443\\u0441 \\u043f\\u0443\\u0431\\u043b\\u0438\\u043a\\u0430\\u0446\\u0438\\u0438\"]}}]"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 1,
+  "fields": {
+    "name": "Can add log entry",
+    "content_type": 1,
+    "codename": "add_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 2,
+  "fields": {
+    "name": "Can change log entry",
+    "content_type": 1,
+    "codename": "change_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 3,
+  "fields": {
+    "name": "Can delete log entry",
+    "content_type": 1,
+    "codename": "delete_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 4,
+  "fields": {
+    "name": "Can view log entry",
+    "content_type": 1,
+    "codename": "view_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 5,
+  "fields": {
+    "name": "Can add permission",
+    "content_type": 2,
+    "codename": "add_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 6,
+  "fields": {
+    "name": "Can change permission",
+    "content_type": 2,
+    "codename": "change_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 7,
+  "fields": {
+    "name": "Can delete permission",
+    "content_type": 2,
+    "codename": "delete_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 8,
+  "fields": {
+    "name": "Can view permission",
+    "content_type": 2,
+    "codename": "view_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 9,
+  "fields": {
+    "name": "Can add group",
+    "content_type": 3,
+    "codename": "add_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 10,
+  "fields": {
+    "name": "Can change group",
+    "content_type": 3,
+    "codename": "change_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 11,
+  "fields": {
+    "name": "Can delete group",
+    "content_type": 3,
+    "codename": "delete_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 12,
+  "fields": {
+    "name": "Can view group",
+    "content_type": 3,
+    "codename": "view_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 13,
+  "fields": {
+    "name": "Can add content type",
+    "content_type": 4,
+    "codename": "add_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 14,
+  "fields": {
+    "name": "Can change content type",
+    "content_type": 4,
+    "codename": "change_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 15,
+  "fields": {
+    "name": "Can delete content type",
+    "content_type": 4,
+    "codename": "delete_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 16,
+  "fields": {
+    "name": "Can view content type",
+    "content_type": 4,
+    "codename": "view_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 17,
+  "fields": {
+    "name": "Can add session",
+    "content_type": 5,
+    "codename": "add_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 18,
+  "fields": {
+    "name": "Can change session",
+    "content_type": 5,
+    "codename": "change_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 19,
+  "fields": {
+    "name": "Can delete session",
+    "content_type": 5,
+    "codename": "delete_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 20,
+  "fields": {
+    "name": "Can view session",
+    "content_type": 5,
+    "codename": "view_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 21,
+  "fields": {
+    "name": "Can add capital",
+    "content_type": 6,
+    "codename": "add_capital"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 22,
+  "fields": {
+    "name": "Can change capital",
+    "content_type": 6,
+    "codename": "change_capital"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 23,
+  "fields": {
+    "name": "Can delete capital",
+    "content_type": 6,
+    "codename": "delete_capital"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 24,
+  "fields": {
+    "name": "Can view capital",
+    "content_type": 6,
+    "codename": "view_capital"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 25,
+  "fields": {
+    "name": "Can add tag post",
+    "content_type": 7,
+    "codename": "add_tagpost"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 26,
+  "fields": {
+    "name": "Can change tag post",
+    "content_type": 7,
+    "codename": "change_tagpost"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 27,
+  "fields": {
+    "name": "Can delete tag post",
+    "content_type": 7,
+    "codename": "delete_tagpost"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 28,
+  "fields": {
+    "name": "Can view tag post",
+    "content_type": 7,
+    "codename": "view_tagpost"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 29,
+  "fields": {
+    "name": "Can add Тема",
+    "content_type": 8,
+    "codename": "add_topics"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 30,
+  "fields": {
+    "name": "Can change Тема",
+    "content_type": 8,
+    "codename": "change_topics"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 31,
+  "fields": {
+    "name": "Can delete Тема",
+    "content_type": 8,
+    "codename": "delete_topics"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 32,
+  "fields": {
+    "name": "Can view Тема",
+    "content_type": 8,
+    "codename": "view_topics"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 33,
+  "fields": {
+    "name": "Can add Путешествие",
+    "content_type": 9,
+    "codename": "add_trip"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 34,
+  "fields": {
+    "name": "Can change Путешествие",
+    "content_type": 9,
+    "codename": "change_trip"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 35,
+  "fields": {
+    "name": "Can delete Путешествие",
+    "content_type": 9,
+    "codename": "delete_trip"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 36,
+  "fields": {
+    "name": "Can view Путешествие",
+    "content_type": 9,
+    "codename": "view_trip"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 37,
+  "fields": {
+    "name": "Can add upload file",
+    "content_type": 10,
+    "codename": "add_uploadfile"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 38,
+  "fields": {
+    "name": "Can change upload file",
+    "content_type": 10,
+    "codename": "change_uploadfile"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 39,
+  "fields": {
+    "name": "Can delete upload file",
+    "content_type": 10,
+    "codename": "delete_uploadfile"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 40,
+  "fields": {
+    "name": "Can view upload file",
+    "content_type": 10,
+    "codename": "view_uploadfile"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 41,
+  "fields": {
+    "name": "Can add user",
+    "content_type": 11,
+    "codename": "add_user"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 42,
+  "fields": {
+    "name": "Can change user",
+    "content_type": 11,
+    "codename": "change_user"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 43,
+  "fields": {
+    "name": "Can delete user",
+    "content_type": 11,
+    "codename": "delete_user"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 44,
+  "fields": {
+    "name": "Can view user",
+    "content_type": 11,
+    "codename": "view_user"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 45,
+  "fields": {
+    "name": "Social Auth",
+    "content_type": 11,
+    "codename": "social_auth"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 46,
+  "fields": {
+    "name": "Can add association",
+    "content_type": 12,
+    "codename": "add_association"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 47,
+  "fields": {
+    "name": "Can change association",
+    "content_type": 12,
+    "codename": "change_association"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 48,
+  "fields": {
+    "name": "Can delete association",
+    "content_type": 12,
+    "codename": "delete_association"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 49,
+  "fields": {
+    "name": "Can view association",
+    "content_type": 12,
+    "codename": "view_association"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 50,
+  "fields": {
+    "name": "Can add code",
+    "content_type": 13,
+    "codename": "add_code"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 51,
+  "fields": {
+    "name": "Can change code",
+    "content_type": 13,
+    "codename": "change_code"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 52,
+  "fields": {
+    "name": "Can delete code",
+    "content_type": 13,
+    "codename": "delete_code"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 53,
+  "fields": {
+    "name": "Can view code",
+    "content_type": 13,
+    "codename": "view_code"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 54,
+  "fields": {
+    "name": "Can add nonce",
+    "content_type": 14,
+    "codename": "add_nonce"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 55,
+  "fields": {
+    "name": "Can change nonce",
+    "content_type": 14,
+    "codename": "change_nonce"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 56,
+  "fields": {
+    "name": "Can delete nonce",
+    "content_type": 14,
+    "codename": "delete_nonce"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 57,
+  "fields": {
+    "name": "Can view nonce",
+    "content_type": 14,
+    "codename": "view_nonce"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 58,
+  "fields": {
+    "name": "Can add user social auth",
+    "content_type": 15,
+    "codename": "add_usersocialauth"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 59,
+  "fields": {
+    "name": "Can change user social auth",
+    "content_type": 15,
+    "codename": "change_usersocialauth"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 60,
+  "fields": {
+    "name": "Can delete user social auth",
+    "content_type": 15,
+    "codename": "delete_usersocialauth"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 61,
+  "fields": {
+    "name": "Can view user social auth",
+    "content_type": 15,
+    "codename": "view_usersocialauth"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 62,
+  "fields": {
+    "name": "Can add partial",
+    "content_type": 16,
+    "codename": "add_partial"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 63,
+  "fields": {
+    "name": "Can change partial",
+    "content_type": 16,
+    "codename": "change_partial"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 64,
+  "fields": {
+    "name": "Can delete partial",
+    "content_type": 16,
+    "codename": "delete_partial"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 65,
+  "fields": {
+    "name": "Can view partial",
+    "content_type": 16,
+    "codename": "view_partial"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 66,
+  "fields": {
+    "name": "Can change partial",
+    "content_type": 17,
+    "codename": "change_partial"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 67,
+  "fields": {
+    "name": "Can delete partial",
+    "content_type": 17,
+    "codename": "delete_partial"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 68,
+  "fields": {
+    "name": "Can view partial",
+    "content_type": 17,
+    "codename": "view_partial"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 69,
+  "fields": {
+    "name": "Can add captcha store",
+    "content_type": 18,
+    "codename": "add_captchastore"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 70,
+  "fields": {
+    "name": "Can change captcha store",
+    "content_type": 18,
+    "codename": "change_captchastore"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 71,
+  "fields": {
+    "name": "Can delete captcha store",
+    "content_type": 18,
+    "codename": "delete_captchastore"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 72,
+  "fields": {
+    "name": "Can view captcha store",
+    "content_type": 18,
+    "codename": "view_captchastore"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 73,
+  "fields": {
+    "name": "Can add site",
+    "content_type": 19,
+    "codename": "add_site"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 74,
+  "fields": {
+    "name": "Can change site",
+    "content_type": 19,
+    "codename": "change_site"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 75,
+  "fields": {
+    "name": "Can delete site",
+    "content_type": 19,
+    "codename": "delete_site"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 76,
+  "fields": {
+    "name": "Can view site",
+    "content_type": 19,
+    "codename": "view_site"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 77,
+  "fields": {
+    "name": "Can add Token",
+    "content_type": 20,
+    "codename": "add_token"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 78,
+  "fields": {
+    "name": "Can change Token",
+    "content_type": 20,
+    "codename": "change_token"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 79,
+  "fields": {
+    "name": "Can delete Token",
+    "content_type": 20,
+    "codename": "delete_token"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 80,
+  "fields": {
+    "name": "Can view Token",
+    "content_type": 20,
+    "codename": "view_token"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 81,
+  "fields": {
+    "name": "Can add Token",
+    "content_type": 21,
+    "codename": "add_tokenproxy"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 82,
+  "fields": {
+    "name": "Can change Token",
+    "content_type": 21,
+    "codename": "change_tokenproxy"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 83,
+  "fields": {
+    "name": "Can delete Token",
+    "content_type": 21,
+    "codename": "delete_tokenproxy"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 84,
+  "fields": {
+    "name": "Can view Token",
+    "content_type": 21,
+    "codename": "view_tokenproxy"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 85,
+  "fields": {
+    "name": "Can add tag",
+    "content_type": 22,
+    "codename": "add_tag"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 86,
+  "fields": {
+    "name": "Can change tag",
+    "content_type": 22,
+    "codename": "change_tag"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 87,
+  "fields": {
+    "name": "Can delete tag",
+    "content_type": 22,
+    "codename": "delete_tag"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 88,
+  "fields": {
+    "name": "Can view tag",
+    "content_type": 22,
+    "codename": "view_tag"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 89,
+  "fields": {
+    "name": "Can add tagged item",
+    "content_type": 23,
+    "codename": "add_taggeditem"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 90,
+  "fields": {
+    "name": "Can change tagged item",
+    "content_type": 23,
+    "codename": "change_taggeditem"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 91,
+  "fields": {
+    "name": "Can delete tagged item",
+    "content_type": 23,
+    "codename": "delete_taggeditem"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 92,
+  "fields": {
+    "name": "Can view tagged item",
+    "content_type": 23,
+    "codename": "view_taggeditem"
+  }
+},
+{
+  "model": "auth.group",
+  "pk": 1,
+  "fields": {
+    "name": "moderator",
+    "permissions": [
+      33,
+      34,
+      35,
+      36
+    ]
+  }
+},
+{
+  "model": "auth.group",
+  "pk": 2,
+  "fields": {
+    "name": "social",
+    "permissions": [
+      45
+    ]
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "ka497f54hiv5j6nss9yod62pds4bk622",
+  "fields": {
+    "session_data": "eyJ2ay1vYXV0aDJfc3RhdGUiOiJHdkZtM1BrcktmVmlaS3NFQXBSdnUyQnZ2MTZPWm1wcyJ9:1tHoRP:RGNccJ9SSmRJnwjzpCsuN9FD804WO17uWEa42hO0Oa0",
+    "expire_date": "2024-12-15T18:13:07.540Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "pjj4eeibyswhh586s4y8kexnpl96iaf5",
+  "fields": {
+    "session_data": ".eJxVjDEOwjAMRe-SGUWU2o7NyM4ZqjhOaAG1UtNOiLtDpQ6w_vfef7kurkvfrTXP3WDu7Bp3-N00pkceN2D3ON4mn6ZxmQf1m-J3Wv11svy87O7fQR9r_60TsSAjCWQSKhEIGBVbg_aYQuYARsaGKtyIkjJKIohB1AoWOLn3B8D0N1Y:1tb0g1:P_zy_q_P9SIlJY-VyEDeUJ2Nsu-Gm6gQUZEoig9TqVs",
+    "expire_date": "2025-02-06T17:07:33.124Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "wt2sbd5vhefjag1dpsknz9loh22wije1",
+  "fields": {
+    "session_data": "eyJnaXRodWJfc3RhdGUiOiJGRndQMmJSWmE3NFVVdHJ3N0Z5ZFBZa1BUc3VadUxvVCIsInZrLW9hdXRoMl9zdGF0ZSI6Inp3T0hoRUZVRFNZMzAyeTJSYzdGd3lnWlh2YWUycU5CIn0:1tHq4R:rFQoC6ia6CN950kuSEEI-5sVLe4NkV_t4wWGOxuShuU",
+    "expire_date": "2024-12-15T19:57:31.639Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "x2ixyxg10mqgsn5sgfn0pe9k6r5jmt6b",
+  "fields": {
+    "session_data": "eyJ2ay1vYXV0aDJfc3RhdGUiOiJ4d0Yxbnd6OWtPNjJ2cDFzV3hmS2FHR0xTMWNBN3gyTSJ9:1tHnkG:9c0D2QR74iI9jxMe74ty_SWtHYwhcQtPEYB2OwsoCxI",
+    "expire_date": "2024-12-15T17:28:32.268Z"
+  }
+},
+{
+  "model": "trip.trip",
+  "pk": 4,
+  "fields": {
+    "title": "Топ-10 направлений для путешествий в 2025 году",
+    "slug": "top-10-napravlenij-dlya-puteshestvij-v-2025-godu",
+    "image": "images/2025/01/23/DALLE_2025-01-23_21.02.12_-_top_travel_2025.webp",
+    "content": "2025 год обещает стать временем для ярких открытий. Среди трендов: Япония во время цветения сакуры, Исландия с её вулканами и гейзерами, Италия, предлагающая не только Рим и Венецию, но и живописную Апулию. Африка набирает популярность: сафари в Кении или Намибии — отличное решение. Патагония в Южной Америке очарует первозданной природой. Азия предлагает Грузию и её гостеприимство, а Южная Корея манит сочетанием традиций и технологий. Для пляжного отдыха выбирайте Мальдивы или Сейшелы, а любители культуры могут отправиться в Париж или Прагу.",
+    "time_create": "2025-01-23T17:10:33.349Z",
+    "time_update": "2025-01-23T18:23:08.727Z",
+    "is_published": true,
+    "topic": null,
+    "capital": null,
+    "author": null,
+    "tags": []
+  }
+},
+{
+  "model": "trip.trip",
+  "pk": 5,
+  "fields": {
+    "title": "Путешествие в одиночку: плюсы, минусы и полезные советы",
+    "slug": "puteshestvie-v-odinochku-plyusy-minusy-i-poleznye-sovety",
+    "image": "images/2025/01/23/DALLE_2025_h00wjmn.02.20_-_A_vibrant_travel_collage_featuring_top_solo_travel.webp",
+    "content": "Путешествия в одиночку — это возможность услышать себя и действовать по своим правилам. Вы не зависите от чужих предпочтений, что позволяет составить маршрут мечты. Однако важно учитывать минусы: одиночество может ощущаться сильнее, особенно в незнакомом месте. Чтобы избежать проблем, заранее изучите место назначения, составьте план передвижения и заручитесь поддержкой близких. Приложения вроде Couchsurfing помогут найти единомышленников. Носите копию документов отдельно от оригинала и сообщайте о своих передвижениях.",
+    "time_create": "2025-01-23T17:12:03.246Z",
+    "time_update": "2025-01-23T18:10:20.867Z",
+    "is_published": true,
+    "topic": null,
+    "capital": null,
+    "author": null,
+    "tags": []
+  }
+},
+{
+  "model": "trip.trip",
+  "pk": 6,
+  "fields": {
+    "title": "Секреты бюджетного путешествия: как увидеть мир и не разориться",
+    "slug": "sekrety-byudzhetnogo-puteshestviya-kak-uvidet-mir-i-ne-razoritsya",
+    "image": "images/2025/01/23/palandoken800x600.jpg",
+    "content": "Бюджетные путешествия требуют грамотного планирования. Ищите дешёвые авиабилеты через агрегаторы, выбирая даты с минимальным спросом. Останавливайтесь в хостелах, апартаментах или пользуйтесь программами обмена жильём. Старайтесь питаться в местных кафе, избегая туристических зон. Бесплатные экскурсии и прогулки — отличная альтернатива платным мероприятиям. Заблаговременное бронирование билетов и жилья — ваш главный друг.",
+    "time_create": "2025-01-23T17:13:42.684Z",
+    "time_update": "2025-01-23T18:27:58.275Z",
+    "is_published": true,
+    "topic": null,
+    "capital": null,
+    "author": null,
+    "tags": []
+  }
+},
+{
+  "model": "trip.trip",
+  "pk": 7,
+  "fields": {
+    "title": "Неизведанные уголки планеты: 7 скрытых жемчужин для туристов",
+    "slug": "neizvedannye-ugolki-planety-7-skrytyh-zhemchuzhin-dlya-turistov",
+    "image": "images/2025/01/23/Small-Ski-Resorts-in-America800x600.jpg",
+    "content": "Среди малоизвестных направлений выделяются острова Лофотены в Норвегии — рай для фотографов, Сокотра в Йемене с её необычными растениями, Гренландия с ледяными фьордами. Албания привлекает пляжами и невысокими ценами. Таджикистан предлагает поразительные пейзажи Памира. Бутан — страна счастья, где ограничивают количество туристов. Маленькие деревушки Португалии, такие как Обидуш, очаруют средневековой атмосферой.",
+    "time_create": "2025-01-23T17:15:40.781Z",
+    "time_update": "2025-01-23T17:15:40.781Z",
+    "is_published": true,
+    "topic": null,
+    "capital": null,
+    "author": null,
+    "tags": []
+  }
+},
+{
+  "model": "trip.trip",
+  "pk": 8,
+  "fields": {
+    "title": "Как выбрать идеальный багаж: рюкзак или чемодан?",
+    "slug": "kak-vybrat-idealnyj-bagazh-ryukzak-ili-chemodan",
+    "image": "images/2025/01/23/Sheregesh-hotels800x600.jpg",
+    "content": "Выбор зависит от типа путешествия. Чемодан идеален для городских поездок: он вместительный, защищает вещи и удобен для аэропортов. Рюкзак подойдёт для активных путешествий и маршрутов по пересечённой местности. Обратите внимание на вес, материал и объём. Рюкзак с объёмом 40-60 литров подойдёт для трекинга, а чемодан на 60-80 литров — для недельного отпуска. Проверьте надёжность замков и качество швов.",
+    "time_create": "2025-01-23T17:18:54.233Z",
+    "time_update": "2025-01-23T17:18:54.233Z",
+    "is_published": true,
+    "topic": null,
+    "capital": null,
+    "author": null,
+    "tags": []
+  }
+},
+{
+  "model": "trip.trip",
+  "pk": 9,
+  "fields": {
+    "title": "Путешествие по национальным паркам: где вдохновиться природой",
+    "slug": "puteshestvie-po-nacionalnym-parkam-gde-vdohnovitsya-prirodoj",
+    "image": "images/2025/01/23/mount800x600.webp",
+    "content": "Национальные парки — идеальное место для соединения с природой. В США обязательны к посещению Йеллоустон, Гранд-Каньон и Йосемити. В Европе выделяются Плитвицкие озёра в Хорватии и Швейцарский национальный парк. Азия предлагает Гималайский парк в Индии, а Австралия — Голубые горы. Исследуйте пешие маршруты, наблюдайте за животными и наслаждайтесь тишиной.",
+    "time_create": "2025-01-23T17:20:48.808Z",
+    "time_update": "2025-01-23T18:27:39.986Z",
+    "is_published": true,
+    "topic": null,
+    "capital": null,
+    "author": null,
+    "tags": []
+  }
+},
+{
+  "model": "trip.trip",
+  "pk": 10,
+  "fields": {
+    "title": "Гастрономический туризм: города, которые стоит посетить ради кухни",
+    "slug": "gastronomicheskij-turizm-goroda-kotorye-stoit-posetit-radi-kuhni",
+    "image": "images/2025/01/23/mineral.jpg",
+    "content": "Любители еды должны посетить такие города, как Париж — столица высокой кухни, Барселона с её тапас и паэльей, Токио, известный суши и рамэном. В Италии откройте для себя Болонью с её пастой и болоньезе. Лима в Перу удивит севиче, а Стамбул — уличной едой, включая кебабы и пахлаву. Не забывайте пробовать местные рынки.",
+    "time_create": "2025-01-23T17:24:11.369Z",
+    "time_update": "2025-01-23T18:27:06.725Z",
+    "is_published": true,
+    "topic": null,
+    "capital": null,
+    "author": null,
+    "tags": []
+  }
+},
+{
+  "model": "trip.trip",
+  "pk": 11,
+  "fields": {
+    "title": "Путешествия с детьми: советы для комфортного отдыха",
+    "slug": "puteshestviya-s-detmi-sovety-dlya-komfortnogo-otdyha",
+    "image": "images/2025/01/23/arhiz.jpeg",
+    "content": "Отдых с детьми требует тщательной подготовки. Выбирайте отели с удобствами для семей, планируйте поездки с учётом режима ребёнка. В самолёте захватите игрушки и перекусы, чтобы занять ребёнка. Парки аттракционов, аквапарки или детские музеи — отличные места для отдыха. Также берите аптечку и любимые вещи малыша.",
+    "time_create": "2025-01-23T17:26:27.400Z",
+    "time_update": "2025-01-23T17:36:39.664Z",
+    "is_published": true,
+    "topic": null,
+    "capital": null,
+    "author": null,
+    "tags": []
+  }
+},
+{
+  "model": "trip.trip",
+  "pk": 12,
+  "fields": {
+    "title": "Топ-5 лучших поездок на выходные: короткие маршруты для отдыха",
+    "slug": "top-5-luchshih-poezdok-na-vyhodnye-korotkie-marshruty-dlya-otdyha",
+    "image": "images/2025/01/23/almati.jpg",
+    "content": "Для короткого отпуска выберите города с развитым транспортом. Например, Прага, с её старинными улочками, Париж для романтического настроения, Будапешт с термальными купальнями. В Италии подойдёт Флоренция, а в Испании — Севилья. Планируйте маршрут заранее, чтобы максимально использовать время.",
+    "time_create": "2025-01-23T17:28:45.687Z",
+    "time_update": "2025-01-23T17:36:39.662Z",
+    "is_published": true,
+    "topic": null,
+    "capital": null,
+    "author": null,
+    "tags": []
+  }
+},
+{
+  "model": "trip.trip",
+  "pk": 13,
+  "fields": {
+    "title": "Экологичный туризм: как путешествовать без вреда для природы",
+    "slug": "ekologichnyj-turizm-kak-puteshestvovat-bez-vreda-dlya-prirody",
+    "image": "images/2025/01/23/DALLE_2025-01-23_21.25.03_-_Eco-Friendly_Tourism.webp",
+    "content": "Эко-туризм становится всё популярнее. Используйте общественный транспорт, избегайте одноразового пластика, выбирайте экологичные отели. Поддерживайте местных производителей, покупая сувениры у ремесленников. Изучайте природу, не нарушая её баланса, и оставляйте места чище, чем нашли.",
+    "time_create": "2025-01-23T17:30:56.498Z",
+    "time_update": "2025-01-23T18:26:00.101Z",
+    "is_published": true,
+    "topic": null,
+    "capital": null,
+    "author": null,
+    "tags": []
+  }
+},
+{
+  "model": "trip.trip",
+  "pk": 14,
+  "fields": {
+    "title": "Лучшие железнодорожные маршруты мира: путешествия с видом",
+    "slug": "luchshie-zheleznodorozhnye-marshruty-mira-puteshestviya-s-vidom",
+    "image": "images/2025/01/23/leto-v-gorah.jpeg",
+    "content": "Железнодорожные путешествия — это комфорт и возможность наслаждаться пейзажами. Среди лучших маршрутов: Транссибирская магистраль в России, поезд Rocky Mountaineer в Канаде, маршрут Jungfraujoch в Швейцарии. В Индии обязательно прокатитесь на Darjeeling Himalayan Railway, а в Японии — на высокоскоростных синкансенах.",
+    "time_create": "2025-01-23T17:32:52.023Z",
+    "time_update": "2025-01-23T17:36:39.658Z",
+    "is_published": true,
+    "topic": null,
+    "capital": null,
+    "author": null,
+    "tags": []
+  }
+},
+{
+  "model": "trip.trip",
+  "pk": 15,
+  "fields": {
+    "title": "Как подготовиться к трекингу в горах: снаряжение и безопасность",
+    "slug": "kak-podgotovitsya-k-trekingu-v-gorah-snaryazhenie-i-bezopasnost",
+    "image": "images/2025/01/23/DALLE_2025-01-23_21.20.06_-_trekking_preparation.webp",
+    "content": "Горные походы требуют подготовки. Выбирайте удобную обувь, подходящую для длительных прогулок. Одежда должна быть слоистой, чтобы адаптироваться к погоде. Возьмите рюкзак с водой, перекусами, аптечкой и картой. Изучите маршрут заранее, сообщите близким о своих планах и избегайте рисковых ситуаций.",
+    "time_create": "2025-01-23T17:34:21.778Z",
+    "time_update": "2025-01-23T18:21:59.234Z",
+    "is_published": true,
+    "topic": null,
+    "capital": null,
+    "author": null,
+    "tags": []
+  }
+},
+{
+  "model": "trip.trip",
+  "pk": 16,
+  "fields": {
+    "title": "Путешествия по Европе на автомобиле: маршруты, советы и лайфхаки",
+    "slug": "puteshestviya-po-evrope-na-avtomobile-marshruty-sovety-i-lajfhaki",
+    "image": "images/2025/01/23/yuzno-sahalinsk.jpg",
+    "content": "Автопутешествия позволяют исследовать Европу в своём темпе. Популярные маршруты: Прованс во Франции с его лавандовыми полями, Альпы — для любителей горных видов, побережье Амальфи в Италии. Планируйте остановки, заранее бронируйте жильё, соблюдайте правила дорожного движения и берите с собой карту или GPS-навигатор. Автомобиль — это свобода выбора.",
+    "time_create": "2025-01-23T17:35:32.360Z",
+    "time_update": "2025-01-23T17:36:39.654Z",
+    "is_published": true,
+    "topic": null,
+    "capital": null,
+    "author": null,
+    "tags": []
+  }
+},
+{
+  "model": "trip.topics",
+  "pk": 1,
+  "fields": {
+    "name": "зима",
+    "slug": "winter"
+  }
+},
+{
+  "model": "trip.topics",
+  "pk": 2,
+  "fields": {
+    "name": "лето",
+    "slug": "summer"
+  }
+},
+{
+  "model": "trip.topics",
+  "pk": 3,
+  "fields": {
+    "name": "пляж",
+    "slug": "coast"
+  }
+},
+{
+  "model": "trip.topics",
+  "pk": 4,
+  "fields": {
+    "name": "горы",
+    "slug": "mountains"
+  }
+},
+{
+  "model": "users.user",
+  "pk": 1,
+  "fields": {
+    "password": "pbkdf2_sha256$870000$NAuj4mrK9sRYTrLCUZ5mDJ$5voS4jobzqFxPjLLgTw5SL1fB0LrPb2Q6cSUQmqsri0=",
+    "last_login": "2025-01-23T17:07:33.121Z",
+    "is_superuser": true,
+    "username": "root",
+    "first_name": "",
+    "last_name": "",
+    "email": "tdvdev@yandex.ru",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2024-11-29T08:32:47.206Z",
+    "photo": "",
+    "date_birth": null,
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "users.user",
+  "pk": 2,
+  "fields": {
+    "password": "pbkdf2_sha256$870000$4NoilwUJceNJ3IWuELuYuM$54EILQq2C7v8ZpZQF6xsDdTGJk7oXzMr3gzc1d2vFV8=",
+    "last_login": "2024-11-30T19:34:00.333Z",
+    "is_superuser": false,
+    "username": "user1",
+    "first_name": "Тигиняну",
+    "last_name": "Дмитрий",
+    "email": "user1@gmail.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2024-11-29T08:52:45Z",
+    "photo": "",
+    "date_birth": null,
+    "groups": [
+      1
+    ],
+    "user_permissions": []
+  }
+},
+{
+  "model": "users.user",
+  "pk": 3,
+  "fields": {
+    "password": "!pjFALVvlvBUtJnkQkgyWDiXckWGejknJaxAWRBAK",
+    "last_login": "2024-11-30T19:34:38.587Z",
+    "is_superuser": false,
+    "username": "DTigi",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2024-11-30T14:51:21.557Z",
+    "photo": "",
+    "date_birth": null,
+    "groups": [
+      2
+    ],
+    "user_permissions": []
+  }
+},
+{
+  "model": "users.user",
+  "pk": 4,
+  "fields": {
+    "password": "pbkdf2_sha256$870000$CkfZz7nsPbclLqBlwThpBq$xIbGuE0EtvPfMURYSN8vLG4OmoavuRsP1dMOPF7cFgk=",
+    "last_login": "2025-01-23T12:51:21.766Z",
+    "is_superuser": false,
+    "username": "user2",
+    "first_name": "",
+    "last_name": "",
+    "email": "user2@user2r45.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2025-01-23T12:42:55.460Z",
+    "photo": "",
+    "date_birth": null,
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "captcha.captchastore",
+  "pk": 1,
+  "fields": {
+    "challenge": "ZGAO",
+    "response": "zgao",
+    "hashkey": "7f6305f961035e383fe9e1c6961e408b06dcb009",
+    "expiration": "2025-01-23T10:25:06.721Z"
+  }
+},
+{
+  "model": "captcha.captchastore",
+  "pk": 2,
+  "fields": {
+    "challenge": "LNNW",
+    "response": "lnnw",
+    "hashkey": "3ac142c78f7a4d4c444309daa95f84d5b1460460",
+    "expiration": "2025-01-23T10:25:39.189Z"
+  }
+},
+{
+  "model": "captcha.captchastore",
+  "pk": 3,
+  "fields": {
+    "challenge": "JKDG",
+    "response": "jkdg",
+    "hashkey": "dc49dd820f4976790ddb0c1ab62cf4df68ce770a",
+    "expiration": "2025-01-23T10:26:36.243Z"
+  }
+},
+{
+  "model": "captcha.captchastore",
+  "pk": 4,
+  "fields": {
+    "challenge": "KOZZ",
+    "response": "kozz",
+    "hashkey": "b89ac23ba91b2dc474abe88567e283afdeb887b3",
+    "expiration": "2025-01-23T10:26:42.170Z"
+  }
+},
+{
+  "model": "captcha.captchastore",
+  "pk": 5,
+  "fields": {
+    "challenge": "QASL",
+    "response": "qasl",
+    "hashkey": "0f2f0e093e49ce6bf85e9df65ae84c9ddaa36b37",
+    "expiration": "2025-01-23T10:26:45.682Z"
+  }
+},
+{
+  "model": "captcha.captchastore",
+  "pk": 6,
+  "fields": {
+    "challenge": "KOMW",
+    "response": "komw",
+    "hashkey": "e2c9c29692274ccf42c3bd95a47267f2fd483f36",
+    "expiration": "2025-01-23T10:27:31.008Z"
+  }
+},
+{
+  "model": "captcha.captchastore",
+  "pk": 7,
+  "fields": {
+    "challenge": "LOIJ",
+    "response": "loij",
+    "hashkey": "8c142faa6235968526a2d3417fc81aa155d75fbf",
+    "expiration": "2025-01-23T10:27:40.904Z"
+  }
+},
+{
+  "model": "captcha.captchastore",
+  "pk": 8,
+  "fields": {
+    "challenge": "DMOM",
+    "response": "dmom",
+    "hashkey": "24156be6243453d87d349d9934d5ae1ce5e27c3a",
+    "expiration": "2025-01-23T10:36:13.422Z"
+  }
+},
+{
+  "model": "captcha.captchastore",
+  "pk": 9,
+  "fields": {
+    "challenge": "CVDR",
+    "response": "cvdr",
+    "hashkey": "7b67f2a5257f5fe9cb8536373fa2594239bf6344",
+    "expiration": "2025-01-23T10:46:03.461Z"
+  }
+},
+{
+  "model": "captcha.captchastore",
+  "pk": 10,
+  "fields": {
+    "challenge": "VYYX",
+    "response": "vyyx",
+    "hashkey": "0c7348d33ef220acc8d0f1dd55bd5a95cb27999d",
+    "expiration": "2025-01-23T10:55:54.727Z"
+  }
+},
+{
+  "model": "captcha.captchastore",
+  "pk": 11,
+  "fields": {
+    "challenge": "LRAN",
+    "response": "lran",
+    "hashkey": "087467275fcdffab2cea76f810289967086c702f",
+    "expiration": "2025-01-23T18:08:44.849Z"
+  }
+},
+{
+  "model": "sites.site",
+  "pk": 1,
+  "fields": {
+    "domain": "tytrip.ru",
+    "name": "tytrip.ru"
+  }
+},
+{
+  "model": "taggit.tag",
+  "pk": 1,
+  "fields": {
+    "name": "winter",
+    "slug": "winter"
+  }
+},
+{
+  "model": "taggit.tag",
+  "pk": 2,
+  "fields": {
+    "name": "mount",
+    "slug": "mount"
+  }
+},
+{
+  "model": "taggit.tag",
+  "pk": 3,
+  "fields": {
+    "name": "авав",
+    "slug": "авав"
+  }
+},
+{
+  "model": "taggit.tag",
+  "pk": 4,
+  "fields": {
+    "name": "right",
+    "slug": "right"
+  }
+},
+{
+  "model": "taggit.tag",
+  "pk": 5,
+  "fields": {
+    "name": "2025",
+    "slug": "2025"
+  }
+},
+{
+  "model": "taggit.tag",
+  "pk": 6,
+  "fields": {
+    "name": "top",
+    "slug": "top"
+  }
+},
+{
+  "model": "taggit.tag",
+  "pk": 7,
+  "fields": {
+    "name": "world",
+    "slug": "world"
+  }
+},
+{
+  "model": "taggit.tag",
+  "pk": 8,
+  "fields": {
+    "name": "selftravel",
+    "slug": "selftravel"
+  }
+},
+{
+  "model": "taggit.tag",
+  "pk": 9,
+  "fields": {
+    "name": "budget",
+    "slug": "budget"
+  }
+},
+{
+  "model": "taggit.tag",
+  "pk": 10,
+  "fields": {
+    "name": "photo",
+    "slug": "photo"
+  }
+},
+{
+  "model": "taggit.tag",
+  "pk": 11,
+  "fields": {
+    "name": "luggage",
+    "slug": "luggage"
+  }
+},
+{
+  "model": "taggit.tag",
+  "pk": 12,
+  "fields": {
+    "name": "national-parks",
+    "slug": "national-parks"
+  }
+},
+{
+  "model": "taggit.tag",
+  "pk": 13,
+  "fields": {
+    "name": "nature",
+    "slug": "nature"
+  }
+},
+{
+  "model": "taggit.tag",
+  "pk": 14,
+  "fields": {
+    "name": "food",
+    "slug": "food"
+  }
+},
+{
+  "model": "taggit.tag",
+  "pk": 15,
+  "fields": {
+    "name": "kids",
+    "slug": "kids"
+  }
+},
+{
+  "model": "taggit.tag",
+  "pk": 16,
+  "fields": {
+    "name": "travel",
+    "slug": "travel"
+  }
+},
+{
+  "model": "taggit.tag",
+  "pk": 17,
+  "fields": {
+    "name": "weekend",
+    "slug": "weekend"
+  }
+},
+{
+  "model": "taggit.tag",
+  "pk": 18,
+  "fields": {
+    "name": "eco",
+    "slug": "eco"
+  }
+},
+{
+  "model": "taggit.tag",
+  "pk": 19,
+  "fields": {
+    "name": "railway",
+    "slug": "railway"
+  }
+},
+{
+  "model": "taggit.tag",
+  "pk": 20,
+  "fields": {
+    "name": "mountains",
+    "slug": "mountains"
+  }
+},
+{
+  "model": "taggit.tag",
+  "pk": 21,
+  "fields": {
+    "name": "car",
+    "slug": "car"
+  }
+},
+{
+  "model": "taggit.tag",
+  "pk": 22,
+  "fields": {
+    "name": "europe",
+    "slug": "europe"
+  }
+},
+{
+  "model": "taggit.taggeditem",
+  "pk": 6,
+  "fields": {
+    "tag": 5,
+    "content_type": 9,
+    "object_id": 4
+  }
+},
+{
+  "model": "taggit.taggeditem",
+  "pk": 7,
+  "fields": {
+    "tag": 6,
+    "content_type": 9,
+    "object_id": 4
+  }
+},
+{
+  "model": "taggit.taggeditem",
+  "pk": 8,
+  "fields": {
+    "tag": 7,
+    "content_type": 9,
+    "object_id": 4
+  }
+},
+{
+  "model": "taggit.taggeditem",
+  "pk": 9,
+  "fields": {
+    "tag": 8,
+    "content_type": 9,
+    "object_id": 5
+  }
+},
+{
+  "model": "taggit.taggeditem",
+  "pk": 10,
+  "fields": {
+    "tag": 9,
+    "content_type": 9,
+    "object_id": 6
+  }
+},
+{
+  "model": "taggit.taggeditem",
+  "pk": 11,
+  "fields": {
+    "tag": 7,
+    "content_type": 9,
+    "object_id": 6
+  }
+},
+{
+  "model": "taggit.taggeditem",
+  "pk": 12,
+  "fields": {
+    "tag": 10,
+    "content_type": 9,
+    "object_id": 7
+  }
+},
+{
+  "model": "taggit.taggeditem",
+  "pk": 13,
+  "fields": {
+    "tag": 7,
+    "content_type": 9,
+    "object_id": 7
+  }
+},
+{
+  "model": "taggit.taggeditem",
+  "pk": 14,
+  "fields": {
+    "tag": 11,
+    "content_type": 9,
+    "object_id": 8
+  }
+},
+{
+  "model": "taggit.taggeditem",
+  "pk": 15,
+  "fields": {
+    "tag": 6,
+    "content_type": 9,
+    "object_id": 8
+  }
+},
+{
+  "model": "taggit.taggeditem",
+  "pk": 16,
+  "fields": {
+    "tag": 12,
+    "content_type": 9,
+    "object_id": 9
+  }
+},
+{
+  "model": "taggit.taggeditem",
+  "pk": 17,
+  "fields": {
+    "tag": 13,
+    "content_type": 9,
+    "object_id": 9
+  }
+},
+{
+  "model": "taggit.taggeditem",
+  "pk": 18,
+  "fields": {
+    "tag": 14,
+    "content_type": 9,
+    "object_id": 10
+  }
+},
+{
+  "model": "taggit.taggeditem",
+  "pk": 19,
+  "fields": {
+    "tag": 7,
+    "content_type": 9,
+    "object_id": 10
+  }
+},
+{
+  "model": "taggit.taggeditem",
+  "pk": 20,
+  "fields": {
+    "tag": 15,
+    "content_type": 9,
+    "object_id": 11
+  }
+},
+{
+  "model": "taggit.taggeditem",
+  "pk": 21,
+  "fields": {
+    "tag": 16,
+    "content_type": 9,
+    "object_id": 11
+  }
+},
+{
+  "model": "taggit.taggeditem",
+  "pk": 22,
+  "fields": {
+    "tag": 6,
+    "content_type": 9,
+    "object_id": 12
+  }
+},
+{
+  "model": "taggit.taggeditem",
+  "pk": 23,
+  "fields": {
+    "tag": 17,
+    "content_type": 9,
+    "object_id": 12
+  }
+},
+{
+  "model": "taggit.taggeditem",
+  "pk": 24,
+  "fields": {
+    "tag": 18,
+    "content_type": 9,
+    "object_id": 13
+  }
+},
+{
+  "model": "taggit.taggeditem",
+  "pk": 25,
+  "fields": {
+    "tag": 13,
+    "content_type": 9,
+    "object_id": 13
+  }
+},
+{
+  "model": "taggit.taggeditem",
+  "pk": 26,
+  "fields": {
+    "tag": 16,
+    "content_type": 9,
+    "object_id": 13
+  }
+},
+{
+  "model": "taggit.taggeditem",
+  "pk": 27,
+  "fields": {
+    "tag": 19,
+    "content_type": 9,
+    "object_id": 14
+  }
+},
+{
+  "model": "taggit.taggeditem",
+  "pk": 28,
+  "fields": {
+    "tag": 16,
+    "content_type": 9,
+    "object_id": 14
+  }
+},
+{
+  "model": "taggit.taggeditem",
+  "pk": 29,
+  "fields": {
+    "tag": 20,
+    "content_type": 9,
+    "object_id": 15
+  }
+},
+{
+  "model": "taggit.taggeditem",
+  "pk": 30,
+  "fields": {
+    "tag": 1,
+    "content_type": 9,
+    "object_id": 15
+  }
+},
+{
+  "model": "taggit.taggeditem",
+  "pk": 31,
+  "fields": {
+    "tag": 21,
+    "content_type": 9,
+    "object_id": 16
+  }
+},
+{
+  "model": "taggit.taggeditem",
+  "pk": 32,
+  "fields": {
+    "tag": 22,
+    "content_type": 9,
+    "object_id": 16
+  }
+},
+{
+  "model": "taggit.taggeditem",
+  "pk": 33,
+  "fields": {
+    "tag": 16,
+    "content_type": 9,
+    "object_id": 16
+  }
+}
+]

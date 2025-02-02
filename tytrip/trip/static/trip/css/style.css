@@ -13,7 +13,7 @@
 }
 
 * {
-box-sizing: border-box;
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
@@ -34,6 +34,7 @@ box-sizing: border-box;
   text-align: center;
   font-family: OpenSans, Arial, sans-serif;
 }
+
 .header:after {
   content: "";
   position: absolute;
@@ -53,8 +54,8 @@ box-sizing: border-box;
 }
 
 .menu {
- display: flex;
- justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 }
 
 .header-logo {
@@ -79,16 +80,19 @@ box-sizing: border-box;
 }
 
 li.menu-list-item form {
-    display: inline-block;
-    button {
-        all: unset;
-    };
-    text-transform: uppercase;
-    font-size: 13px;
+  display: inline-block;
+
+  button {
+    all: unset;
+  }
+
+  ;
+  text-transform: uppercase;
+  font-size: 13px;
 }
 
 .header-title {
-  margin-top: 70px;  
+  margin-top: 70px;
   text-transform: uppercase;
   width: 687px;
   font-size: 45px;
@@ -97,37 +101,40 @@ li.menu-list-item form {
   margin-right: auto;
   line-height: 75px;
 }
+
 .main-content {
- display: flex;
- width: 1200px; 
- padding: 64px 15px;
- margin: 0 auto;
- justify-content: space-between;
- font-family: OpenSans, Arial, sans-serif;
+  display: flex;
+  width: 1200px;
+  padding: 64px 15px;
+  margin: 0 auto;
+  justify-content: space-between;
+  font-family: OpenSans, Arial, sans-serif;
 }
+
 .main {
   width: 778px;
 }
+
 .card {
- display: flex; 
- justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 }
 
 .card:nth-child(n+2) {
- margin-top: 60px;
+  margin-top: 60px;
 }
 
 .poster {
- width: 380px;
+  width: 380px;
 }
 
 .poster-mini {
- width: 80px;
+  width: 80px;
 }
 
 .article {
- width: 367px;
- /*text-align: left;*/
+  width: 367px;
+  /*text-align: left;*/
 }
 
 .tag-list {
@@ -135,7 +142,7 @@ li.menu-list-item form {
   flex-wrap: wrap;
   list-style-type: none;
   margin: 0;
-  }
+}
 
 .tag-link {
   text-decoration: none;
@@ -163,14 +170,14 @@ li.menu-list-item form {
 }
 
 .time {
-font-size: 12px;
-color: #888888;
+  font-size: 12px;
+  color: #888888;
 }
 
 .autor {
-font-weight: 700;
-font-size: 12px;
-color: #000000;
+  font-weight: 700;
+  font-size: 12px;
+  color: #000000;
 }
 
 .discription {
@@ -181,7 +188,7 @@ color: #000000;
 .aside {
   width: 272px;
   pagging: 0px;
-  
+
 }
 
 .new__posts {
@@ -232,7 +239,7 @@ color: #000000;
   float: left;
 }
 
-.find{
+.find {
   display: flex;
   flex-direction: row;
   margin-top: 60px;
@@ -253,7 +260,7 @@ color: #000000;
   width: 48px;
   height: 48px;
   border: none;
-  background-color: #b59f5b; 
+  background-color: #b59f5b;
   background-image: url("https://netology-code.github.io/html-2-diploma/sources/images/search.svg");
   background-repeat: no-repeat;
   background-size: 50%;
@@ -292,6 +299,7 @@ color: #000000;
 .tags {
   margin-bottom: 60px;
 }
+
 .tags_block {
   display: flex;
   flex-wrap: wrap;
@@ -358,9 +366,9 @@ color: #000000;
 }
 
 .footer {
- width: 1200px; 
- margin: 0 auto;
- text-align: center;
+  width: 1200px;
+  margin: 0 auto;
+  text-align: center;
 }
 
 .footer-logo {
@@ -383,94 +391,122 @@ color: #000000;
 }
 
 .form-input {
-    width: 300px;
-    font-size: 16px;
+  width: 300px;
+  font-size: 16px;
 }
 
 .form-label {
-    display: inline-block;
-    min-width: 150px;
-    vertical-align: top;
+  display: inline-block;
+  min-width: 150px;
+  vertical-align: top;
 }
 
 .form-error ul {
-    list-style: none;
-    padding: 0;
-    color: #CC0000;
+  list-style: none;
+  padding: 0;
+  color: #CC0000;
 }
 
 .form-button {
-    min-width: 200px;
-    font-size: 16px;
+  min-width: 200px;
+  font-size: 16px;
 }
 
 .list-pages {
-   text-align: center;
-   margin: 0 0 20px 0;
+  text-align: center;
+  margin: 0 0 20px 0;
 }
 
 .list-pages ul {
-   margin: 20px 0 0 0;
-   padding: 0;
-   list-style: none;
+  margin: 20px 0 0 0;
+  padding: 0;
+  list-style: none;
 }
 
 .list-pages ul li {
-   display: inline-block;
-   margin: 0 20px 0 0;
+  display: inline-block;
+  margin: 0 20px 0 0;
 }
 
 .list-pages a {
-   color: #000;
-   font-size: 24px;
-   text-decoration: none;
+  color: #000;
+  font-size: 24px;
+  text-decoration: none;
 }
 
-.list-pages .page-num, .page-num-selected {
-   display: inline-block;
-   width: 60px;
-   height: 44px;
-   padding: 8px 0 0 0;
-   border: 1px solid #d0d0d0;
-   border-radius: 30px;
+.list-pages .page-num,
+.page-num-selected {
+  display: inline-block;
+  width: 60px;
+  height: 44px;
+  padding: 8px 0 0 0;
+  border: 1px solid #d0d0d0;
+  border-radius: 30px;
 }
 
 .list-pages .page-num:hover {
-   box-shadow: 3px 3px 1px #d0d0d0;
+  box-shadow: 3px 3px 1px #d0d0d0;
 }
 
 .list-pages .page-num-selected {
-   border: none;
-   color: #000;
-   font-size: 20px;
+  border: none;
+  color: #000;
+  font-size: 20px;
 }
 
-.list-pages .page-num-selected:hover
-
-.carousel-item {
-    height: 20rem;
+.list-pages .page-num-selected:hover .carousel-item {
+  height: 20rem;
 }
 
 .my-carousel {
-    padding: 0;
+  padding: 0;
 }
 
 .my-carousel h5 {
-    font-size: 60px;
+  font-size: 60px;
 }
 
 .my-carousel p {
-    font-size: 30px;
+  font-size: 30px;
 }
 
 .carousel-caption {
-    bottom: 100px;
+  bottom: 100px;
 }
 
 .carousel-item {
-    height: 20rem;
+  height: 20rem;
 }
 
 .my-footer {
-    background-color: #f5f5f5;
+  background-color: #f5f5f5;
+}
+
+:root {
+  --bg-color: #ffffff;
+  --text-color: #000000;
+}
+
+.dark-mode {
+  --bg-color: #121212 !important;
+  --text-color: #ffffff !important;
+}
+
+body {
+  background-color: var(--bg-color) !important;
+  color: var(--text-color) !important;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+button {
+  padding: 10px;
+  cursor: pointer;
+  border: none;
+  background-color: #ddd;
+  border-radius: 5px;
+}
+
+.dark-mode button {
+  background-color: #444 !important;
+  color: white !important;
 }
