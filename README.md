@@ -7,12 +7,12 @@ https://www.tytrip.ru/
 
 ## Технологии
 
-Python 3.x
-Django
-Django REST Framework
-Redis
-SQLite/PostgreSQL (или другая СУБД по вашему выбору)
-OAuth 2.0
+- Python 3.x
+- Django
+- Django REST Framework
+- Redis
+- SQLite/PostgreSQL (или другая СУБД по вашему выбору)
+- OAuth 2.0
 
 ## Установка
 
