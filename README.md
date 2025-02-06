@@ -1,8 +1,18 @@
 # Django Project
+https://www.tytrip.ru/
 
 ## Описание
 
 Этот проект представляет собой веб-приложение, созданное с использованием Django. Он включает в себя основные функции, такие как аутентификация пользователей, управление контентом и API.
+
+## Технологии
+
+Python 3.x
+Django
+Django REST Framework
+Redis
+SQLite/PostgreSQL (или другая СУБД по вашему выбору)
+OAuth 2.0
 
 ## Установка
 
@@ -59,6 +69,17 @@ DEBUG=True
 DATABASE_URL=postgres://user:password@localhost:5432/dbname
 ```
 
+## API эндпоинты
+
+Приложение предоставляет RESTful API.
+
+Примеры эндпоинтов:
+- `GET /api/posts/` — Получить список постов
+- `POST /api/feedback/` — Обратная связь
+- `GET /api/posts/{slug}/` — Получить информацию о конкретном посте
+- `GET /api/posts/?q=` — Поиск по сайту
+- `POST /api/comments/` — Добавить комментарий
+  
 ## Развертывание
 
 Для развертывания на продакшн выполните следующие шаги:
@@ -68,6 +89,11 @@ DATABASE_URL=postgres://user:password@localhost:5432/dbname
 3. Настройте сервер (Gunicorn, Nginx, Docker и т. д.).
 
 
+## Дополнительная информация
+- [Django](https://www.djangoproject.com/)
+- [Django REST Framework](https://www.django-rest-framework.org/)
 
+### Автор
+**DTigi** - [GitHub Profile](https://github.com/DTigi)
 
 
